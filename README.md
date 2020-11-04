@@ -82,6 +82,7 @@
 		- [pnpm](#pnpm)
 		- [Closures](#closures)
 	- [jQuery](#jquery)
+	- [Glossary](#glossary)
 - [Javascript - Decrement This Section Over Time](#javascript---decrement-this-section-over-time)
 	- [Console.Assert](#consoleassert)
 		- [Array](#array-1)
@@ -4400,7 +4401,9 @@ Key features of closures
 
 [jQuery](notes/jquery.md)
 
+## Glossary
 
+[Glossary](notes/glossary.md)
 
 
 
