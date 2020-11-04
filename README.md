@@ -1,11 +1,14 @@
 # Javascript
 
 - [Javascript](#javascript)
+	- [Author](#author)
+	- [Introduction](#introduction)
 	- [Resources](#resources)
 	- [Javascript History](#javascript-history)
 		- [Good Coding Practices](#good-coding-practices)
 	- [Linting](#linting)
 		- [Declaring Variables](#declaring-variables)
+	- [Template Literals](#template-literals)
 	- [Reserved Keywords](#reserved-keywords)
 - [Usage](#usage)
 	- [Chrome Dev Tools](#chrome-dev-tools)
@@ -18,6 +21,9 @@
 	- [Javascript equality](#javascript-equality)
 		- [Loops](#loops)
 		- [Array](#array)
+		- [map](#map)
+		- [Reduce](#reduce)
+		- [Filter](#filter)
 		- [Dates](#dates)
 	- [Javascript Primitive Types](#javascript-primitive-types)
 	- [String](#string)
@@ -42,8 +48,15 @@
 		- [forEach](#foreach)
 		- [fill (an array with default values)](#fill-an-array-with-default-values)
 		- [Map Reduce Filter](#map-reduce-filter)
-		- [Filter](#filter)
+		- [Filter](#filter-1)
 - [JSON](#json)
+	- [SAMPLE JSON](#sample-json)
+	- [JSON Encoding](#json-encoding)
+	- [JSON.STRINGIFY](#jsonstringify)
+	- [JSON.Parse](#jsonparse)
+	- [SERIALIZE](#serialize)
+	- [valid JSON?](#valid-json)
+	- [UNDEFINED](#undefined)
 		- [Fetch](#fetch)
 - [Collections](#collections)
 	- [Sets consist of unordered, unindexed but unique values](#sets-consist-of-unordered-unindexed-but-unique-values)
@@ -54,6 +67,10 @@
 		- [Cookies](#cookies)
 - [70-480 Notes](#70-480-notes)
 	- [Forms](#forms)
+	- [Serializing Form Data](#serializing-form-data)
+	- [FORMS](#forms-1)
+	- [DOM Capture And Bubble](#dom-capture-and-bubble)
+	- [GEOLOCATION](#geolocation)
 	- [Audio](#audio)
 	- [Video](#video)
 - [Javascript Dictionary](#javascript-dictionary)
@@ -64,6 +81,7 @@
 		- [Debounce](#debounce)
 		- [pnpm](#pnpm)
 		- [Closures](#closures)
+	- [jQuery](#jquery)
 - [Javascript - Decrement This Section Over Time](#javascript---decrement-this-section-over-time)
 	- [Console.Assert](#consoleassert)
 		- [Array](#array-1)
@@ -107,6 +125,15 @@
 - [JAVASCRIPT FLOW - 480 structured notes - Too long so decrement over time](#javascript-flow---480-structured-notes---too-long-so-decrement-over-time)
 
 
+## Author
+
+Phil Anderson
+
+@PhilAnderson Web Enterprises 2020
+
+## Introduction
+
+This is a series of notes from which to learn from scratch all about Javascript.
 
 ## Resources
 
@@ -200,23 +227,32 @@ File paths : Linux is case sensitive but Windows is not
 
 ### Declaring Variables
 
-```
 must start with letter or _ and can contain numbers
-var is valid within enclosing function(){}
-let is valid within enclosing braces {}
+
+`var` is valid within enclosing function(){}
+
+`let` is valid within enclosing braces {}
+
+`const` is used for immutable objects like arrays
 
 Multiple declarations
-	var a=1,b=2,c="hi";
-x=1;   declares a global variable
 
-use strict;   forces proper declarations of variables
+	var a=1,b=2,c="hi";
+
+use strict;   forces proper declarations of variables so that `x=1;` is invalid
 
 variables are 'hoisted' to the top of code when they are declared (placed at the start, before any other code is run, with value undefined until the line of code is reached which assigns a value)
+
 All variables and objects are children of the root 'Object' object
-	
-	
-	
+
 Literal entered into a program
+
+## Template Literals 
+
+Using a `backtick`
+
+```js
+console.log(`Finding all instances of '${needle}' in '${haystack}'`)
 ```
 
 ## Reserved Keywords
@@ -736,8 +772,11 @@ Object containing arrays of differing length
 	var obj = {};
 	obj.key = [value1, value2, value3];
 	obj["key2"] = [value1, value2];
+```
 
-### map to new array
+### map
+
+maps to new array
 
 map is like a foreach loop over an array
 
@@ -745,6 +784,7 @@ map is like a foreach loop over an array
 
     myNewArray = myOldArray.map(function(item))
 
+```js
 <p>Click the button to get a new array with the full name of each person in the array.</p>
 <button onclick="myFunction()">Try it</button>
 
@@ -764,11 +804,12 @@ function myFunction() {
     });
 }
 </script>
+```
 
 ### Reduce
 
 ### Filter
-```
+
 
 ### Dates
 
@@ -1421,8 +1462,6 @@ Attributes
 var boxwidth = document.getElementById('inputbox1').getAttribute('width');
 setAttribute('x','value')
 CSS 'attr'
-JQUERY	$(..).attr('width')	GET
-JQUERY	$(..).attr('width','value')	SET
 
 # Arrays
 
@@ -1490,43 +1529,30 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
 # JSON
 
-```jsx
-JSON
+JSON can be represented as either a list of values, e.g. an Array, or a hash of properties and values, e.g. an Object.
 
-	from https://docs.nodejitsu.com/articles/javascript-conventions/what-is-json
-	JSON can be represented as either a list of values, e.g. an Array, or a hash of properties and values, e.g. an Object.
-	// a JSON array
-	["one", "two", "three"]
-	// a JSON object
-	{ "one": , "two": 2, "three": 3 }
+```json
+// a JSON array
+["one", "two", "three"]
+// a JSON object
+{ "one": , "two": 2, "three": 3 }
+```
 	
-	SAMPLE DATA 
-	
-	
-		CREATE IN 		http://www.json-generator.com/#generate
-		
-		
-		AND				https://www.mockaroo.com/
-		
-	
-		AND 			http://jsonschema.net/#/
-		
-		 	
-		
-		
-		
+## SAMPLE JSON
+
+CREATE IN 		http://www.json-generator.com/#generate
+
+AND				https://www.mockaroo.com/
+
+AND 			http://jsonschema.net/#/
 		
 	
-	
-	
-	
-	
-	
-	
-JSON Encoding
+## JSON Encoding
 
 Encoding and Decoding
+
 Javascript provides 2 methods for encoding data structures to json and encoding json back to javascript objects and arrays. They are both available on the JSON object that is available in the global scope.
+
 JSON.STRINGIFY
 	JSON OBJECT => STRING
 	
@@ -1534,10 +1560,12 @@ JSON.PARSE
 	STRING ==> JSON OBJECT
 	
 	
-JSON.STRINGIFY
+## JSON.STRINGIFY
 
 		
 JSON.stringify takes a javascript object or array and returns a serialized string in the JSON format.
+
+```js
 var data = {
   name: "John Doe"
   , age: 32
@@ -1548,78 +1576,94 @@ var jsonStr = JSON.stringify(data);
 console.log(jsonStr);
 data = { name: "John Doe" , age: 32  , title: "Vice President of JavaScript" }; jsonStr=JSON.stringify(data);console.log(jsonStr);
 // prints '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}'
-JSON.Parse
+```
+
+## JSON.Parse
 
 JSON.parse takes a JSON string and decodes it to a javascript data structure.
 var jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
+
+```js
 var data = JSON.parse(jsonStr);
 console.log(data.title);
 var jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}'; var data = JSON.parse(jsonStr); console.log(data.title);
-SERIALIZE : HTML FORM : POST DATA TO SERVER (FORM ACTION ="" METHOD='POST')
+```
+
+## SERIALIZE
+
+HTML FORM : POST DATA TO SERVER (FORM ACTION ="" METHOD='POST')
+
 	==> 'SERIALIZE FORM FIELDS AND SEND AS STRING'
 	
 	
-	JQUERY : MANUAL 'SERIALIZE' COMMAND TO DO THIS MANUALLY 
-	
-		SERIALIZE = ENCODE AS STRING YOUR FORM DATA
-	
 FOR..IN...LOOPS TO EXTRACT JSON DATA 
+
 EXAMPLE : JSON WITHIN JSON - EXTRACT BOTH THE MAIN LIST AND EACH SUB-LIST 
 	EG LIST OF PEOPLE, OF WHICH JOHN DOE IS JUST ONE.
 	var jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}
 	';
 	OUTPUT ALL NAME AND AGE 
 		
-		
-		console.log('\n\n');
-		for (var person in people){
-			if(people.hasOwnProperty(person)){
-				var friendList = '';
-			for (var friend in people[person].friends){
-				if(people[person].friends.hasOwnProperty(friend)){
-				if (friendList.length>0){
-					friendList += ', ';
-				}
-					friendList += people[person].friends[friend].name;
-				}
-			}
-				console.log('Record ' + 
-					person +  
-					' has name ' + people[person].name + 
-					' who has ' + people[person].eyeColor + 
-					' eyes and ' + people[person].friends.length + 
-					' friends called ' + friendList + "\n\n"
-					);
-			}
+```js		
+console.log('\n\n');
+for (var person in people){
+	if(people.hasOwnProperty(person)){
+		var friendList = '';
+	for (var friend in people[person].friends){
+		if(people[person].friends.hasOwnProperty(friend)){
+		if (friendList.length>0){
+			friendList += ', ';
 		}
-		node_89_json.js 
+			friendList += people[person].friends[friend].name;
+		}
+	}
+		console.log('Record ' + 
+			person +  
+			' has name ' + people[person].name + 
+			' who has ' + people[person].eyeColor + 
+			' eyes and ' + people[person].friends.length + 
+			' friends called ' + friendList + "\n\n"
+			);
+	}
+}
+node_89_json.js 
+```
 		
 		
 		
-		
-What is valid JSON?
+## valid JSON?
+
+{"property",value}
 	
-	{"property",value}
-	
-	There are a few rules to remember when dealing with data in JSON format. There are several gotchas that can produce invalid JSON as well.
-	Empty objects and arrays are okay
-	Strings can contain any unicode character, this includes object properties
-	null is a valid JSON value on it's own
-	All object properties should always be double quoted
-	Object property values must be one of the following: String, Number, Boolean, Object, Array, null
-	Number values must be in decimal format, no octal or hex representations
-	Trailing commas on arrays are not allowed
-	These are all examples of valid JSON.
-	{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}
-	["one", "two", "three"]
-	// nesting valid values is okay
-	{"names": ["John Doe", "Jane Doe"] }
-	[ { "name": "John Doe"}, {"name": "Jane Doe"} ]
-	{} // empty hash
-	[] // empty list
-	null
-	{ "key": "\uFDD0" } // unicode escape codes
-	
+There are a few rules to remember when dealing with data in JSON format. There are several gotchas that can produce invalid JSON as well.
+
+Empty objects and arrays are okay
+
+Strings can contain any unicode character, this includes object properties
+
+null is a valid JSON value on it's own
+
+All object properties should always be double quoted
+
+Object property values must be one of the following: String, Number, Boolean, Object, Array, null
+
+Number values must be in decimal format, no octal or hex representations
+
+Trailing commas on arrays are not allowed
+
+These are all examples of valid JSON.
+
+```json
+{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}
+["one", "two", "three"]
+// nesting valid values is okay
+{"names": ["John Doe", "Jane Doe"] }
+[ { "name": "John Doe"}, {"name": "Jane Doe"} ]
+{} // empty hash
+[] // empty list
+null
+{ "key": "\uFDD0" } // unicode escape codes
+```
 	
 Invalid JSON 
 	Functions
@@ -1630,10 +1674,11 @@ Invalid JSON
 				node_18_writefile_readfile.js
 	
 	
-NOTE : UNDEFINED 
+## UNDEFINED 
+
 Any function without an explicit RETURN STATEMENT ALWAYS RETURNS UNDEFINED 
-js_32_function.htm 
-	
+
+```js
 function x(){}
 	
 	x();    RETURN UNDEFINED
@@ -2041,12 +2086,12 @@ NIL VALIDATION
 	
 	
 GETTING DATA FROM USER
-						JAVASCRIPT				JQUERY
+						JAVASCRIPT				
 
-	INPUT				(element).value			$(element).val()
+	INPUT				(element).value			
 	
-	CHECKBOX			(element).checked  		(same in  JQUERY)
-	RADIO				(element).checked		(same in  JQUERY)
+	CHECKBOX			(element).checked
+	RADIO				(element).checked
 		
 SUBMITTING A FORM
 	HTML
@@ -2365,7 +2410,6 @@ CHANGING THE CSS WHEN VALIDATION FAILS
 	
 		JS 		==> CLASSNAME = "FAILEDCLASS"
 		JS          CLASSLIST.ADD("FAILEDCLASS")
-		JQUERY  ==> ADDCLASS("FAILEDCLASS")
 
 CHANGE CSS USING INPUT:INVALID PSEUDO CLASS
 ```
@@ -2377,57 +2421,81 @@ Reset a form to default state
 document.myForm.reset()
 ```
 
-Serializing Form Data
-Turning form data into a string ready to be sent to the server is called Serializing and can be done with a command as well
+## Serializing Form Data
 
-```
-var myString = $('#myForm').serialize();   // JQUERY
+Turning form data into a string ready to be sent to the server is called `serializing` and can be done with a command as well
 
-	FORMS - TERMS IN NO PARTICULAR ORDER
+## FORMS
 
-	Checkbox Y/N
-	Radio 
-	checked is T/F
-	radiobutton.checked
-	select  when text is selected
-	submit
-	Reset restores default values
-	Select   can have one or multiple choices
-	Textarea
-	Form : onReset, onSubmit, length,
-	Checkbox : onClick()
-	Text/Area  onBlur/Focus/Change/Select
-	Radio : onClick/Checked/name/value
-	Select = drop-down
-	document.getElementById("TextBoxID").value   gets the text which is currently in a text box
-	TextBoxID.disabled=true - disables a text box
-	ID.focus   gives focus to an element
-	RadioButton.value  gives text value of Radio Button
-	RadioButton.checked true / false
-	List.value   gives text of currently selected list box item
-	TextArea.value = text in TextArea
-	onchange
-	onselect
-	RadioButtonID.checked = true to set a box as selected
-	CheckBoxid.checked = true  to check a box
-	TextAreaID.value = "Text"   sets text in Text Area
-	prompt() gets value from user
-```
+Checkbox Y/N
 
-DOM Capture And Bubble
+Radio 
+
+checked is T/F
+
+radiobutton.checked
+
+select  when text is selected
+
+submit
+
+Reset restores default values
+
+Select   can have one or multiple choices
+
+Textarea
+
+Form : onReset, onSubmit, length,
+
+Checkbox : onClick()
+
+Text/Area  onBlur/Focus/Change/Select
+
+Radio : onClick/Checked/name/value
+
+Select = drop-down
+
+document.getElementById("TextBoxID").value   gets the text which is currently in a text box
+
+TextBoxID.disabled=true - disables a text box
+
+ID.focus   gives focus to an element
+
+RadioButton.value  gives text value of Radio Button
+
+RadioButton.checked true / false
+
+List.value   gives text of currently selected list box item
+
+TextArea.value = text in TextArea
+
+onchange
+
+onselect
+
+RadioButtonID.checked = true to set a box as selected
+
+CheckBoxid.checked = true  to check a box
+
+TextAreaID.value = "Text"   sets text in Text Area
+
+prompt() gets value from user
+
+## DOM Capture And Bubble
+
 Capture means the event is fired at the TOP OF THE DOM FIRST, THEN fires in each element until the EVENT.TARGET is reached.
 
-```
 Bubble means event is handled first at the child, then its parent
 	then its parent until it bubbles up to the root element.
 
+```js
 addEventListener('event',handler_function,capture)
+```	
 	
-	
-			TRUE => EVENTS ARE CAPTURED 
-			FALSE => EVENTS BUBBLE UP TO THE TOP OF THE DOM
-			
+TRUE => EVENTS ARE CAPTURED 
 
+FALSE => EVENTS BUBBLE UP TO THE TOP OF THE DOM
+			
 CAPTURE         TOP => MIDDLE => BOTTOM
 	
 	RARELY USED
@@ -2445,44 +2513,38 @@ BUBBLE          BOTTOM MIDDLE TOP
 	
 	
 	
-	
+```html
 
-			
-			
-	Tutorial at <http://javascript.info/tutorial/bubbling-and-capturing>				
-
-Example  ((PS NOT TESTED YET))
-
-	<div id='div1'>
-		Outer div
-		<div id='div2'>
-			Inner div
-		</div>
+<div id='div1'>
+	Outer div
+	<div id='div2'>
+		Inner div
 	</div>
+</div>
 
-	<script>
-		function capture(e){
-			alert('capture at ' + this.id);
-		}
-		
-		
-		function bubble(e){
-			alert('bubble at ' + this.id);
-		}
+<script>
+	function capture(e){
+		alert('capture at ' + this.id);
+	}
 	
-		var div1 = document.getElementById('div1');
-		var div2 = document.getElementById('div2');
-		
-		div1.addEventListener('click',capture,true);
-		div2.addEventListener('click',capture,true);
-		div1.addEventListener('click',bubble,false);
-		div2.addEventListener('click',bubble,false);
-		
 	
-	</script>
+	function bubble(e){
+		alert('bubble at ' + this.id);
+	}
+
+	var div1 = document.getElementById('div1');
+	var div2 = document.getElementById('div2');
+	
+	div1.addEventListener('click',capture,true);
+	div2.addEventListener('click',capture,true);
+	div1.addEventListener('click',bubble,false);
+	div2.addEventListener('click',bubble,false);
+	
+
+</script>
 ```
 
-GEOLOCATION
+## GEOLOCATION
 
 JAVASCRIPT
 NAMESPACE
@@ -4334,7 +4396,9 @@ Key features of closures
 
 
 
+## jQuery
 
+[jQuery](notes/jquery.md)
 
 
 
@@ -5018,10 +5082,6 @@ Date.prototype.toDateInputValue = (function() {
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
     return local.toJSON().slice(0,10);
 });
-// apply it in jQuery or Javascript
-$(document).ready( function() {
-    $('#datePicker').val(new Date().toDateInputValue());
-});​
 document.getElementById('datePicker').value = new Date().toDateInputValue();
 ```
 
@@ -5146,7 +5206,6 @@ METADATA ==> DATA ABOUT DATA PICTURE=RAW DATA TIMETAKEN=METADATA
 ID	UNIQUE ID ON PAGE <div id="maindiv"></div>
 #maindiv
 document.getElementById('maindiv')	JAVASCRIPT
-$('#maindiv').	JQUERY
 
 CLASS	MULTIPLE ELEMENTS SELECTED
 .myclass
@@ -5543,16 +5602,10 @@ Object
 			JSON.stringify produces application/json data 
 			from a JavaScript object or array.
 				{id:1,name:"phil"}
-			jQuery.serialize produces 
-			application/x-www-form-urlencoded data 
-			(the standard encoding for HTML form 
-			submissions) from a jQuery object 
-			containing an HTML Form Element 
-			or a set of form controls.
+
 				FORM INPUT DATA FROM SCREEN
 				SUBMIT
 				id=1&name=phil&..
-				OR USE jquery ('myForm').serialize()
 ```
 
 EXPRESSIONS
