@@ -809,6 +809,12 @@ function myFunction() {
 
 ### Reduce
 
+To get the sum of items in an array we write
+
+```js
+const total = myArray.reduce((x,y)=>x+y)
+```
+
 ### Filter
 
 
