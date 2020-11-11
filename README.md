@@ -1,5 +1,4 @@
 # Javascript
-
 - [Javascript](#javascript)
 	- [Author](#author)
 	- [Introduction](#introduction)
@@ -12,19 +11,19 @@
 		- [Maths](#maths)
 		- [Conditionals](#conditionals)
 	- [Javascript equality](#javascript-equality)
-		- [Loops](#loops)
-		- [Array](#array)
-		- [map](#map)
-		- [Reduce](#reduce)
-		- [Filter](#filter)
-		- [Dates](#dates)
+	- [Loops](#loops)
+	- [Array](#array)
+	- [map](#map)
+	- [Reduce](#reduce)
+	- [Filter](#filter)
+	- [Dates](#dates)
 	- [Javascript Primitive Types](#javascript-primitive-types)
 	- [String](#string)
 	- [Boolean to string](#boolean-to-string)
 	- [Date to string](#date-to-string)
-- [String To Number](#string-to-number)
-- [Casting from date to number](#casting-from-date-to-number)
-- [Converting to booleans](#converting-to-booleans)
+	- [String To Number](#string-to-number)
+	- [Casting from date to number](#casting-from-date-to-number)
+	- [Converting to booleans](#converting-to-booleans)
 		- [SETTIMEOUT AND SETINTERVAL](#settimeout-and-setinterval)
 		- [Try . Catch . Finally Exception Handler](#try--catch--finally-exception-handler)
 		- [Function](#function)
@@ -443,7 +442,7 @@ a === true //true
 
 
 
-### Loops
+## Loops
 
 ```
 While() loop
@@ -455,7 +454,7 @@ For(var x=0;x<10;x++){}
 For(var item in myObject){ }
 ```
 
-### Array
+## Array
 
 ```
 array1 = ["item1","item2"];
@@ -564,7 +563,7 @@ Object containing arrays of differing length
 	obj["key2"] = [value1, value2];
 ```
 
-### map
+## map
 
 maps to new array
 
@@ -596,7 +595,7 @@ function myFunction() {
 </script>
 ```
 
-### Reduce
+## Reduce
 
 To get the sum of items in an array we write
 
@@ -604,12 +603,12 @@ To get the sum of items in an array we write
 const total = myArray.reduce((x,y)=>x+y)
 ```
 
-### Filter
+## Filter
 
 
-### Dates
+## Dates
 
-```
+```js
 var myDate = new Date();
 
 var myDate = new Date(yyyy,mm,dd,hh,mm,ss,ms);
@@ -650,16 +649,38 @@ toTimeString(date) returns time
 var todaysDate = today.getTime();
 var millisecondDiff = futureDate - todaysDate
 var dayDiff = math.Floor(millisecondDiff/(1000*60*60*24))  //days
-setFullYear / setMonth / setDate / setHours / setMinutes / setSeconds / setMilliseconds all can set that one particular part of the date without affecting any other
-Note : <input type="date"> can set default date for example to today with the code
-	HTML
-		<input type="date" id="datePicker"> 
-	
-	Javscript
-		document.getElementById('DatePicker').valueAsDate = new Date();
-			(see node_mongo_005.js for example of this working)
+setFullYear / setMonth / setDate / setHours / setMinutes / setSeconds / setMilliseconds
 ```
 
+Inputting a date
+
+```html
+<input type="date"> 
+<!-- set default date to today -->
+<input type="date" id="datePicker"> 
+<script>
+	document.getElementById('DatePicker').valueAsDate = new Date();
+</script>
+```
+
+ISO Date
+
+```js
+const date01 = new Date('07 November 2020 13:30 GMT`);
+console.log(date01
+/*
+Sat Nov 07 2020 13:30:00 GMT+0000 (Greenwich Mean Time)
+*/
+console.log(date01.toISOString())
+/*
+2020-11-07T13:30:00.000
+*/
+console.log(date01.toGMTString())
+/*
+Sat, 07 Nov 2020 13:30:00 GMT
+*/
+
+```
 
 ## Javascript Primitive Types
 
@@ -707,7 +728,7 @@ String(new Date('2019-01-22'))
 
 
 
-# String To Number
+## String To Number
 
 ```js
 Number("1") //1
@@ -720,13 +741,13 @@ Number(true) //1
 Number(false) //0
 ```
 
-# Casting from date to number
+## Casting from date to number
 
 If you pass a Date object to `Number()`, it will return the date timestamp, which is the best date to number conversion you can get.
 
 
 
-# Converting to booleans
+## Converting to booleans
 
 Any value can be converted to boolean passing it to `Boolean()`.
 
