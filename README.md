@@ -4,15 +4,8 @@
 	- [Author](#author)
 	- [Introduction](#introduction)
 	- [Resources](#resources)
-	- [Javascript History](#javascript-history)
-		- [Good Coding Practices](#good-coding-practices)
-	- [Linting](#linting)
-		- [Declaring Variables](#declaring-variables)
-	- [Template Literals](#template-literals)
-	- [Reserved Keywords](#reserved-keywords)
-- [Usage](#usage)
 	- [Chrome Dev Tools](#chrome-dev-tools)
-		- [Data Types : 8 of them](#data-types--8-of-them)
+		- [Data Types](#data-types)
 		- [TypeOf](#typeof)
 		- [Expressions](#expressions)
 		- [Operators](#operators)
@@ -76,7 +69,8 @@
 - [Javascript Dictionary](#javascript-dictionary)
 - [Javascript Glossary](#javascript-glossary)
 		- [ChartJS](#chartjs)
-		- [Console Debugging : Console.log, info, debug, warn, error](#console-debugging--consolelog-info-debug-warn-error)
+		- [Console](#console)
+	- [String format](#string-format)
 		- [DATETIME](#datetime)
 		- [Debounce](#debounce)
 		- [pnpm](#pnpm)
@@ -84,7 +78,6 @@
 	- [jQuery](#jquery)
 	- [Glossary](#glossary)
 - [Javascript - Decrement This Section Over Time](#javascript---decrement-this-section-over-time)
-	- [Console.Assert](#consoleassert)
 		- [Array](#array-1)
 	- [Classes](#classes)
 	- [HTML and Javascript](#html-and-javascript)
@@ -146,299 +139,95 @@ Javascript documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 
 
-## Javascript History
 
-ECMAScript6                : Computing standards body based in Geneva
-
-Mozilla
-
-1995 Netscape
-	
-	Mini-Browser-OS to compete with C++ as portable JAVA for Sun 
-	https://en.wikipedia.org/wiki/JavaScript#History
-
-JScript by Microsoft 
-
-	IE3 first to implement Javascript
-	
-ECMAScript formal standard for JavaScript
-
-http://www.asmarterwaytolearn.com/js/index-of-exercises.html
-
-Typescript is an evolution of Javascript and attempts to eliminate some of the bugs and bad practices embedded into the core of the language.
-
-
-### Good Coding Practices
-
-Always close constructs as soon as you form them
-
-Indent code properly always eg 4 spaces = 1 tab and stick to it
-
-Don't duplicate code   DRY   DON'T REPEAT YOURSELF
-
-USE console.log when developing your application in order to match and trace output
-
-Declare variables at the start of your code in general
-
-It is possible to declare null values just to get going eg var x=0;  var y='';
-
-use strict;   forces variable declaration
-
-- keywords
-  
-  Avoid using keywords in your code like date, name, function etc which are reserved keywords
-
-	<http://www.w3schools.com/js/js_reserved.asp>
-
-- script 
-  
-  Javascript <script> location : end of body - allows body & css to load first or enclose within $(document).ready()
-
-
-## Linting
-
-- 2 spaces – for indentation
-- No unused variables – this one catches tons of bugs!
-- No semicolons – It's fine. Really!
-- Never start a line with `(` , `[` , or `````
-    - This is the only gotcha with omitting semicolons – automatically checked for you!
-- Space after keywords `if (condition) { ... }`
-- Always use `===` instead of `==` (but `obj == null` is allowed to check `null || undefined`)
-
-```js
-
-```
-
-Coding conventions
-case sensitive
-
-```
-;             (but can often get away without using it)
-
-"" or ''
-
-spaces are ignored
-
-camelCase is often used although not mandatory
-
-CONSTANT
-
-File paths : Linux is case sensitive but Windows is not
-```
-
-### Declaring Variables
-
-must start with letter or _ and can contain numbers
-
-`var` is valid within enclosing function(){}
-
-`let` is valid within enclosing braces {}
-
-`const` is used for immutable objects like arrays
-
-Multiple declarations
-
-	var a=1,b=2,c="hi";
-
-use strict;   forces proper declarations of variables so that `x=1;` is invalid
-
-variables are 'hoisted' to the top of code when they are declared (placed at the start, before any other code is run, with value undefined until the line of code is reached which assigns a value)
-
-All variables and objects are children of the root 'Object' object
-
-Literal entered into a program
-
-## Template Literals 
-
-Using a `backtick`
-
-```js
-console.log(`Finding all instances of '${needle}' in '${haystack}'`)
-```
-
-## Reserved Keywords
-
-```js
-abstract ,arguments,boolean,break,byte, case,catch,char,class,const, continue,debugger,default,delete,do, double,else,enum,eval,export, extends,FALSE,final,finally,float, for,function,goto,if,implements, import,in,instanceof,int,interface, let,long,native,new,null, package,private,protected,public,return, short,static,super\*,switch,synchronized, this,throw,throws, transient,true,try ,typeof ,var,void,volatile, while,with,yield,
-```
-
-Reserved keywords used on HTML page
-
-```js
-alert,all,anchor,anchors,area,assign,blur,button,checkbox,clearInterval,clearTimeout,clientInformation,close,closed,confirm,constructor,crypto,decodeURI,decodeURIComponent,defaultStatus,document,element,elements,embed,embeds,encodeURI,encodeURIComponent,escape,event,fileUpload,focus,form,forms,frame,innerHeight,innerWidth,layer,layers,link,location
-mimeTypes,navigate,navigator,frames,frameRate,hidden,history,image,images,offscreenBuffering
-open,opener,option,outerHeight,outerWidth,packages,pageXOffset,pageYOffset,parent,parseFloat
-parseInt,password,pkcs11,plugin,prompt,propertyIsEnum,radio,reset,screenX,screenY,scroll,secure,select,self,setInterval,setTimeout,status,submit,taint,text,textarea,top,unescape,untaint,window
-```
-
-# Usage
-
----
-
-The easiest way to use JavaScript Standard Style to check your code is to install it globally as a Node command line program. To do so, simply run the following command in your terminal (flag `-g` installs standard globally on your system, omit it if you want to install in the current working directory):
-
-```bash
-npm install standard -g
-```
-
-After you've done that you should be able to use the `standard` program. The simplest use case would be checking the style of all JavaScript files in the current working directory:
-
-```bash
-$ standard
-Error: Use JavaScript Standard Style
- lib/torrent.js:950:11: Expected '===' and instead saw '=='.
-```
-
-```js
-$ standard
-Error: Use JavaScript Standard Style
- lib/torrent.js:950:11: Expected '===' and instead saw '=='.
-```
-
-This guide is based on [https://github.com/feross/standard](https://github.com/feross/standard)
 
 ## Chrome Dev Tools
 
-Open Dev Tools with
-
-```
-Command - Alt - I
-F12
 Control - Shift - I
-```
 
-Networking Tab
+Networking Tab - Reload the page and view the pages which have loaded, and their relative times to load
 
-```
-Reload the page and view the pages which have loaded, 
-and their relative times to load
-```
+### Data Types
 
-Console Tab
-
-```
-Can view any page errors
-
-Can also enter live Javascript code here
-```
-
-### Data Types : 8 of them
-
-7 Primitives
-
+Primitives
 - number
 - string
 - boolean
-- null  (note : bug : type says object but it's not)
-
-```jsx
-# check for null
-if(item === null) {}
-```
-
+- null  
 - undefined
 - BigInt
 - Symbol
 
-One Object
-
+Object
 - Object
 
-Plus you can think of these!
+Regular Expression 
+- var myRegularExpression = /test/g
 
-```
+Date
+- var d = new Date()
 	
-Regular Expression
-
-	var myRegularExpression = /test/g
+Function
+- var x = function(){//code}
 	
-
-Date	
-	var d = new Date()
-	
-		
-var x = function(){//code}
-	
-
 Exponential
+- var x = 1.23e5       123000
 
-	var x = 1.23e5       123000
-	
-	
-NaN
-
-	Not a number
-	
-	isNaN(x) 		TRUE OR FALSE
-	
-		TRUE => IT IS NOT A NUMBER!
+NaN Not a number
+- isNaN(x) 		TRUE OR FALSE  		TRUE => IT IS NOT A NUMBER!
 		
 Infinity
+- Infinity
 
--Infinity
-
-	
 Array
 
-	var arr = []    or   ()
-	var arr = [3];      
-	var arr = [1,2,3, "hello" , {} , [] ];
-	var arr = [,]
-	var arr = [,,]
-	
+```js
+var arr = []    or   ()
+var arr = [3];      
+var arr = [1,2,3, "hello" , {} , [] ];
+var arr = [,]
+var arr = [,,]
+```	
 
 Object
 
-	Objects are useful as they can be used to contain data in 
-	key-value pairs
+```js
+var obj = {}
+var obj = new Object();
+
+var myObject = {
+	var1: "value1";
+	var2: "value2";
+	var3: 15;
+};
+
+var obj = { "key": [value1, value2, value3], "key2": [value1, value2] }
+or
+
+var obj = {};
+
+	obj.key=value;
 	
-	Arrays store data numerically by array index [0] [1] etc 
-
-	Objects store data using name 
-
-		myObject.myfield=mydata;
-
-	Objects can contain other objects, arrays etc - no limit.
-
-	Use JSON to send objects across internet when transferring data from one place to another
-
+		key also called 'property' which has attribute
+		obj.property=attribute
 	
+	obj.key = [value1, value2, value3];
 
-	var obj = {}
-	var obj = new Object();
-	
-	var myObject = {
-		var1: "value1";
-		var2: "value2";
-		var3: 15;
-	};
-
-	var obj = { "key": [value1, value2, value3], "key2": [value1, value2] }
 	or
+	
+	obj["key2"] = [value1, value2]; 
 
-	var obj = {};
+myObject.var2= 23 / "string" / false / [val1,val2,val3] / undefined
 
-		obj.key=value;
+delete myObject.var3;
 		
-			key also called 'property' which has attribute
-			obj.property=attribute
-		
-		obj.key = [value1, value2, value3];
+JSON.parse     ==> String to JSON
+JSON.stringify ==> JSON to String
 	
-		or
-		
-		obj["key2"] = [value1, value2]; 
 
-	myObject.var2= 23 / "string" / false / [val1,val2,val3] / undefined
-
-	delete myObject.var3;
-	
-	
-		JSON.parse     ==> String to JSON
-		JSON.stringify ==> JSON to String
-	
 	Note : root object is 'Object' and everything is a child of this object
 			and its methods eg .toString();
+```
 
 Other object types
 
@@ -454,7 +243,7 @@ Other object types
 HTML ATTRIBUTES
 
 	<object>.setAttribute("name","inputName");
-```
+
 
 ### TypeOf
 
@@ -4245,57 +4034,41 @@ var obj = {get x() {return 0} };
     </fieldset>
 ```
 
-### Console Debugging : Console.log, info, debug, warn, error
+### Console 
 
-```bash
-<fieldset>
-        <h1>Console Debugging Output</h1>
-        <h2>Click <a href="#"><span id="javascript-console-debug">here</span></a> then hit F12 and view console tab to
-            view different types of console output as indicated below</h2>
+See reference https://developer.mozilla.org/en-US/docs/Web/API/Console
 
-        <pre class="code">
+- console.log() produces black text
+- console.info() blue text with icon
+- console.debug() have to view with F12, console, filter, levels, verbose
+- console.warn() yellow with icon
+- console.error() red with icon
+- console.assert(boolean,"this test has failed") - appears if assertion is false
 
-					console.log() produces black text
-					console.info() blue text with icon
-					console.debug() have to view with F12, console, filter, levels, verbose
-					console.warn() yellow with icon
-					console.error() red with icon
-
-        </pre>
-
-        <script>
-            $('#javascript-console-debug').click(function (event) {
-                event.preventDefault();
-                console.log('console.log');
-                console.info('console.info');
-                console.debug('console.debug'); // same as log()
-                console.warn('console.warn');
-                console.error('console.error');
-                console.assert(true); // not output if true
-                console.assert(false); // assert outputs if fails
-                var consoleOutputX = 1;
-                console.log("variable x is %d", consoleOutputX);
-                var consoleObject1 = {
-                    a: 1,
-                    b: 2,
-                    c: 3
-                };
-                console.log('object is %o', consoleObject1);
-                console.table(consoleObject1);
-                console.log(" ");
-                console.dir("console.dir - output object");
-                console.dir(consoleObject1);
-                console.log(" ");
-                console.dir("console.dir output HTML object");
-                var consoleHtml = $('#javascript-console-debug');
-                console.dir(consoleHtml);
-                console.log(" ");
-                console.dirxml('console.dirxml - output HTML object');
-                console.dirxml(consoleHtml);
-            });
-        </script>
-    </fieldset>
+```js
+console.log('console.log');
+console.log('big object',bigObject)
+console.info('console.info');
+console.debug('console.debug'); // same as log()
+console.warn('console.warn');
+console.error('console.error');
+console.assert(true); // not output if true
+console.assert(false); // assert outputs if fails
+console.table(myObject);
+console.dir() - view details of object
+console.dirxml() - shows interactive tree of element with descendants
 ```
+
+## String format
+
+```js
+// %d
+console.log("variable x is %d", consoleOutputX);
+// %o
+console.log('object is %o', consoleObject1);
+```
+
+
 
 ### DATETIME
 
@@ -4417,14 +4190,6 @@ Key features of closures
 
 # Javascript - Decrement This Section Over Time
 
-## Console.Assert
-
-```jsx
-console.assert 
-var a=10;
-console.assert(a==9,"a is not 9");   ==> will output as a failed assert to console (see js_assert.htm)
-```
-	
 
 ### Array
 		
