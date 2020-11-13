@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar Detail</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../../../data.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Maps API Interrogation</h1>
+        <div id="nav-placeholder"></div>
+        <h3>Google Maps</h3>
+        <button type="button" class="buttonSeparate" id="showMap" onclick="showGoogleMap()">Show Google Map</button>
+        <div id="map"></div>
+    </div>
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("nav.html");
+            $('#showMap').click(()=>{
+                $('#showMap').text((i,text)=>{
+                    return text === 'Show Google Map' ? 'Hide Google Map' : 'Show Google Map';
+                })
+            })
+        });
+        showGoogleMap = () => {
+            $('#map').toggle();
+        }
+        initMap = () => {
+            const position = {
+                lat: -25.344,
+                lng: 131.036
+            }
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom:4,
+                center: position,
+            })
+            const marker = new google.maps.Marker({
+                position,
+                map,
+            })
+        }
+    </script>
+        <!----
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0xwzxpw9_pFoHMojR9sCxG65s7K8vLzU&callback=initialiseMap&libraries=&v=weekly" defer></script>
+    -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0xwzxpw9_pFoHMojR9sCxG65s7K8vLzU&callback=initMap&libraries=&v=weekly"
+    defer
+  ></script>
+</body>
+</html>
