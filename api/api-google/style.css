@@ -32,3 +32,12 @@ li{
     background-color: #c1d6cd;
     display:none;
 }
+.input{
+    margin:1vmin 2vmin;
+    background-color: #e3e4f0;
+    border-radius:2vmin;
+    border:1px solid #8d95e0;
+    padding:2vmin 3vmin;
+    box-shadow: 1vmin 0vmin 20vmin #8d95e0;
+    outline:none;
+}

@@ -15,13 +15,19 @@
         <div id="nav-placeholder"></div>
         <h3>Google Maps</h3>
         <button type="button" class="buttonSeparate" id="showMap" onclick="showGoogleMap()">Show Google Map</button>
+        <button type='button' class='buttonSeparate' id='goHome'>Go Home</button>
         <button type='button' class='buttonSeparate' id='zoomIn'>Zoom In</button>
         <button type='button' class='buttonSeparate' id='zoomOut'>Zoom Out</button>
+        <input type="text" id="search" class="input" placeholder="search for a loction" />
         <div id="map"></div>
     </div>
     <script>
         $(function(){
             let zoom = 4;
+            let positionCurrent = {
+                lat: -25.344,
+                lng: 131.036
+            }
             $("#nav-placeholder").load("nav-google-maps.html");
             $('#showMap').click(()=>{
                 $('#showMap').text((i,text)=>{
@@ -31,40 +37,66 @@
             $('#zoomIn').click( () => {
                 $('#map').show()
                 zoom+=0.5;
-                const position = {
-                    lat: -25.344,
-                    lng: 131.036
-                }
                 const map = new google.maps.Map(document.getElementById('map'), {
                     zoom,
-                    center: position,
+                    center: positionCurrent,
                 })
                 const marker = new google.maps.Marker({
-                    position,
+                    position: positionCurrent,
                     map,
                 })
             })
             $('#zoomOut').click( () => {
                 $('#map').show()
                 zoom-=0.5
-                const position = {
-                    lat: -25.344,
-                    lng: 131.036
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center:positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position: positionCurrent,
+                    map,
+                })
+            })
+            $('#goHome').click( ()=>{
+                $('#map').show();
+                console.log('showing home')
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    console.error(`geolocation is not possible`)
+                }
+            })
+            showPosition = (position) => {
+                positionCurrent = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
                 }
                 const map = new google.maps.Map(document.getElementById('map'), {
                     zoom,
-                    center:position,
+                    center:positionCurrent,
                 })
                 const marker = new google.maps.Marker({
-                    position,
+                    position:positionCurrent,
                     map,
+                })
+            }
+            $('#search').keydown( ()=>{
+                const url = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=${API_KEY_GOOGLE_MAPS}`
+                console.log(url)
+                fetch(url)
+                .then( (response) => {
+                    response.json().then(()=>{
+                        console.log(data);
+                    })
+                
                 })
             })
         });
         showGoogleMap = () => {
             $('#map').toggle();
         }
-        initialiseMap = () => {
+        initMap = () => {
             const position = {
                 lat: -25.344,
                 lng: 131.036
@@ -77,8 +109,8 @@
                 position,
                 map,
             })
-        }
-        const mylink = `https://maps.googleapis.com/maps/api/js?key=${API_KEY_GOOGLE_MAPS}&callback=initialiseMap&libraries=&v=weekly`
+        }        
+        const mylink = `https://maps.googleapis.com/maps/api/js?key=${API_KEY_GOOGLE_MAPS}&callback=initMap&libraries=&v=weekly`
         $.getScript(mylink, function() {  });
     </script> 
 </body>
