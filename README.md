@@ -53,11 +53,11 @@
 - [Collections](#collections)
 	- [Sets consist of unordered, unindexed but unique values](#sets-consist-of-unordered-unindexed-but-unique-values)
 - [Events](#events)
-		- [event.type (eg click), event.target  (eg button), event.target.value (eg button value)](#eventtype-eg-click-eventtarget-eg-button-eventtargetvalue-eg-button-value)
+		- [event.type (eg click), event.target  (eg button), event.target.value (eg button value)](#eventtype-eg-click-eventtarget--eg-button-eventtargetvalue-eg-button-value)
 		- [Environment Variables In Javascript](#environment-variables-in-javascript)
-- [ECommerce](#ecommerce)
+	- [Google Maps](#google-maps)
 		- [Cookies](#cookies)
-- [70-480 Notes](#70-480-notes)
+- [70-480 Notes - Decrement](#70-480-notes---decrement)
 	- [Forms](#forms)
 	- [Serializing Form Data](#serializing-form-data)
 	- [FORMS](#forms-1)
@@ -91,7 +91,7 @@
 	- [Object.freeze() - cannot change value of properties](#objectfreeze---cannot-change-value-of-properties)
 	- [Object.preventExtensions() - cannot add properties](#objectpreventextensions---cannot-add-properties)
 	- [querySelectorAll](#queryselectorall)
-	- [Scoping : Global, Function or Scope.   Also Lexical or Dynamic](#scoping--global-function-or-scope-also-lexical-or-dynamic)
+	- [Scoping : Global, Function or Scope.   Also Lexical or Dynamic](#scoping--global-function-or-scope---also-lexical-or-dynamic)
 	- [Javascript Switch](#javascript-switch)
 	- [Or just 'return'](#or-just-return)
 	- [Javascript If..Else](#javascript-ifelse)
@@ -1786,41 +1786,251 @@ We can use environment variables to store our keys
 
 List all environment variables (MAC)
 
-```
+```js
 printenv
 ```
 
 Create `app-env` file
 
-```
-export API_KEY="ABDJFdfrpf956irjglkfmgi5kgf"
-export TOKEN="213j29rhdfn94htrfuh94"
+```js
+export API_KEY="..."
+export TOKEN="..."
 ```
 
 Add this file into the environment variables
 
-```
+```js
 source app-env
 ```
 
 Now using whatever code syntax is applicable for example in node
 
-```
+```js
 var api-key = process.env.API_KEY
 ```
 
 and also ignore the file in .gitignore
 
-```
+```js
 app-env
 ```
 
-# ECommerce
+
+## Google Maps
+
+This page shows a map, zooms in and out, can set the latitude and longitude and even search for a new place on the map
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar Detail</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../../data.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Maps API Interrogation</h1>
+        <div id="nav-placeholder"></div>
+        <h3>Google Maps</h3>
+        <button type="button" class="buttonSeparate" id="showMap" onclick="showGoogleMap()">Show Google Map</button>
+        <button type='button' class='buttonSeparate' id='goHome'>Go Home</button>
+        <button type='button' class='buttonSeparate' id='zoomIn'>Zoom In</button>
+        <button type='button' class='buttonSeparate' id='zoomOut'>Zoom Out</button>
+        <input type="text" id="search" class="input" placeholder="location" />
+        Lat
+        <input type="number" id="latitude" class="input" placeholder="latitude" />
+        Long 
+        <input type="number" id="longitude" class="input" placeholder="longitude" />
+        <input type="number" id="zoom" class="input" placeholder="zoom" value="5" step="0.5" />
+        <div id="map"></div>
+    </div>
+    <script>
+        $(function(){
+            let zoom = 5;
+            let positionCurrent = {
+                lat: -25.344,
+                lng: 131.036
+            }
+            $("#nav-placeholder").load("nav-google-maps.html");
+            $('#showMap').click(()=>{
+                $('#showMap').text((i,text)=>{
+                    return text === 'Show Google Map' ? 'Hide Google Map' : 'Show Google Map';
+                })
+            })
+            $('#zoomIn').click( () => {
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                zoom+=0.5;
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center: positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position: positionCurrent,
+                    map,
+                })
+            })
+            $('#zoomOut').click( () => {
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                zoom-=0.5
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center:positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position: positionCurrent,
+                    map,
+                })
+            })
+            $('#goHome').click( ()=>{
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                console.log('showing home')
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    console.error(`geolocation is not possible`)
+                }
+            })
+            $('#latitude').change(()=>{
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                positionCurrent.lat = parseFloat($('#latitude').val());
+                console.log('positionCurrent',positionCurrent)
+                if(navigator.geolocation) {
+                    showPosition2()
+                } else {
+                    console.error(`geolocation is not possible`)
+                }
+            })
+            $('#longitude').change(()=>{
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                positionCurrent.lng = parseFloat($('#longitude').val());
+                console.log('positionCurrent',positionCurrent)
+                if(navigator.geolocation) {
+                    showPosition2()
+                } else {
+                    console.error(`geolocation is not possible`)
+                }
+            })
+            $('#zoom').change(()=>{
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                zoom = parseFloat(document.getElementById('zoom').value);
+                console.log('new zoom',zoom)
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center: positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position: positionCurrent,
+                    map,
+                })
+
+            })
+            showPosition = (position) => {
+                positionCurrent = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                }
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center:positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position:positionCurrent,
+                    map,
+                })
+            }
+            showPosition2 = () => {
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center:positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position:positionCurrent,
+                    map,
+                })
+            }
+            $('#search').keyup(()=>{
+                console.log('input has changed to ',$('#search').val())
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                
+                // places api
+                let map = new google.maps.Map(document.getElementById("map"), {
+                    center: positionCurrent,
+                    zoom,
+                });
+                const request = {
+                    query: $('#search').val(),
+                    fields: ["name", "geometry"],
+                };
+                let service = new google.maps.places.PlacesService(map);
+                console.log('service',service)
+                service.findPlaceFromQuery(request, (results, status) => {
+                    console.log('google places api request',google.maps.places.PlacesServiceStatus)
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (let i = 0; i < results.length; i++) {
+                        //createMarker(results[i]);
+                    }
+                    map.setCenter(results[0].geometry.location);
+                    }
+                });
+            })
+        });
+        showGoogleMap = () => {
+            $('#map').toggle();
+        }
+        initMap = () => {
+            const position = {
+                lat: -25.344,
+                lng: 131.036
+            }
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: position,
+            })
+            const marker = new google.maps.Marker({
+                position,
+                map,
+            })
+        }
+        createMarker = (place) => {
+            const marker = new google.maps.Marker({
+                map,
+                position: place.geometry.location,
+            });
+            google.maps.event.addListener(marker, "click", () => {
+                infowindow.setContent(place.name);
+                infowindow.open(map);
+            });
+        }        
+        const mylink = `https://maps.googleapis.com/maps/api/js?key=${API_KEY_GOOGLE_MAPS}&callback=initMap&libraries=places&v=weekly`
+        $.getScript(mylink, function() {  });
+    </script>
+</body>
+</html>
+```
+
 
 ### Cookies
 
-```bash
-
+```js
 Note that for Javascript cookies can check out my JSFiddle
 
 ### create
@@ -1854,7 +2064,7 @@ cookie =”name=value; expires=date(UTC); path=/; max-age=(seconds);domain=;secu
 cookie add Response.Cookies.Add(myNewCookie);1
 ```
 
-# 70-480 Notes
+# 70-480 Notes - Decrement
 
 ## Forms
 

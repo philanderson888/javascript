@@ -15,13 +15,24 @@
         <div id="nav-placeholder"></div>
         <h3>Google Maps</h3>
         <button type="button" class="buttonSeparate" id="showMap" onclick="showGoogleMap()">Show Google Map</button>
+        <button type='button' class='buttonSeparate' id='goHome'>Go Home</button>
         <button type='button' class='buttonSeparate' id='zoomIn'>Zoom In</button>
         <button type='button' class='buttonSeparate' id='zoomOut'>Zoom Out</button>
+        <input type="text" id="search" class="input" placeholder="location" />
+        Lat
+        <input type="number" id="latitude" class="input" placeholder="latitude" />
+        Long 
+        <input type="number" id="longitude" class="input" placeholder="longitude" />
+        <input type="number" id="zoom" class="input" placeholder="zoom" value="5" step="0.5" />
         <div id="map"></div>
     </div>
     <script>
         $(function(){
-            let zoom = 4;
+            let zoom = 5;
+            let positionCurrent = {
+                lat: -25.344,
+                lng: 131.036
+            }
             $("#nav-placeholder").load("nav-google-maps.html");
             $('#showMap').click(()=>{
                 $('#showMap').text((i,text)=>{
@@ -29,48 +40,146 @@
                 })
             })
             $('#zoomIn').click( () => {
-                $('#map').show()
-                zoom+=0.5;
-                const position = {
-                    lat: -25.344,
-                    lng: 131.036
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
                 }
+                zoom+=0.5;
                 const map = new google.maps.Map(document.getElementById('map'), {
                     zoom,
-                    center: position,
+                    center: positionCurrent,
                 })
                 const marker = new google.maps.Marker({
-                    position,
+                    position: positionCurrent,
                     map,
                 })
             })
             $('#zoomOut').click( () => {
-                $('#map').show()
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
                 zoom-=0.5
-                const position = {
-                    lat: -25.344,
-                    lng: 131.036
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center:positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position: positionCurrent,
+                    map,
+                })
+            })
+            $('#goHome').click( ()=>{
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                console.log('showing home')
+                if(navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    console.error(`geolocation is not possible`)
+                }
+            })
+            $('#latitude').change(()=>{
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                positionCurrent.lat = parseFloat($('#latitude').val());
+                console.log('positionCurrent',positionCurrent)
+                if(navigator.geolocation) {
+                    showPosition2()
+                } else {
+                    console.error(`geolocation is not possible`)
+                }
+            })
+            $('#longitude').change(()=>{
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                positionCurrent.lng = parseFloat($('#longitude').val());
+                console.log('positionCurrent',positionCurrent)
+                if(navigator.geolocation) {
+                    showPosition2()
+                } else {
+                    console.error(`geolocation is not possible`)
+                }
+            })
+            $('#zoom').change(()=>{
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                zoom = parseFloat(document.getElementById('zoom').value);
+                console.log('new zoom',zoom)
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center: positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position: positionCurrent,
+                    map,
+                })
+
+            })
+            showPosition = (position) => {
+                positionCurrent = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
                 }
                 const map = new google.maps.Map(document.getElementById('map'), {
                     zoom,
-                    center:position,
+                    center:positionCurrent,
                 })
                 const marker = new google.maps.Marker({
-                    position,
+                    position:positionCurrent,
                     map,
                 })
+            }
+            showPosition2 = () => {
+                const map = new google.maps.Map(document.getElementById('map'), {
+                    zoom,
+                    center:positionCurrent,
+                })
+                const marker = new google.maps.Marker({
+                    position:positionCurrent,
+                    map,
+                })
+            }
+            $('#search').keyup(()=>{
+                console.log('input has changed to ',$('#search').val())
+                if ( $('#map').is(":hidden")) {
+                    $('#map').show();
+                }
+                
+                // places api
+                let map = new google.maps.Map(document.getElementById("map"), {
+                    center: positionCurrent,
+                    zoom,
+                });
+                const request = {
+                    query: $('#search').val(),
+                    fields: ["name", "geometry"],
+                };
+                let service = new google.maps.places.PlacesService(map);
+                console.log('service',service)
+                service.findPlaceFromQuery(request, (results, status) => {
+                    console.log('google places api request',google.maps.places.PlacesServiceStatus)
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    for (let i = 0; i < results.length; i++) {
+                        //createMarker(results[i]);
+                    }
+                    map.setCenter(results[0].geometry.location);
+                    }
+                });
             })
         });
         showGoogleMap = () => {
             $('#map').toggle();
         }
-        initialiseMap = () => {
+        initMap = () => {
             const position = {
                 lat: -25.344,
                 lng: 131.036
             }
             const map = new google.maps.Map(document.getElementById('map'), {
-                zoom:4,
+                zoom: 4,
                 center: position,
             })
             const marker = new google.maps.Marker({
@@ -78,8 +187,18 @@
                 map,
             })
         }
-        const mylink = `https://maps.googleapis.com/maps/api/js?key=${API_KEY_GOOGLE_MAPS}&callback=initialiseMap&libraries=&v=weekly`
+        createMarker = (place) => {
+            const marker = new google.maps.Marker({
+                map,
+                position: place.geometry.location,
+            });
+            google.maps.event.addListener(marker, "click", () => {
+                infowindow.setContent(place.name);
+                infowindow.open(map);
+            });
+        }        
+        const mylink = `https://maps.googleapis.com/maps/api/js?key=${API_KEY_GOOGLE_MAPS}&callback=initMap&libraries=places&v=weekly`
         $.getScript(mylink, function() {  });
-    </script> 
+    </script>
 </body>
 </html>

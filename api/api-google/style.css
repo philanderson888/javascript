@@ -27,7 +27,7 @@ li{
     margin:0 2vw;
 }
 #map {
-    height:400px;
+    height:80vh;
     width:100%;
     background-color: #c1d6cd;
     display:none;
@@ -40,4 +40,7 @@ li{
     padding:2vmin 3vmin;
     box-shadow: 1vmin 0vmin 20vmin #8d95e0;
     outline:none;
+}
+#latitude, #longitude, #zoom{
+    width:4vw;
 }
