@@ -573,6 +573,10 @@ map is like a foreach loop over an array
 
     myNewArray = myOldArray.map(function(item))
 
+*Note:*
+*- map is used when we want to return an array mapped from the original array*
+*- forEach is used when we want to iterate but do not want to return anything*
+
 ```js
 <p>Click the button to get a new array with the full name of each person in the array.</p>
 <button onclick="myFunction()">Try it</button>
