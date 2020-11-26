@@ -1,8 +1,5 @@
 # Javascript Formal Course
 
-# Javascript
-
-[Javascript Glossary](notion://www.notion.so/philanderson888/Javascript-Formal-Course-8a26124f8df54b48b4c6ed241c23eb0f#javascript-glossary)
 
 # Session 1: INTRODUCTION TO JAVASCRIPT WEB DEVELOPMENT
 
@@ -778,13 +775,12 @@ To append an existing item into the DOM one could use appendChild where one woul
 
 When selecting items in the DOM items can be selected individually with an ID or multiple items can be selected eg by className (document.getElementsByClassName) or for example by tagName (document.getElementsByTagName);
 
-## Cookies
 
-## Alternative Storage Options
 
-# Session 10: JAVASCRIPT TOOLS
 
-## Profiling JavaScript
+## Tools
+
+### Profiling JavaScript
 
 Javascript can be 'profiled' to view the slow parts of the page.
 
@@ -880,110 +876,3 @@ Focuses on the View part of MVC
 
 Flux and Redux are part of the React suite of tools
 
-## Javascript Glossary
-
-[Google Scripting](notion://www.notion.so/philanderson888/Javascript-Formal-Course-8a26124f8df54b48b4c6ed241c23eb0f#google-scripting)
-
-# Google Scripting
-
-It is possible to email from Google Sheets. See this code as an example
-
-```
-function myFunction() {
-  var range, data, sheet, spreadsheetDocument, startRow, startColumn, numRows, numColumns, message;
-  
-  spreadsheetDocument = SpreadsheetApp.openById("1vy0A_Gu8u_Ba5tQbCcEbjuly0BTb6QVW7CKOIl47LJQ");
-  sheet = spreadsheetDocument.getSheetByName('Daily Tasks'); 
-  startRow = 1;
-  startColumn = 1;
-  numRows = 100;
-  numColumns = 53;
-  range = sheet.getRange(startRow,startColumn,numRows,numColumns); 
-  data = range.getValues();
-  message = '';
-  message += '===============\\nDaily Tasks To Complete\\n========\\n\\n\\n\\n';
-  for (i in data){
-    var row = data[i];
-    if (row[0].length>0) {
-        message += row[0];
-        message += '\\n\\r';
-        counter++;
-    }
-  } 
-  message += '\\n\\n\\n\\n===========\\nDaily Stats\\n===========\\n\\n\\n\\n';
-  sheet = spreadsheetDocument.getSheetByName('Summary');
-  for (var i = 2; i <= 20; i++){
-    range = sheet.getRange(2,i);
-    data = range.getValue();
-    data =  Math.round(data * 100);
-    message += data + '% : ';
-    range = sheet.getRange(1,i);
-    data = range.getValue();
-    message += data + '\\n\\n';
-  }
-  
-
-  
-  
-  message += '\\n\\n\\n\\n=====\\nWeekly Stats\\n=======\\n\\n\\n\\n';
-  var range = sheet.getRange("I1");
-  var data = range.getValue();
-  message += data + ': ';
-  var range = sheet.getRange("I2");
-  var data = range.getValue();
-  message += data + ': ';
-  var lastRow = sheet.getMaxRows();
-  var cellValue = "I" + lastRow;
-  var range = sheet.getRange(cellValue);
-  var data =  range.getValue();
-  data =  Math.round(data * 100);
-  message += data + '% Weekly Tasks Done';
-  message += '\\n\\n';
-
- 
-  
-  
-  message += '\\n\\n\\n\\n==========\\nMonthly Stats\\n===========\\n\\n\\n\\n';  
-  // Monthly Stats 
-  var sheet = spreadsheetDocument.getSheetByName('Monthly Tasks');
-  var lastRow = sheet.getMaxRows();
-  // October
-  var cellValue = "C" + lastRow;
-  var range = sheet.getRange(cellValue);
-  var data =  range.getValue();
-  data =  Math.round(data * 100);
-  message += data + '% October Monthly Tasks Done';
-  message += '\\n\\n\\n\\n\\n';  
-
-  
-  
-  
-  message += '\\n\\n\\n\\n======\\nCount Number Of Tasks\\n========\\n\\n\\n\\n';   
-  var sheet = spreadsheetDocument.getSheetByName('Tasks'); 
-  var startRow = 1;
-  var startColumn = 1;
-  var numRows = 2000;
-  var range3 = sheet.getRange(startRow, startColumn, numRows);
-  var data = range3.getValues();
-  var counter = 0;
-  for (i in data){
-    var row = data[i];
-    if (row[0].length>0) {
-        if(row[0] === 'Done November'){
-          break;
-        }
-        message += row[0];
-        message += '\\n\\r';
-        counter++;
-    }
-  }
-
-  
-  // Set value
-  spreadsheetDocument.getSheetByName('Summary').getRange('B17').setValue(counter);
- 
-  // Send email
-  var emailAddress = 'philanderson888@hotmail.com'; 
-  var subject = 'Regular Daily Tasks';    
-  MailApp.sendEmail(emailAddress,subject,message);
-```
