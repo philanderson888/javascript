@@ -1,63 +1,55 @@
 # Javascript
+
+## Contents
+
 - [Javascript](#javascript)
+	- [Contents](#contents)
 	- [Author](#author)
 	- [Introduction](#introduction)
 	- [Resources](#resources)
-	- [Chrome Dev Tools](#chrome-dev-tools)
-		- [Data Types](#data-types)
-		- [TypeOf](#typeof)
-		- [Expressions](#expressions)
-		- [Operators](#operators)
-		- [Maths](#maths)
-		- [Conditionals](#conditionals)
-	- [Javascript equality](#javascript-equality)
+	- [types](#types)
+	- [TypeOf](#typeof)
+	- [Operators](#operators)
+	- [Maths](#maths)
+	- [equality](#equality)
 	- [Loops](#loops)
 	- [Array](#array)
 	- [map](#map)
 	- [Reduce](#reduce)
-	- [Filter](#filter)
 	- [Dates](#dates)
-	- [Javascript Primitive Types](#javascript-primitive-types)
+	- [types](#types-1)
 	- [String](#string)
 	- [Boolean to string](#boolean-to-string)
 	- [Date to string](#date-to-string)
 	- [String To Number](#string-to-number)
-	- [Casting from date to number](#casting-from-date-to-number)
-	- [Converting to booleans](#converting-to-booleans)
-		- [SETTIMEOUT AND SETINTERVAL](#settimeout-and-setinterval)
-		- [Try . Catch . Finally Exception Handler](#try--catch--finally-exception-handler)
-		- [Function](#function)
-- [Document Object Model (DOM)](#document-object-model-dom)
-- [SVG](#svg)
-	- [CREATE SVG ELEMENT](#create-svg-element)
-	- [CANVAS](#canvas)
-	- [JS](#js)
-- [Arrays](#arrays)
-		- [Array.of](#arrayof)
-		- [Spread Operator - Use to pass in elements of an array into a function](#spread-operator---use-to-pass-in-elements-of-an-array-into-a-function)
-		- [find(element ⇒ condiiton)](#findelement--condiiton)
-		- [findIndex(element⇒condition)](#findindexelementcondition)
-		- [forEach](#foreach)
-		- [fill (an array with default values)](#fill-an-array-with-default-values)
-		- [Map Reduce Filter](#map-reduce-filter)
-		- [Filter](#filter-1)
-- [JSON](#json)
-	- [SAMPLE JSON](#sample-json)
-	- [JSON Encoding](#json-encoding)
-	- [JSON.STRINGIFY](#jsonstringify)
-	- [JSON.Parse](#jsonparse)
-	- [SERIALIZE](#serialize)
+	- [Number(date)](#numberdate)
+	- [truthy falsy](#truthy-falsy)
+	- [setTimeout setInterval](#settimeout-setinterval)
+	- [exceptions](#exceptions)
+	- [Function](#function)
+	- [dom](#dom)
+	- [svg](#svg)
+	- [canvas](#canvas)
+	- [websockets](#websockets)
+	- [Spread Operator](#spread-operator)
+	- [find](#find)
+	- [findIndex](#findindex)
+	- [forEach](#foreach)
+	- [Filter](#filter)
+	- [JSON](#json)
+	- [serialize](#serialize)
+	- [for..in](#forin)
 	- [valid JSON?](#valid-json)
 	- [UNDEFINED](#undefined)
-		- [Fetch](#fetch)
-- [Collections](#collections)
-	- [Sets consist of unordered, unindexed but unique values](#sets-consist-of-unordered-unindexed-but-unique-values)
-- [Events](#events)
-		- [event.type (eg click), event.target  (eg button), event.target.value (eg button value)](#eventtype-eg-click-eventtarget--eg-button-eventtargetvalue-eg-button-value)
-		- [Environment Variables In Javascript](#environment-variables-in-javascript)
+	- [Fetch](#fetch)
+	- [Collections](#collections)
+	- [Sets](#sets)
+	- [Events](#events)
+	- [event.type](#eventtype)
+	- [environment variables](#environment-variables)
+	- [Google Calendar](#google-calendar)
 	- [Google Maps](#google-maps)
-		- [Cookies](#cookies)
-- [70-480 Notes - Decrement](#70-480-notes---decrement)
+	- [Javascript flow 2 - decrement](#javascript-flow-2---decrement)
 	- [Forms](#forms)
 	- [Serializing Form Data](#serializing-form-data)
 	- [FORMS](#forms-1)
@@ -65,57 +57,71 @@
 	- [GEOLOCATION](#geolocation)
 	- [Audio](#audio)
 	- [Video](#video)
-- [Javascript Dictionary](#javascript-dictionary)
-- [Javascript Glossary](#javascript-glossary)
-		- [ChartJS](#chartjs)
-		- [Console](#console)
-	- [String format](#string-format)
-		- [DATETIME](#datetime)
-		- [Debounce](#debounce)
-		- [pnpm](#pnpm)
-		- [Closures](#closures)
+	- [Navigator](#navigator)
+	- [performance](#performance)
+	- [Storage](#storage)
+	- [Cookies](#cookies)
+	- [Local Storage](#local-storage)
+	- [Session Storage](#session-storage)
+	- [Cookies](#cookies-1)
+	- [HTML5 localStorage](#html5-localstorage)
+	- [Session State](#session-state)
+	- [cookie](#cookie)
+	- [location](#location)
+	- [websockets](#websockets-1)
 	- [jQuery](#jquery)
-	- [Glossary](#glossary)
-- [Javascript - Decrement This Section Over Time](#javascript---decrement-this-section-over-time)
-		- [Array](#array-1)
+	- [Array](#array-1)
 	- [Classes](#classes)
-	- [HTML and Javascript](#html-and-javascript)
-- [Javascript Flow 2 - Merge Into Course Above](#javascript-flow-2---merge-into-course-above)
-	- [Page Loading](#page-loading)
-	- [Skeleton Screen : Load Structure First](#skeleton-screen--load-structure-first)
-	- [Image Loading : Fuzzy first then merge into full image](#image-loading--fuzzy-first-then-merge-into-full-image)
+	- [dependency injection](#dependency-injection)
+	- [try.catch.finally](#trycatchfinally)
+	- [async](#async)
+	- [map](#map-1)
+	- [page load](#page-load)
 	- [Delete](#delete)
-	- [classList.add('className')](#classlistaddclassname)
-	- [forEach(function(item){ // use item})](#foreachfunctionitem--use-item)
-	- [Object.seal() - can't change properties](#objectseal---cant-change-properties)
-	- [Object.freeze() - cannot change value of properties](#objectfreeze---cannot-change-value-of-properties)
-	- [Object.preventExtensions() - cannot add properties](#objectpreventextensions---cannot-add-properties)
+	- [classList](#classlist)
+	- [forEach](#foreach-1)
+	- [Object.seal()](#objectseal)
+	- [Object.freeze()](#objectfreeze)
+	- [Object.preventExtensions()](#objectpreventextensions)
 	- [querySelectorAll](#queryselectorall)
-	- [Scoping : Global, Function or Scope.   Also Lexical or Dynamic](#scoping--global-function-or-scope---also-lexical-or-dynamic)
+	- [scope](#scope)
 	- [Javascript Switch](#javascript-switch)
 	- [Or just 'return'](#or-just-return)
 	- [Javascript If..Else](#javascript-ifelse)
 	- [document.querySelector](#documentqueryselector)
 	- [Set A Listener](#set-a-listener)
 	- [classList.remove](#classlistremove)
-		- [getPropertyValue](#getpropertyvalue)
-		- [getAttribute](#getattribute)
-		- [this](#this)
-		- [Dates](#dates-1)
-- [Creating And Appending Elements](#creating-and-appending-elements)
-- [Template Literal `some text ${variable} here`](#template-literal-some-text-variable-here)
-- [Async](#async)
-- [Includes](#includes)
-- [Prototype](#prototype)
-- [JAVASCRIPT FLOW 3 - 480 structured notes - Too long so decrement over time](#javascript-flow-3---480-structured-notes---too-long-so-decrement-over-time)
-	
-		- [Console Debugging : Console.log, info, debug, warn, error](#console-debugging--consolelog-info-debug-warn-error)
-		- [DATETIME](#datetime)
-		- [Debounce](#debounce)
-		- [pnpm](#pnpm)
-		- [Closures](#closures)
-- [Javascript - Decrement This Section Over Time](#javascript---decrement-this-section-over-time)
-- [JAVASCRIPT FLOW - 480 structured notes - Too long so decrement over time](#javascript-flow---480-structured-notes---too-long-so-decrement-over-time)
+	- [getPropertyValue](#getpropertyvalue)
+	- [getAttribute](#getattribute)
+	- [this](#this)
+	- [Dates](#dates-1)
+	- [dom](#dom-1)
+	- [string includes](#string-includes)
+	- [Prototype](#prototype)
+	- [VIDEO](#video-1)
+	- [exceptions](#exceptions-1)
+	- [Functions](#functions)
+	- [Web Worker](#web-worker)
+	- [webworker](#webworker)
+	- [dom](#dom-2)
+	- [ajax](#ajax)
+	- [Google sheets](#google-sheets)
+	- [Send Gmail](#send-gmail)
+	- [Glossary](#glossary)
+	- [AJAX](#ajax-1)
+	- [ChartJS](#chartjs)
+	- [Console](#console)
+	- [String format](#string-format)
+	- [DATETIME](#datetime)
+	- [Debounce](#debounce)
+	- [Closures](#closures)
+	- [AppCache](#appcache)
+	- [Image ISMAP](#image-ismap)
+	- [Image USEMAP](#image-usemap)
+	- [XmlHttpRequest](#xmlhttprequest)
+	- [svg](#svg-1)
+	- [canvas](#canvas-1)
+	- [jQuery](#jquery-1)
 
 
 ## Author
@@ -130,23 +136,11 @@ This is a series of notes from which to learn from scratch all about Javascript.
 
 ## Resources
 
-Javascript documentation https://developer.mozilla.org/en-US/docs/Web/JavaScript>
-
-[Javascript Introduction](https://github.com/philanderson888/html-css-javascript)
-
-[Javascript Formal Course](notes/javascript-formal-course.md)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 
 
-
-
-## Chrome Dev Tools
-
-Control - Shift - I
-
-Networking Tab - Reload the page and view the pages which have loaded, and their relative times to load
-
-### Data Types
+## types
 
 Primitives
 - number
@@ -239,12 +233,8 @@ Other object types
 	Arguments array passed to a function
 	
 	
-HTML ATTRIBUTES
 
-	<object>.setAttribute("name","inputName");
-
-
-### TypeOf
+## TypeOf
 
 ```
 Variable can change its type
@@ -268,25 +258,7 @@ typeof(x)  declares its type
 		typeof(x)				function
 ```
 
-### Expressions
-
-```
-x = y assign
-
-x==y same value                         1 == "1"    same value
-
-x===y same value and data type          1 !== "1"   different type
-
-! not
-
-> < >= <= ==
-
-&&
-
-||
-```
-
-### Operators
+## Operators
 
 ```
 Arithmetic evaluates to a number
@@ -295,59 +267,14 @@ String evaluates to a string
 
 Logical evaluates to true/false
 
-UNARY
-	
-	
-	y=x++;  y = x then increment x
-	y=++x;  increment x then y = this incremented value
+INTEGER DIVISION RETURNS AN INTEGER
 
-	y=x--;
-	y=--x;
-	
-	
-	
-	
+int/int = int eg 5/2 = 2 so must use float instead
 
-BINARY
-
-	+ - * / %
-	
-	
-	x += y is short for x = x + y   ie increment x by value of y 
-		
-		
-	DIVISION
-	
-		INTEGER DIVISION RETURNS AN INTEGER
-
-			int/int = int eg 5/2 = 2 so must use float instead
-
-		
-		DOUBLE/FLOAT DIVISION RETURNS A DOUBLE/FLOAT
-		
-	
-		% modulus is remainder   9%3==> 0    10%3==>1    11%3==>2
-		
-		
-		11/3=3
-		
-		
-		11%3=2
-		
-
-Ternary
-	(x<10?10:100) if x<10 then return 10 else 100
-	
-	INT.PARSE
-
-Bit shift >> <<   :  Bitwise operator
-	<http://imgs.g4estatic.com/bitwise-operators/table_bitwise.png>
-
-	
-BODMAS / BIDMAS rules!
+DOUBLE/FLOAT DIVISION RETURNS A DOUBLE/FLOAT
 ```
 
-### Maths
+## Maths
 
 ```
 Rounding Numbers
@@ -410,27 +337,10 @@ Infinity !!!
 	<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity>
 ```
 
-### Conditionals
-
-```jsx
-!= or !== not equal
->=
-if(x>5) { DO THIS } // NO SEMICOLON !!!
-if (x===5) // double nearly same as triple!!!
-if() {} else if () {} else {}
-and/or && / ||
-Switch
-switch(variable){
-case "xxxx":
-//code
-break;
-default:
-//code
-}
-```
 
 
-## Javascript equality
+
+## equality
 
 ```js
 const a = true
@@ -607,8 +517,6 @@ To get the sum of items in an array we write
 const total = myArray.reduce((x,y)=>x+y)
 ```
 
-## Filter
-
 
 ## Dates
 
@@ -686,21 +594,16 @@ Sat, 07 Nov 2020 13:30:00 GMT
 
 ```
 
-## Javascript Primitive Types
+## types
 
-These are javascript primitive types
-
-Number
-
-String
-
-Boolean
-
-Symbol
+primitive types
+- Number
+- String
+- Boolean
+- Symbol
 
 Object type is
-
-Object
+- Object
 
 ## String
 
@@ -745,13 +648,12 @@ Number(true) //1
 Number(false) //0
 ```
 
-## Casting from date to number
+## Number(date)
 
-If you pass a Date object to `Number()`, it will return the date timestamp, which is the best date to number conversion you can get.
+Converts date to UNIX timestamp
 
 
-
-## Converting to booleans
+## truthy falsy
 
 Any value can be converted to boolean passing it to `Boolean()`.
 
@@ -768,37 +670,23 @@ Boolean(undefined) //false
 
 
 
-### SETTIMEOUT AND SETINTERVAL
+## setTimeout setInterval
 
-SET TIMEOUT
+```js
+setTimeout("fnClock()", 1000);   delay
 
-```
-CAUSES A DELAY
-	
-		setTimeout("fnClock()", 1000);   delay
+setInterval(function () {
+	somethingElse();
+}, 2000); 				
+// clear
+var mytimer = setInterval(fnDothis(),1000);
+function fnStop = clearInterval(mytimer);
+// parameters
 
-				see js_setTimeout - mosaic squares.htm
-
-SET INTERVAL
-
-	set Interval  is regular time interval eg 1 second on a clock 
-
-		setInterval(function () {
-			somethingElse();
-		}, 2000); 						// Execute somethingElse() every
-										2 seconds.
-CLEAR INTERVALS AND TIMERS
-
-	var mytimer = setInterval(fnDothis(),1000);
-	
-	function fnStop = clearInterval(mytimer);
-	
-	
-PASS PARAMETERS IN
 	SETINTERVAL(DO_THIS, 2000, "STRING-TO-PASS-IN");
 ```
 
-### Try . Catch . Finally Exception Handler
+## exceptions
 
 ```
 try{
@@ -838,7 +726,7 @@ Optional parameters
 Input Validation eg with Regular Expressions
 ```
 
-### Function
+## Function
 
 Declare Named Function
 
@@ -923,15 +811,12 @@ Callback Function
 */
 ```
 
-# Document Object Model (DOM)
+## dom
 
-Using Window Objects
-[http://www.ciwcourse.co.uk/nutshell ciw course/hierarchy.jpg](http://www.ciwcourse.co.uk/nutshell%20ciw%20course/hierarchy.jpg)
+
 Window is root element
 
 ```
-Window => Document => HTML => body => DIV
-
 window is the (default) object that is always present in every command but omitted from being explicitly stated.
 
 eg  alert() can be written window.alert()
@@ -1119,139 +1004,51 @@ SpanID.firstChild is the text element in <span>
 SpanID.firstChild.nodeValue = "text"  to change <span> text
 ```
 
-# SVG
+## svg
 
-```
-SCALAR VECTOR GRAPHICS
-SCALES INDEPENDENT OF HOW BIG OR SMALL SCREEN IS
-DRAWN WITH VECTOR MATHS
-PURE IMAGE
-CREATE DOM ELEMENT
-THIS ELEMENT CAN BE PART OF DOM AND STYLE WITH CSS ETC
-AS ANY OTHER ELEMENT
-PERFORMANCE : BECAUSE DRAWING : MANY ITEMS, CAN SLOW PERFORMANCE
-STATIC
-DYNAMIC ITEMS : BETTER USING CANVAS (SIMILAR)
-(BETTER FOR LIVE JAVASCRIPT)
-```
+[SVG](notes/svg.md)
 
-## CREATE SVG ELEMENT
+## canvas
 
-```html
-<svg>
-<svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
-STROKE : DRAW OUTSIDE
-STROKE-WIDTH:
-FILL : INSIDE CONTENT
-```
+[canvas](notes/canvas.md)
 
+## websockets
+
+full duplex communications over http
+
+ws://
+wss://
 
 ```js
-RECT : X Y WIDTH HEIGHT
-CIRCLE : CX CY R
-ELLIPSE : CX CY RX RY
-POLYLINE : X1 Y1, X2 Y2, X3 Y3
-CAN DO TEXT ALSO
-	STROKE-WIDTH IS THICKNESS OF TEXT
-	FILL INSIDE
-	STROKE OUTSIDE
-TEXTPATH : CURVED PATH FOR TEXT TO FOLLOW
-TRANSFORM
-	ROTATE(30DEG,X,Y)    	ROTATE ABOUT (X,Y)
-	TRANSLATE(X,Y)		MOVE SHAPE BY X AND BY Y	
-	SCALE(X,Y)		MULTIPLY BY FACTOR OF X HORIZONTAL
-						      Y VERTICAL
-	SKEW()			SHEAR IN X AND Y DIRECTION
-```
-
-
-
-
-
-
-## CANVAS
-
-SVG BEST FOR STATIC ITEMS
-
-CANVAS BEST FOR DYNAMIC INTERACTION WITH JAVASCRIPT ON PAGE
-
-EG GAMES
-
-<CANVAS ID="">
-CANVAS{ // CSS }
-
-
-## JS
-
-```js
-
-var canvas = document.getElementById('myCanvas')
-
-var context = canvas.getContext('2d');
-
-RECTANGE
-
-	ctx.fillstyle="red"
-
-	ctx.fillrect(x,y,width,height)
-
-CLEAR
-
-	ctx.clearrect(x,y,width,height)
-
-STROKE : OUTSIDE
-FILL   : INSIDE
-
-PATH
-	beginPath()
-	MOVETO		STARTING POINT OF YOUR DRAWING
-	LINETO(X,Y)
-	LINETO(A,B)
-	CLOSEPATH()
-	STROKE()		DRAW OUTLINE
-	FILL()			FILL SHAPE
-LINE
-	line(x,y,end-x,end-y)
-
-TRIANGLE
-	triangle(x,y,x1,y1,x2,y2)
-
-TEXT
-
-
-```
-WEB SOCKETS
-USES HTTP TO SEND DATA
-SPECIAL PROTOCOL WS:// WSS://
-BENEFIT : SEND TINY PIECES OF DATA (WITHOUT BURDEN OF HTML HEADERS..)
-CREATE SOCKET
-OPEN SOCKET
-SEND DATA 2-WAY COMMS TO AND FROM BOTH SOCKET ENDS
-REAL TIME CHAT
 var mysocket = new WebSocket('ws://url')
 mysocket.onmessage = function(e){ // e.data }
 mysocket.send('message')
+```
+
 1) STRING
 2) BLOB EG FILE
 3) BUFFER
 READYSTATE
-```
 
+var mySecureSocket = 'wss://mysecuresite.com';
 
-0	CONNECTING
+CONNECTING
+
 	1	GOOD (OPEN AND READY)
 	2	CLOSING
 	3	CLOSED
 	
-
+```js
 mysocket.onopen = function(){}
 mysocket.addEventListener('open',function(){})
-                               error
-			   message
-			   close
-```
+    error
+    message
+   close
 
-DOM continued
+
+## dom
+
+
 ('parent').childNodes	==> ARRAY OF ELEMENTS
 ('parent').childNodes[0]	FIRST ELEMENT
 [array.length-1 ]
@@ -1284,15 +1081,17 @@ var boxwidth = document.getElementById('inputbox1').getAttribute('width');
 setAttribute('x','value')
 CSS 'attr'
 
-# Arrays
+## arrays
 
-### Array.of
+## Array.of
 
 ```jsx
 let myArray = Array.of(1,2,3);
 ```
 
-### Spread Operator - Use to pass in elements of an array into a function
+## Spread Operator
+
+Use to pass in elements of an array into a function
 
 ```jsx
 let myArray = Array.of(1,2,3);
@@ -1304,38 +1103,27 @@ function getSum(a,b,c){
 getSum(...myArray)
 ```
 
-### find(element ⇒ condiiton)
+## find
 
 ```jsx
-# finds first item greater than 1000 in your array
 var output = myArray.find(item=>item>1000)
 ```
 
-### findIndex(element⇒condition)
+## findIndex
 
 ```jsx
-# finds index of first match of given condition
 var output = myArray.findIndex(item=>item>1000)
 ```
 
-### forEach
+## forEach
 
 ```jsx
 let total = 0;
 myArray.forEach( item => total += item ) 
 ```
 
-### fill (an array with default values)
 
-```jsx
-myArray.fill(0)
-```
-
-### Map Reduce Filter
-
-We now have new items in Javascript to deal with arrays.
-
-### Filter
+## Filter
 
 To get the minimum value in an array we can use
 
@@ -1348,82 +1136,27 @@ fetch("https://jsonplaceholder.typicode.com/users")
 	})
 ```
 
-# JSON
+## JSON
 
-JSON can be represented as either a list of values, e.g. an Array, or a hash of properties and values, e.g. an Object.
+generate
 
-```json
-// a JSON array
-["one", "two", "three"]
-// a JSON object
-{ "one": , "two": 2, "three": 3 }
-```
-	
-## SAMPLE JSON
+http://www.json-generator.com/#generate
 
-CREATE IN 		http://www.json-generator.com/#generate
+https://www.mockaroo.com/
 
-AND				https://www.mockaroo.com/
-
-AND 			http://jsonschema.net/#/
+http://jsonschema.net/#/
 		
 	
-## JSON Encoding
 
-Encoding and Decoding
 
-Javascript provides 2 methods for encoding data structures to json and encoding json back to javascript objects and arrays. They are both available on the JSON object that is available in the global scope.
-
-JSON.STRINGIFY
-	JSON OBJECT => STRING
-	
-JSON.PARSE
-	STRING ==> JSON OBJECT
-	
-	
-## JSON.STRINGIFY
-
-		
-JSON.stringify takes a javascript object or array and returns a serialized string in the JSON format.
-
-```js
-var data = {
-  name: "John Doe"
-  , age: 32
-  , title: "Vice President of JavaScript"
-  , MOREDATA : {  "A":"1"  } 
-}
-var jsonStr = JSON.stringify(data);
-console.log(jsonStr);
-data = { name: "John Doe" , age: 32  , title: "Vice President of JavaScript" }; jsonStr=JSON.stringify(data);console.log(jsonStr);
-// prints '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}'
-```
-
-## JSON.Parse
-
-JSON.parse takes a JSON string and decodes it to a javascript data structure.
-var jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}';
-
-```js
-var data = JSON.parse(jsonStr);
-console.log(data.title);
-var jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}'; var data = JSON.parse(jsonStr); console.log(data.title);
-```
-
-## SERIALIZE
+## serialize
 
 HTML FORM : POST DATA TO SERVER (FORM ACTION ="" METHOD='POST')
 
 	==> 'SERIALIZE FORM FIELDS AND SEND AS STRING'
 	
-	
-FOR..IN...LOOPS TO EXTRACT JSON DATA 
 
-EXAMPLE : JSON WITHIN JSON - EXTRACT BOTH THE MAIN LIST AND EACH SUB-LIST 
-	EG LIST OF PEOPLE, OF WHICH JOHN DOE IS JUST ONE.
-	var jsonStr = '{"name":"John Doe","age":32,"title":"Vice President of JavaScript"}
-	';
-	OUTPUT ALL NAME AND AGE 
+## for..in
 		
 ```js		
 console.log('\n\n');
@@ -1447,11 +1180,9 @@ for (var person in people){
 			);
 	}
 }
-node_89_json.js 
 ```
 		
-		
-		
+	
 ## valid JSON?
 
 {"property",value}
@@ -1505,7 +1236,7 @@ function x(){}
 	x();    RETURN UNDEFINED
 ```
 
-### Fetch
+## Fetch
 
 ```js
 <h2>Javascript Fetch</h2>
@@ -1581,13 +1312,17 @@ function x(){}
 }
 ```
 
-# Collections
+## Collections
 
 Before ES6 we had arrays and objects
 
 Now we also have `sets`, `maps`, `weak sets` and `weak maps`
 
-## Sets consist of unordered, unindexed but unique values
+## Sets 
+
+- unordered
+- unindexed
+- unique
 
 ```jsx
 const mySet = new Set()
@@ -1608,7 +1343,7 @@ mySet.add(10) // ignores duplicates!
 .Values()  // show values
 ```
 
-# Events
+## Events
 
 ```
 EVENT
@@ -1739,7 +1474,50 @@ Using the onLoad and onUnload Events
 	window.onunload
 ```
 
-### event.type (eg click), event.target  (eg button), event.target.value (eg button value)
+
+
+Keyboard Events
+
+  KeyPress
+  KeyDown
+  KeyUp
+  shiftKey/ctrlKey/altKey
+  charCode : Keyboard Letters, Numbers and Characters : KeyPress
+  scanCode : Special Keys like Escape : KeyUp/Down
+  http://javascript.info/tutorial/keyboard-events
+
+Mouse Events
+
+  mouseMove
+  mouseDown
+  mouseUp
+  mouseEnter
+  mouseLeave
+  mouseOut
+  click
+  dblClick
+
+Finger Events : Gestures
+
+  TouchStart
+    Finger is placed on the screen
+
+  TouchMove
+    Finger is dragged across screen
+
+  TouchEnd
+    Finger is removed from screen
+
+  Testing Finger Events : Using An Emulator
+    Hold down shift in these emulations to simulate multiple finger touches
+    http://cdn.rawgit.com/hammerjs/touchemulator/master/tests/manual/hammer.html
+    http://cdn.rawgit.com/hammerjs/touchemulator/master/tests/manual/leaflet.html
+
+
+
+## event.type 
+
+(eg click), event.target  (eg button), event.target.value (eg button value)
 
 ```js
 <h2>Ajax Example</h2>
@@ -1782,11 +1560,7 @@ Using the onLoad and onUnload Events
 }
 ```
 
-### Environment Variables In Javascript
-
-Exposure of your keys can lead to your account being compromised so it's important to keep the secure.
-
-We can use environment variables to store our keys
+## environment variables
 
 List all environment variables (MAC)
 
@@ -1818,6 +1592,124 @@ and also ignore the file in .gitignore
 ```js
 app-env
 ```
+
+## Google Calendar
+
+Find the code at [api\index.html](api\index.html)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Calendar Detail</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="../../../data.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Google Calendar API Interrogation</h1>
+        <div id="nav-placeholder"> </div>    
+    </div>
+    <script>
+        $(function(){
+        $("#nav-placeholder").load("nav.html");
+        });
+    </script>
+    <div class="container">
+        <button onclick="authenticate().then(loadClient).then(listCalendarEntries)">Calendar List Entries</button>
+        <h3>Calendar Object</h3>
+        <div id="calendar-object"></div>
+        <h3>Events Listed Here</h3>
+        <div id="events">Events listed here</div>
+        <h3>Time Differences Listed Here</h3>
+        <div id="time-difference"></div>
+        <h3>Total Time Differences Listed Here</h3>
+        <div id="totalTimeDifference">Total Time Difference</div>
+    </div>
+    <script>
+    function authenticate() {
+        return gapi.auth2.getAuthInstance()
+            .signIn({scope: "https://www.googleapis.com/auth/calendar"})
+            .then(function() { console.log("Sign-in successful"); },
+                function(err) { console.error("Error signing in", err); });
+    }
+    function loadClient() {
+        gapi.client.setApiKey(API_KEY);
+        return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest")
+            .then(function() { console.log("GAPI client loaded for API"); },
+                function(err) { console.error("Error loading GAPI client for API", err); });
+    }
+    // Make sure the client is loaded and sign-in is complete before calling this method.
+    function listCalendarEntries() {
+        return gapi.client.calendar.calendarList.list()
+            .then(function(response) {
+                    // Handle the results here (response.result has the parsed body).
+                    console.log("Response", response.result);
+                    let output = '';
+                    for(calendar of response.result.items){
+                        output += calendar.summary + '<br/>' + calendar.id + '<br/>' + JSON.stringify(calendar) + "< br/><br /><br /><br/>"
+                        getTimeDifferences(calendar.summary,calendar.id)
+                    }
+                    document.getElementById('calendar-object').innerHTML=output;
+                    
+                },
+                function(err) { console.error("Execute error", err); });
+    }
+    function getCalendarMetadata(){
+        return gapi.client.calendar.calendarList.list()
+            .then(function(response) {
+                    // Handle the results here (response.result has the parsed body).
+                    console.log("Response", response);
+                },
+                function(err) { console.error("Execute error", err); });
+    }
+    function getTimeDifferences(calendarSummary,calendarId){
+        return gapi.client.calendar.events.list({calendarId})
+            .then(function(response) {
+                    const events = response.result.items.slice(0,5).map(event=>event)
+                    console.log("Response.result.items", events);
+                    let eventData = '';
+                    let totalDiff = 0;
+                    document.getElementById('time-difference').innerHTML += `<br/><br/>${calendarSummary}<br/>${calendarId}<br/><br/>`
+                    for(const event of events){
+                        if (event===undefined) continue
+                        if (event.status==='cancelled') continue
+                        if (event.start==='undefined') continue
+                        if (event.start.dateTime===undefined) continue
+                        const start = event.start.dateTime
+                        const end = event.end.dateTime
+                        const diff = (new Date(end)) - (new Date(start))
+                        totalDiff += diff
+                        const days = Math.floor(diff/86400000)
+                        const hours = Math.floor((diff%86400000) / 3600000)
+                        const mins = Math.floor(((diff % 86400000)%3600000)/60000)
+                        const output = `${days} days, ${hours} hours, ${mins} minutes\n`;
+                        eventData += output
+                        console.log(output)
+                        document.getElementById('time-difference').innerHTML += output + "<br/>"
+                    }
+                    document.getElementById('events').innerText=eventData
+                    const totalDiffDays = Math.floor(totalDiff/86400000)
+                    const totalDiffHours = Math.floor((totalDiff%86400000) / 3600000)
+                    const totalDiffMins = Math.floor(((totalDiff % 86400000)%3600000)/60000)
+                    const output = `difference ${totalDiffDays} days, ${totalDiffHours} hours, ${totalDiffMins} minutes\n`;
+                    document.getElementById('time-difference').innerHTML += output + '<br/>'
+                },
+                function(err) { console.error("Execute error", err); });
+    }
+    gapi.load("client:auth2", function() {
+        gapi.auth2.init({client_id: CLIENT_ID});
+    });
+    </script>
+</body>
+</html>
+```
+
+
 
 
 ## Google Maps
@@ -2032,43 +1924,9 @@ This page shows a map, zooms in and out, can set the latitude and longitude and 
 ```
 
 
-### Cookies
 
-```js
-Note that for Javascript cookies can check out my JSFiddle
 
-### create
-var myNewCookie = new HttpCookie("CookieName","CookieValue");
-HttpCookie cookieName = new HttpCookie ("name","value");
-var cookie = new HttpCookie ("Name","Value"); cookie.expires = DateTimeNow.AddMinutes(10);
-
-### expiry
-mycookie.expires = DateTimeNow.AddMinutes(10)
-
-### read
-cookieValue = Request.Cookies["CookieName"].Value;
-
-name=value expires=UTC max-age=seconds
-
-Cookie Request.Cookies["name"].Value
-Cookie Response.Add(mycookie)
-Cookie response.add(name);
-
-Cookie Set HttpCookie cookie = new HttpCookie ("Name","Value");Response.Add(cookie)
-Cookie set using Httpcookie cookie = new HttpCookie ("Name","Value"); cookie.expires = DateTimeNow.AddMinutes(10); Response.
-
-var x = Cookies["name"].Value;
-cookie.Expires=DateTimeNow.AddMinutes(10)
-
-cookie=”name=value; expires=date;path=/;max-age=;domain=;secure=;
-cookieEnabled navigator.cookieEnabled==true then cookies are enabled
-
-if(Request.Cookies["name"]!=null) {data=Request.Cookies["name"].Value;
-cookie =”name=value; expires=date(UTC); path=/; max-age=(seconds);domain=;secure=;
-cookie add Response.Cookies.Add(myNewCookie);1
-```
-
-# 70-480 Notes - Decrement
+## Javascript flow 2 - decrement
 
 ## Forms
 
@@ -3429,55 +3287,180 @@ OFFLINE EVENT WHEN GOES OFFLINE
 	WINDOW.ADDEVENTLISTENER('OFFLINE',FUNCTION(){})
 ```
 
-Navigator
+## Navigator
+
+```js
 Navigator.userAgent => details about browser
-
-```
-<http://www.w3schools.com/jsref/prop_nav_useragent.asp>
-```
-
-Navigator (Not sure if in the 480 exam)
-navigator contains info about the browser (JS)
 navigator.appCodeName gives the name of the client browser
 navigator.appName gives the name of the browser
 navigator.cookieEnabled returns if cookies enabled or not
 navigator.getUserMedia accesses audio, video, webcam hardware of the end user
-
 ```
-Stats about the browser being used 
-	
-	<http://www.w3schools.com/jsref/obj_navigator.asp>
-	
-Check out jsFiddle 
-	
-	<https://jsfiddle.net/user/philanderson888/fiddles/>
-	
-	<https://jsfiddle.net/user/philanderson888/fiddles/>
-```
+See https://jsfiddle.net/philanderson888/z6p5fqga/ and https://jsfiddle.net/philanderson888/3f9k11gh/
 
-DEBUGGING AND PERFORMANCE (8-17)
+
+
+## performance
+
+```js
 WINDOW.PERFORMANCE.NAVIGATION
-
-```
-HOW DID USER NAVIGATE TO PAGE
-
+// HOW DID USER NAVIGATE TO PAGE
 WINDOW.PERFORMANCE.TIMING
 ```
 
-OFFLINE SUPPORT (MODULE 9)
-Cookie Storage
-Transmitted to the server each time ... adding load to the page
-Can be turned off
 
+## Storage
+
+HTML is a STATELESS PROTOCOL
+
+  it does not have any 'memory' of previous page visits
+
+Persistence = STORING DATA BETWEEN CLICKS
+
+Storing Data Between Clicks - The 'State' Of The Application or Session
+
+Persistence is the ability to store data
+
+Data can be stored on the SERVER and the CLIENT!
+
+HTML
+
+  Stateless protocol : does not have any inherent 'memory' of previous page visits
+
+Look at
+
+  1. Cookies
+  2. Session Cookies
+  3. Application State
+  4. Local Storage
+
+  
+## Cookies
+
+    SMALL TINY PIECES OF DATA
+    
+    4kb max
+
+    SENT WITH EVERY PAGE REQUEST 
+
+    DATA ACCESSIBLE BOTH BY CLIENT AND SERVER
+
+      document.cookie = "username=John Doe";
+
+      document.cookie = "username=John Doe; 
+            expires=Thu, 18 Dec 2013 12:00:00 UTC";
+
+      SESSION COOKIE HAS NO EXPIRY DATE; VALID FOR THIS SESSION ONLY
+
+    ((COOKIE/SESSION DATA ==> VALID FOR ONE USER ONLY))
+
+    Example at http://jsfiddle.net/user/philanderson888/fiddles/
+
+## Local Storage
+
+    FOR LARGE FILES WE WANT A WAY OF STORING DATA ON LOCAL CLIENT MACHINE
+
+    5MB PERMANENTLY ON CLIENT
+
+    localStorage.setItem("lastname", "Smith");
+
+    localStorage.lastname
+
+    localStorage.getItem("lastname")
+
+  ## Session Storage
+
+    
+    same as local storage, destroyed after session
+
+    sessionStorage.setItem("lastname", "Smith");
+
+  Browser Cache (temporary internet files)
+
+    Files downloaded eg CSS, Javascript can be stored in client cache for
+        later use
+
+## Cookies
+
+Cookies are small text files which can be used to transmit data between the client and the server which reflect the state of the session or application.
+Small file size (4kb)
+Sent with every HTTP request
+Can be accessed by both client and server code
+
+Cookies are tiny (4kb max) pieces of text data
+
+They are SENT WITH EVERY HTML REQUEST
+
+create with
+
+document.cookie="username=Phil";
+
+  ((store data as key/value pair))
+
+  IF NO EXPIRY DATE ==> SESSION COOKIE : DELETED WHEN YOU FINISH
+    USING THIS SITE
+
+expires="18 Dec 2017";
+
+  THIS COOKIE NOW LAST UNTIL THAT DATE
+
+
+
+
+## HTML5 localStorage
+
+Local storage is the ability to store files and data permanently on the client machine.  
+This is fully persistent ie it has no time span after which the data will expire, 
+so in that sense the data is permanent although if the client clears their cache and temporary 
+storage areas out which they are more than welcome to do at any stage, the data will be erased.
+Can only be accessed by client browser code
+Can timestamp and purge items from local storage cache in order to manage space effectively
+Lab - Code on PDF : does your browser support local storage???
+
+Up to 5MB max
+
+localStorage.setItem("firstName","phil");
+            
+
+Get data (next time)
+
+  localStorage.getItem("firstName");   ==> return "phil"
+
+Shorten this
+
+  localStorage.firstName   ==> return "phil"
+
+HTML5 Session Storage
+
+Same exists just for one session
+
+sessionStorage.setItem..
+              .getItem..    same syntax
+
+Note : BROWSER CACHE WILL ALREADY STORE EG IMAGES, GIF, STYLESHEETS, JS, FROM 
+  YOUR SITE ANYWAY ***********
+
+Application State
+
+The data pertaining to the application as a whole for all users
+
+## Session State
+
+The data pertaining to one user after they log in, relevant for that user for that logged in 'session' until they either log out or they stop using the application in which case after a certain time span the session will automatically log them out and the session data will cease to exist.
+Storing Data Permanently On The Client Device
+
+
+
+
+## cookie
+
+```js
+document.cookie="name=value"
+
+Set-Cookie : name = value; expires = date; path = path; domain=domain; secure
 ```
-USED TO STORE
-	
-			USER PROFILE DATA, PAGE HISTORY DATA
-	
-	document.cookie="name=value"
-	Set-Cookie : name = value; expires = date; path = path; domain=domain; secure
-	
-	EXPIRES
+
+EXPIRES
 	
 		MUST SET EXPIRY DATE IF WANT TO CLEAR THE COOKIE AT SOME POINT
 		
@@ -3565,26 +3548,34 @@ STORAGE EVENT
 				 .STORAGEAREA   =  SESSION OR LOCAL
 				 
 
-			localstorage can be accessed only by browser
-			localStorage clear();
-			localStorage getItem(key)
-			localStorage persists between tabs
-			localstorage persists in the local browser file cache
-			LocalStorage provides up to 10MB of local storage
-			localStorage removeItem(key)
-			localStorage setItem(key,value)
-			localStorage setItem(key,value) / getItem(key) / removeItem / clear
-			location is current URL
-			location.assign loads a new document with the new URL
-			location.hostname            myhost
-			location.href is the current URL
-			location.path   c:\\wwwroot\\...
-			location.port   80 or 443
-			location.protocol   http  https
+localstorage can be accessed only by browser
+localStorage clear();
+localStorage getItem(key)
+localStorage persists between tabs
+localstorage persists in the local browser file cache
+LocalStorage provides up to 10MB of local storage
+localStorage removeItem(key)
+localStorage setItem(key,value)
+localStorage setItem(key,value) / getItem(key) / removeItem / clear
 
-### IndexedDb is a proper database for larger amounts of data to be stored locally
-### on a computer
 
+## location
+
+location is current URL
+
+```js
+location.assign loads a new document with the new URL
+location.hostname            myhost
+location.href is the current URL
+location.path   c:\\wwwroot\\...
+location.port   80 or 443
+location.protocol   http  https
+```
+
+
+
+
+## websockets
 ```
 
 WEB SOCKETS (MODULE 13)
@@ -4119,314 +4110,14 @@ var obj = {get x() {return 0} };
   PNPM
 ```
 
-# Javascript Glossary
-
-### ChartJS
-
-```bash
-<fieldset>
-        <h1>Javascript ChartJS : Displaying Charts - Bar Chart</h1>
-        <style>
-            .chart-js-01-container {
-                width: 50vw;
-                border: 2px solid rgba(247, 210, 4, 0.822);
-            }
-        </style>
-        <div class="chart-js-01-container">
-            <canvas id="chart-js-01"></canvas>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-alpha/dist/Chart.min.js"></script>
-        <script>
-            new Chart(document.getElementById('chart-js-01'), {
-                type: 'bar',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 30, 3, 5, 2, 6],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        </script>
-    </fieldset>
-
-    <fieldset>
-        <h1>Javascript ChartJS : Displaying Charts - Pie Chart</h1>
-        <p>Credit : <a
-                href="https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started">https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started</a>
-        </p>
-        <style>
-            .chart-js-02-container {
-                width: 50vw;
-                border: 2px solid rgba(247, 210, 4, 0.822);
-            }
-        </style>
-        <div class="chart-js-02-container">
-            <canvas id="chart-js-02"></canvas>
-        </div>
-
-        <script>
-            new Chart(document.getElementById("chart-js-02"), {
-                type: 'pie',
-                data: {
-                    labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-                    datasets: [{
-                        label: "Population (millions)",
-                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                        data: [2478, 5267, 734, 784, 433]
-                    }]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'Predicted world population (millions) in 2050'
-                    }
-                }
-            });
-        </script>
-    </fieldset>
-
-    <fieldset>
-        <h1>Javascript ChartJS - Line Chart</h1>
-        <p>Credit : <a
-                href="https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started">https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started</a>
-        </p>
-        <div class="chart-js-03-container">
-            <canvas id="chart-js-03"></canvas>
-        </div>
-        <style>
-            .chart-js-03-container {
-                width: 50vw;
-                border: 2px solid rgba(247, 210, 4, 0.822);
-            }
-        </style>
-        <script>
-            new Chart(document.getElementById("chart-js-03"), {
-                type: 'line',
-                data: {
-                    labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
-                    datasets: [{
-                        data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
-                        label: "Africa",
-                        borderColor: "#3e95cd",
-                        fill: false
-                    }, {
-                        data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
-                        label: "Asia",
-                        borderColor: "#8e5ea2",
-                        fill: false
-                    }, {
-                        data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
-                        label: "Europe",
-                        borderColor: "#3cba9f",
-                        fill: false
-                    }, {
-                        data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
-                        label: "Latin America",
-                        borderColor: "#e8c3b9",
-                        fill: false
-                    }, {
-                        data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
-                        label: "North America",
-                        borderColor: "#c45850",
-                        fill: false
-                    }]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'World population per region (in millions)'
-                    }
-                }
-            });
-        </script>
-    </fieldset>
-```
-
-### Console 
-
-See reference https://developer.mozilla.org/en-US/docs/Web/API/Console
-
-- console.log() produces black text
-- console.info() blue text with icon
-- console.debug() have to view with F12, console, filter, levels, verbose
-- console.warn() yellow with icon
-- console.error() red with icon
-- console.assert(boolean,"this test has failed") - appears if assertion is false
-
-```js
-console.log('console.log');
-console.log('big object',bigObject)
-console.info('console.info');
-console.debug('console.debug'); // same as log()
-console.warn('console.warn');
-console.error('console.error');
-console.assert(true); // not output if true
-console.assert(false); // assert outputs if fails
-console.table(myObject);
-console.dir() - view details of object
-console.dirxml() - shows interactive tree of element with descendants
-```
-
-## String format
-
-```js
-// %d
-console.log("variable x is %d", consoleOutputX);
-// %o
-console.log('object is %o', consoleObject1);
-```
-
-
-
-### DATETIME
-
-```
-<time>4h</time>
-<time>2012</time>
-<time datetime="2012-10-20">Today</time>
-<time datetime="09:00:00">9am</time>
-```
-
-### Debounce
-
-If a function gets called repeatedly for example onResize() when a window is being resized, then that function can be called over and over and over again as the user resizes the window. If the function has some work to do, this may cause a lag and a slow-down in the user experience. Therefore in these situations it can be useful to limit the number of times that this function can be called in any one time period.
-
-The `debounce` Javascript function can set a time limit between function calls for any given function
-
-```
-var output = debounce(DoThis(),250);
-
-function DoThis(){
-	console.log('Doing something')
-}
-
-for (let i=0;i<10;i++){
-	output()
-}
-```
-
-```
-var debounce = require('debounce');
-window.onresize = debounce(resize, 200);
- 
-function resize(e) {
-  console.log('height', window.innerHeight);
-  console.log('width', window.innerWidth);
-}
-```
-
-### pnpm
-
-```
-# instgall
-npm install pnpm
-# upgrade to latest
-pnpm upgrade pnpm
-# install libraries
-pnpm install bootstrap popper jquery
-```
-
-### Closures
-
-```jsx
-(function(){
-// app code goes here
-})();
-
-```
-
-Javascript variables can be global or local
-
-Variables created without var are always global, even if declared within a function
-
-Javascript inner function can solve the problem of wanting a private variable, which is not destroyed every time the function finishes
-
-All functions have access to the scope 'above' them
-
-Dilemma : create and initialise a variable only once - use a closure
-
-```jsx
-var add = (function () {
-var counter = 0;
-return function () {return counter += 1;}
-})();
-add();
-add();
-add();
-// the counter is now 3
-
-```
-
-The function only runs once and returns a function. Calling add() does not run the closure again, just the part which returns, which accesses the private variable (does not reset it)
-
-See https://gifted-haibt-065acd.netlify.app/#javascript-closures and https://codepen.io/philanderson888/pen/QJNwGN for a working example.
-
-
-Javascript closures are inner functions which have access to the
-
-Outer function parameters
-		
-	Outer function variables
-		
-	(but not the arguments array)
-
-
-		
-Key features of closures
-
-	1. Access to parent function parameters
-	
-	2. Access to parent function variables
-	
-	3. Access to parent function variables even
-			after the function has returned which
-			means effectively the parent function 'stays' in RAM and we can use or increment the same variable in the same state that it was when the function returned ie is not re-declared but we still have access to it.
-
-
 
 ## jQuery
 
 [jQuery](notes/jquery.md)
 
-## Glossary
-
-[Glossary](notes/glossary.md)
 
 
-
-
-
-# Javascript - Decrement This Section Over Time
-
-
-### Array
+## Array
 		
 ```js
 var x = [1,2,3];
@@ -4465,7 +4156,7 @@ Object
 	
 ```	
 	
-### PASSING PARAMETERS
+## PASSING PARAMETERS
 		
 ```javascript	
 	function doThis(x,y,z)  {
@@ -4571,144 +4262,28 @@ class x {
 ```
 			
 	
-## HTML and Javascript 
-
-```html
-	<html>
-	<head>
-	<script src="myjavascript.js"></script>	
+## dependency injection
 	
-CALLING REGULAR FUNCTIONS 
-CALLING REGULAR FUNCTIONS 
-	CALLING A FUNCTION WITH NO RETURN VARIABLE
-		function x(){}
-		x();
-	CALLING A FUNCTION WITH A RETURN VARIABLE
-		function y(){
-		 z=1;
-		 return z;
-		}
-		var output=y();                 will hold 1 
-		==> ONLY ALLOWED ONE RETURN VARIABLE SO HAVE TO RETURN
-			AN OBJECT OR ARRAY IF MULTIPLE RETURN VARIABLES 
-			ARE REQUIRED
-			
-			
-			
-			
-PRIVATE AND PUBLIC METHOD INSIDE FUNCTION 
-		function x(){
-		  var z=2;
-		  function y(){}          //PRIVATE 
-		  
-		  this.publicFunction = function(){}
-		  return(thisvalue)
-		  
-		}
-		
-		
-		console.log(publicz);
-		
-		publicFunction();
-		
-		SEE LAB js_private_public_functions.htm FOR A WORKED EXAMPLE 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-FUNCTION : RETURNING ITEMS 
-	function x(){
-	
-	  return {
-		x:1,
-		y:function(){}
-	  }
-	}
-	x and y are public (x variable, y function)
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-FUNCTION : ANONYMOUS 
-		var x = function (){
-			console.log("Anonymous function at work");
-		}
-		x();   will run the code!
-		
-		We can use anonymous functions and pass them as variables into other functions
-       doThis(a,b,c,dothisfunction(ERROR,DATA){
-           if(ERROR){  
-			return;
-		   }
-		   // GOOD CODE
-	   });
-		
-	
-			doThis  =  BURGER CASHIER
-						
-			a,b,c   =  GET BE A BIG MAC WITH FRIES AND COKE
-								
-			dothisfunction ==> WHAT WE DO WHEN BURGER IS READY (EAT IT!)
-				CALLBACK PARAMETERS
-				
-					'ERROR FIRST'    MUST CATCH ALL EXCEPTIONS!!!
-					
-				DATA SECOND   (IN THIS CASE THE BURGER IS OUR DATA	
-									RETURNED!)
-	
-		
-			
 DI Dependency Injection is the opposite of top-down inheritance
+
 	Inheritance 
 	
 		Parent
 		
 			Child
 			
+Dependency Injection
+	
+```js
+function1(function2passedin(){}){}
+```
+
+dynamic dependency injection : type of function2 is not known until run time
 			
-			
-			
-	Dependency Injection
-	
-		function1(function2passedin(){}){}
-		
-			dynamic dependency injection : type of function2 is not known 
-			until run time
-			
-    
-			
-	
-	
-	
-	
-	
-	
-	
-	
+
+## try.catch.finally
+
+
 	
 	
 TRY..CATCH..FINALLY 
@@ -4727,7 +4302,7 @@ TRY..CATCH..FINALLY
 					
 					
 					
-	
+## async
 	
 	
 		
@@ -4755,38 +4330,30 @@ ASYNCHRONOUS CODE - ERRORS AND CALLBACKS
 								
 			2) NO ERROR ==> PROCEED 
 	
-New in ES6 
+## map
 
+Map stores key-value pairs
+
+```js
 	
-	Collections And Maps 
-	
-	Map is new type of object storing a list of keys and corresponding values 
-		https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Keyed_collections
-		
-	var x = new Map();
-	x.set("a","first letter");
-	x.set("b","second letter");
-	x.set("c","third letter");
-	x.get("c");
-	
-	for(var key of x.keys()){
-		console.log(key + " has value \"" + x.get(key) + "\"");
-	}
-	
-	
-	Collection also can add [key,value] pairs
+var x = new Map();
+x.set("a","first letter");
+x.set("b","second letter");
+x.set("c","third letter");
+x.get("c");
+
+for(var key of x.keys()){
+	console.log(key + " has value \"" + x.get(key) + "\"");
+}
 ```
 
 
-# Javascript Flow 2 - Merge Into Course Above
+## page load
 
-## Page Loading
+1. skeleton structure
+2. fuzzy images
+3. full content
 
-## Skeleton Screen : Load Structure First
-
-Creates a skeleton mock-up of the screen while the rest of the screen loads
-
-## Image Loading : Fuzzy first then merge into full image
 
 ## Delete
 
@@ -4803,50 +4370,51 @@ or
 delete myObject['property02']
 ```
 
-## classList.add('className')
+## classList
 
 Can be used to add a class to a list of existing classes.
 
 ```js
+classlist.add('className')
+```
 
+```js
 // make this the active class
-
 document.querySelector('classname').classList.add('active');
 ```
 
-## forEach(function(item){ // use item})
+## forEach
 
-Iterates over an array
+Set a listener on each element which matches the CSS class
 
 ```js
-// Set a listener on each element which matches the CSS class
-
-document.querySelectorAll('.chess-block').forEach(function(element) {
-        element.onclick = horse;
-    })
+document.querySelectorAll('.chess-block').forEach(element => {
+    element.onclick = horse;
+})
 ```
 
-## Object.seal() - can't change properties
+## Object.seal()
 
 This prevents properties being added or removed to an object
 
 ```js
-
 const myObject = {}
-
 myObject.property01 = 'test'
-
 Object.seal(myObject)
-
 myObject.property01 = 'testing2'
-
-myObject.cantAddThis = 'some value'  // cannot add because it's sealed
-delete myObject.property01  // cannot do this either
+// cannot do
+myObject.cantAddThis = 'some value' 
+// cannot do
+delete myObject.property01
 ```
 
-## Object.freeze() - cannot change value of properties
+## Object.freeze()
 
-## Object.preventExtensions() - cannot add properties
+cannot change value of properties
+
+## Object.preventExtensions()
+
+cannot add properties
 
 ## querySelectorAll
 
@@ -4860,11 +4428,21 @@ document.querySelectorAll('.chess-block').forEach(function(element) {
 
 ```
 
-## Scoping : Global, Function or Scope.   Also Lexical or Dynamic
+## scope
 
-Lexical scoping : value determined by position when written
+- global 
+- function
+- local
 
-Dynamic scoping : value determined by position when called at runtime
+also
+
+- Lexical scoping
+
+value determined by position when written
+
+- Dynamic scoping
+
+value determined by position when called at runtime
 
 ## Javascript Switch
 
@@ -4955,7 +4533,7 @@ document.querySelectorAll('.chess-block').forEach(function(element) {
     })
 ```
 
-### getPropertyValue
+## getPropertyValue
 
 Can be used to query a CSS value
 
@@ -4987,7 +4565,7 @@ let vertical = styles.getPropertyValue('--y-height');
 }
 ```
 
-### getAttribute
+## getAttribute
 
 ```js
 // Can be used to read the HTML attribute of an element, in particular a data item
@@ -5019,7 +4597,7 @@ function showDetails(animal) {
 </html>
 ```
 
-### this
+## this
 
 Can be used to send an item to a function when it's clicked on
 
@@ -5052,11 +4630,11 @@ function showDetails(animal) {
 
 ```
 
-### Dates
+## Dates
 
 Moment is for dates 
 
-# Creating And Appending Elements
+## dom
 
 ```jsx
 const script = document.createElement("script")
@@ -5065,22 +4643,17 @@ script.addEventListener("load")
 document.body.appendChild(script)
 ```
 
-# Template Literal `some text ${variable} here`
 
-# Async
+## string includes
 
-async function returns a promise . . . 
+see if a string contains a substring
 
-# Includes
-
-Can be used to search a string.  Equivalent of LINQ .contains
-
-```jsx
+```js
 var str = "Hello world, welcome to the universe.";
 var n = str.includes("world");
 ```
 
-# Prototype
+## Prototype
 
 To add a function to an existing function , use `prototype`
 
@@ -5097,282 +4670,10 @@ document.getElementById('datePicker').value = new Date().toDateInputValue();
 
 
 
-# JAVASCRIPT FLOW 3 - 480 structured notes - Too long so decrement over time
-
-480 Structured Notes
-
-ILSPY
-ILDASM
-Zen Coding
-ol>li*12>lorem1
-
-```
-CW TAB TAB    	console.writeLine
-CTL KC			Comment
-CTL KU			Uncomment
-for TAB TAB
-foreach TAB TAB
-<term>			INSERT SNIPPET
-F12 			SHOW PLACE IN HIERARCHY OF TERM
-SHOW ALL FILES	VIEW HIDDEN FILES
-ZEN CODING		p*5>lorem   	TAB
-				table>tr*5>td*4>lorem2 	tab
-```
-
-Debugging
-F9	Breakpoint
-F11	Step Into
-Using System.Diagnostics;	turn on debugging
-
-```
-System.Diagnostics.Debug.WriteLine(x);	appear in OUTPUT window 
-										when debugging
-```
-
-480 Class Notes After First Delivery
-
-480 LABS
-
-Labs To Build In
-REGEX
-MATCH
-TEST
-SEARCH
-REPLACE
-INDEXOF
-LASTINDEXOF
-EXEC
-CHARAT
-EVENT.PREVENTDEFAULT FROM CODE AT JS_FORM_VALIDATION_03.HTM
-EVENT.STOPPROPOGATION
-SERIALIZE
-SERIALIZEARRAY
-HTML
-Form : test if a check box is selected or not
-Form : use pattern element to test input against a regular expression
-CSS
-Word wrap when one word of text exceeds width of div (break-word)
-CSS Box model using standard model (box-sizing:content-box)
-CSS Box model using border box (box-sizing:border-box)
-CSS : Set background image
-CSS : Set background image to repeat in x direction then y direction then both
-CSS : Position a div with STATIC (default), FIXED, RELATIVE, ABSOLUTE
-CSS : use float:left to place two divs together
-CSS TRANSFORM IN SVG
-CSS SHAPES IN SVG : SQUARE, CIRCLE, TRIANGLE
-JAVASCRIPT
-Form : prevent submission using onsubmit = "return fn()" if returning false
-Form : use submit() method to submit a form in Javascript
-Form : CREATE A FORM WITH VALIDATION WITH USERNAME, PASSWORD, DATE OF BIRTH, TELEPHONE NUMBER, EMAIL ALL OF WHICH MUST BE PRESENT
-Array : create an array with push, pop, unshift, shift, slice, splice
-Array : sort and reverse
-Capture and Bubble
-Load image from file explorer and place on the screen
-FLEXBOX
-FLEXBOX : CREATE 5 BOXES TO FIT ON ONE LINE
-FLEXBOX : CREATE 10 BOXES TO FIT OVER MULTIPLE LINES
-Canvas create shapes : SQUARE, Circle, Triangle
-Canvas add event listener
-SVG
-ADVANCED CSS
-Drag text from one div to another div
-Drag image from one div to another div
-Search : indexOf and lastIndexOf
-WEB WORKER
-web worker : create and send a message to a web worker, and send a reply back
-AJAX
-AJAX call using $.ajax
-AJAX call using XMLHttpRequest SYNCHRONOUS
-AJAX call using XMLHttpRequest ASYNCHRONOUS
-HTML
-<tag>
-<element>
-property img src="url" src=property url=value
-attribute= property eg src above <element attribute="value">
-<!DOCTYPE html>
-<html>
-<head>
-<body>
-HTML5 SECTION
-<header>
-<footer>
-<content>
-<aside>
-DOM DOCUMENT OBJECT MODEL TREE STRUCTURE OF ALL WEB PAGES
-WINDOW => DOCUMENT => HTML => BODY => DIV ....
-<VIDEO>
-<AUDIO>
-<IFRAME> ==> WINDOW WITHIN WINDOW
-METADATA ==> DATA ABOUT DATA PICTURE=RAW DATA TIMETAKEN=METADATA
-<META> IN HEAD => METADATA ABOUT PAGE
-<SCRIPT>...JAVASCRIPT </SCRIPT>	INTERNAL JAVASCRIPT
-<SCRIPT SRC="URL"></SCRIPT>	EXTERNAL JAVASCRIPT
-<BUTTON ONCLICK="alert('you clicked!');">	INLINE JAVASCRIPT
-<STYLE> CSS ON PAGE	INTERNAL CSS (ON PAGE)
-<STYLE rel="stylesheet" href="url">	EXTERNAL CSS
-<button style="background-color:red;">	INLINE CSS
-
-ID	UNIQUE ID ON PAGE <div id="maindiv"></div>
-#maindiv
-document.getElementById('maindiv')	JAVASCRIPT
-
-CLASS	MULTIPLE ELEMENTS SELECTED
-.myclass
-document.getElementsByClassName('myclass') (ARRAY RETURNED)
-$('.myclass').
-document.getElementsByTagName('p')	ALL PARAGRAPHS, ARRAY
-(document).ready(function(){//code here runs
-after page
-has loaded })	PAGELOAD
-<body onload="runafunction()"
-H1..H6
-<form>
-<input type="text" />
-<button type="button/submit"
-<input type="search"
-INPUT TYPES
-text
-search
-number
-email
-date
-password
-url
-radio
-checkbox
-select
-<option>
-label for="name_of_input_element"
-id
-name	SUBMIT FORM ==> NAME FIELD IS USED TO CREATE THE STRING WHICH
-IS SENT TO THE SERVER FOR PROCESSING
-table NOT USED ON STRUCTURES AS HARDER TO MANAGE WITH RESPONSIVE DESIGN
-event
-onclick=function(){}	ONLY ONE HANDLER
-onmouseover	hover
-onmouseout	LEAVE ELEMENT
-onfocus	CLICK IN BOX
-onblur	CLICK OUT OF BOX
-
-listener	LISTEN FOR EVENT
-$('myelement').addEventListener("click",function(){})
-HANDLER
-
-```
-MULTIPLE HANDLERS CAN RUN FOR ONE EVENT
-```
-
-SEMANTIC : STRUCTURE WITH MEANING
-<header>
-<footer>
-<article>
-<nav>	NAVIGATION BAR
-<aside>
-<section>	MAIN CONTENT
-STRUCTURE OF A PAGE
-<!DOCTYPE html>	HTML 5 RUNS HERE
-<HTML>
-<HEAD>
-<META DESCRIPTION
-<META VIEWPORT	DISPLAY IN DIFFERENT TYPES OF BROWSER
-<TITLE>
-<STYLE> INTERNAL CSS
-<STYLE HREF="" REL="STYLESHEET">
-</HEAD>
-<BODY onload="functiondothisnow()">
-<nav>
-<header>
-<section class="main">
-<footer>
-<SCRIPT>..JS..</SCRIPT>	BETTER AT BOTTOM OF BODY
-</BODY>
-<OL>	ORDERED LIST
-1,2,3
-list-style-type:
-a,b,c
-i,ii,ii
-I,II,III,IV
-<UL>	UNORDERED LIST
-<LI>
-DL	DT	DD
-<b>
-<i>
-<strong>
-<em>	EMPHASIS
-HTML
-!DOCTYPE html	FIRST LINE IN CODE
-TYPE OF HTML
-
-XHTML
-STRICTER TYPE OF HTML
-<xhtml ...
-forces stricter type of html
-STRICT	deprecated features not allowed
-TRANSITIONAL	deprecated features
-FRAMESET	allows framesets...
-XML FORCES
-lower case tags only
-closing tag
-/> self-closing
-no nesting
-<p><em></p></em>
-COMPUTER CAN READ AND DECODE THE PAGE AS XML FILE TO EXTRACT DATA EASILY
-
-HTML REFERENCE
-W3C	PURE TECHNICAL SPEC
-MOZILLA	BETTER FOR OFFICIAL SPEC
-W3SCHOOLS	LEARNING
-
-SEMANTIC TAGS
-NAV
-
-META TAG
-META NAME="DESCRIPTION" CONTENT="DESCRIPTION OF SITE"
-META CHARSET="UTF-8" PLAIN TEXT
-
-```
-ASCII = 8 BITS
-			UNICODE (UTF8)	16 BITS (2 BYTES)	
-META VIEWPORT		INFORM BROWSER GOING TO BE VIEWED FROM MOBILE
-		WIDTH=DEVICE		SET WIDTH TO DEVICE WIDTH
-		INITIAL SCALE=1		SET SCALE
-```
-
-INPUT
-
-```
-TEXT 	(DEFAULT)		==> EXAM : INVALID TYPE ==> DEFAULT 
-					TO TEXT
-SUBMIT		WHOLE FORM
-RESET		FIELDS TO BLANK
-DATE
-MONTH		mm yyyy
-TEL
-NUMBER		min=10 max=20 step=4
-PASSWORD	min=5 (length)
-HIDDEN		DOES NOT APPEAR
-
-	<FORM>
-		<INPUT TYPE="HIDDEN" NAME="HIDDEN01" VALUE="X">
-		<SUBMIT>
-		ONSUBMIT  ==> DATA SENT WITH FORM  HIDDEN01=X
-
-placeholder	DISPLAY UNTIL YOU BEGIN TYPING
-autocomplete	
-		1) SAVE IF GO FORWARD/BACK BY ERROR
-		2) BROWSER DOES AUTO-PREDICT EG NAME, ADDRESS ETC
-required
-		must be present
-```
-
-HTML ELEMENTS
-ABBR	SHOWS FULL TEXT ON HOVER
 
 
 
-
-
-VIDEO
+## VIDEO
 
 ```
 src="abc.mp4"
@@ -5420,7 +4721,7 @@ BDI - Bi-Directional Indicator
 	(left to right, or right to left)
 
 
-## Regex Pattern
+## Regex 
 
 INPUT TYPE="TEXT" PATTERN="<<<REGULAR EXPRESSION<<<"
 
@@ -5436,10 +4737,8 @@ INPUT TYPE="TEXT" PATTERN="<<<REGULAR EXPRESSION<<<"
 
 
 
+## DATA-
 
-
-
-DATA-
 	CUSTOM TAG FOR ANY DATA WE WANT
 	DIV DATA-NAME="X"
 		LOCATE
@@ -5447,111 +4746,39 @@ DATA-
 
 
 
+## debug
 
-
-
-JAVASCRIPT
-HISTORY
-1995
-NETSCAPE
-MINI-ENVIRONMENT RUNNING INSIDE A BROWSER
-MINI-OS
-MICROSOFT	JSCRIPT
-IE3 FIRST TO HAVE JAVASCRIPT
-OFFICIAL NAME
-ECMASCRIPT6 FORMAL STANDARD
-JAVASCRIPT AND JAVA ...	NOT RELATED
-GOOD PRACTICE
-[http://javascript.crockford.com/code.html](http://javascript.crockford.com/code.html)
-OPEN THEN CLOSE ALL CONSTRUCTS IMMEDIATELY
-INDENT 4 SPACES
-DRY DON'T REPEAT YOURSELF
-HOIST : REGARDLESS WHERE YOU DECLARE VARIABLE IT GETS PUT AT TOP
-OF YOUR CODE
-GOOD PRACTICE : PUT DECLARATIONS AT TOP
-var x;	(GLOBAL IF DECLARED OUTSIDE FUNCTION)
-{ let x =6; }
-
-```
-var x;		UNDEFINED		
-var y=null;	NULL
-var z=""	EMPTY STRING
-GLOBAL VS LOCAL SCOPE
-var aa,bb,bb;
-var aa=1;
-function abc(){
-		var bb=2
-}
-var bb=3;
-var bb="hello"
-	GLOBAL??	aa
-	LOCAL??		bb INSIDE FUNCTION ONLY
-
-AVOID KEYWORDS EG NAME,DATE,TIME  (RESERVED)
-```
-
-DEBUGGING
-console.log()
 debugger;	pause live code
-COMMENTS
-HTML
-<!-- COMMENT	-->
-CSS
-/* */
-JAVASCRIPT
-/* */	MULTILINE
-//	SINGLE LINE
-Coding conventions
-CASE SENSITIVE??
-FILES IN WINDOWS	NOT CASE SENSITIVE
-FILES IN LINUX	YES CASE SENSITIVE
-Javascript code	YES MUST TAKE CARE!!
-camelCase	often used by default
-CONSTANT	FIXED, UNCHANGING
-;	TERMINATE LINE; RECOMMENDED TO BE PRESENT (NOT REQUIRED)
-""	used to enclose string
-' '	used to enclose string
 
-```
-" ' string ' "     OR   '  " string "  '		good,valid
-```
 
-DECLARING VARIABLES
-must start with LETTER abcABC or UNDERSCORE ___
-must contain	numbers or letters or __
-var : valid in global space??? YES local function??? YES
-INT X=15; INVALID
-STRING Y="HI" INVALID
-IMPLICIT DECLARATION (COMPUTER ASSUMES TYPE)
-var x=[1,2,3]	=> imply array type
-var y={"name":"rob"}	=> imply object type
-let	valid in local .. { code block } only
-var a=1,b=2;	multiple declare
-use strict;	MUST USE var; declaration
-hoist	variables put at start of code
-Object ==>	all items are children of ROOT OBJECT
-Literal	RAW STRING DATA AS OPPOSED TO A VARIABLE
-DATA TYPES
+## types
+
 String	var x="hi"
-empty	var x=""
+
 Number	var x=1;
+
 Constant	const DO_NOT_CHANGE_ME = 557;
 
 ```
 Boolean			1/0
+
 Regular Expression	var myregexp = / /g     global match
 				      /^     starts with
 				        $/  finishes with
+
 Date			var d = new Date()
 			var d = new Date("literal")
+
 Undefined		var t;
 			var t=undefined
 			
 				NO VALUE ASSIGNED
 				TYPE IS UNDEFINED
+
 Null			var x = null    TYPE IS OBJECT
 
 Exponential		var a = 1.23e5   123000
+
 NaN			test item if number or not
 			if (isNaN(x))
 			if (!isNaN(x))
@@ -5568,6 +4795,7 @@ Others
 	Global
 	Math
 	Arguments
+
 Array
 	
 	var myArray = new Array()
@@ -5581,6 +4809,7 @@ Array
 	myArray[0] is first item
 	
 Object
+
 	key-value pairs
 	ARRAY : DATA STORED WITH INDEX 0,1,2,3  
 		0 			IS FIRST ITEM
@@ -5617,57 +4846,8 @@ Object
 				id=1&name=phil&..
 ```
 
-EXPRESSIONS
-x=y	ASSIGN VALUE OF Y TO X
-x==y	COMPARE VALUE
+## maths
 
-```
-x===y		COMPARE VALUE  AND   TYPE
-!
-> < >= <= 
-&&
-||
-```
-
-OPERATOR
-UNARY
-
-```
-++x	INCREMENT THEN ASSIGN
-	x++	ASSIGN THEN INCREMENT
-BINARY
-	INTEGER DIVISION
-	int/int
-		==>   5/2	==> 2     CARE! TRUNCATE
-		USE 5.0/2.0
-	MODULUS
-		100%3 ==> 	% IS REMAINDER 1
-
-TERNARY OPERATOR
-	var output   =  (y==7)   ?   true  :   false  ;
-BIT SHIFT OPERATOR
-	>>	SHIFT ALL BINARY BITS ONE PLACE (MULTIPLY X 2)
-	<<					DIVIDE BY 2				
-		1 0 1 0		10 (DECIMAL)
-		BIT SHIFT TO LEFT
-	      1 0 1 0 0		20
-		1000110		70
-		0100011		(BIT SHIFT ONE PLACE) 35 	
-BODMAS/BIDMAS
-	BRACKETS AND OPERATIONS EG X SQUARED
-	DIVISION, MULTIPLICATION
-	ADD, SUBTRACT
-		(5+7)+2*3-5 = 
-		 12  +  6 -5 = 13
-```
-
-Maths
-
-```
-Math.round   3.5=>4.0        NOTE : FINANCIAL WORLD NOT GOOD
-Math.ceil	3.1 => 4.0
-Math.floor	3.9 => 3.0
-Abs		ABS(-15) => +15
 Math.random	BETWEEN 0 AND 1
 Pow(x,y)	x to the power of y
 Sqrt		
@@ -5682,42 +4862,11 @@ Math.ln10	2.3
 exp(x)		
 log(x)
 Math.sin(x)/cos(x)/tan(x)/asin/acos/atan
-```
 
-Interacting With User : Getting Input From Alert/Prompt
-Alert	alert('my message');
-Prompt	var x = prompt('enter your number')
 
-```
-with default
-		var x = prompt('enter number','default value');
-		==> STRING TYPE   OR  NULL IF CANCELLED
-Confirm
-		var x = confirm('Proceed?');
-		==> BOOLEAN
-```
 
-CONDITIONS
-!=	NOT EQUAL
-if () {} else if () {} else {}
-Switch
-switch(x){
-case 1 :
-// code
-break;
-default:
-//code
-}
-for (var x=0;x<100;x++){}
-var x=0;
-while (x<100) { //code; x++ }
-do { // code ; x++ } while (x<10)
-// KEYS OF OBJECT
-for (var item in myObject){}
-myArray.foreach()
+## array
 
-Array Methods
-NOTE : METHODS FOR QUEUE AND STACK WORK ON ALL ARRAYS!
 
 ```
 myArray.join()	
@@ -5752,67 +4901,39 @@ myArray.reverse		of sort()
 indexOf('a')		[c,b,a]		==> RETURN 2
 ```
 
-Strings
-CONCAT	finalString = firstString.concat(secondString);
+## strings
 
-```
-toLowerCase() 	Abc => abc		simplify input verification
-
-toUpperCase()	Abc => ABC
-```
-
-STRINGS AND NUMBERS
-PARSEINT
-
-```
-STRING TO INTEGER
-	TRUNCATES DECIMALS
-	
-		parseInt("1") 		=> 	1				Converts string to int
-		
-		parseInt("aa123.456thisword")			=> 123
-		
-			
-PARSEFLOAT
-
-	string to decimal
-	parseFloat("abc123.456")		=> 123.456
-		
-	
-	
-	
-NUMBER
-
-	Number       string to matching number
-	
-	
+Number       string to matching number
 	
 toString()    number to String
 
 toFixed(2)    number to 2DP
+
 isNAN
-```
 
-STRINGS : RETURNING VALUE FROM FORMS
 textbox.value is text inside textbox
+
 document.getElementById('').value
-$('').val
 
-```
-Escaping Characters
-		\\b  backspace
-		\\f form feed  = printer : load next page
-		\\n new line (mostly)
-		\\r carriage return  (use both \\n\\r)
-		\\t tab
-		\\”
-		\\'
-		\\\\ backslash
-```
+## escaping
 
-SPLITTING STRINGS
+\\b  backspace
+\\f form feed  = printer : load next page
+\\n new line (mostly)
+\\r carriage return  (use both \\n\\r)
+\\t tab
+\\”
+\\'
+\\\\ backslash
+
+
+## string operations
+
+
 split creates array of substrings
+
 substring() gets string within string
+
 substring(initial pos, final pos+1)
 
 ```
@@ -5860,7 +4981,7 @@ var a = mylongstring.match(myregexp/g)        returns test,test,test
 	CHARAT
 ```
 
-STRING OPERATIONS
+
 
 ```
 Split()   splits a string into an array of substrings
@@ -5892,7 +5013,10 @@ Reversing
     mystring.split.("").reverse().join("");
 ```
 
+## regex
+
 RegExp(pattern,modifiers) Regular Expression
+
 var myRegExp = /test/ one match only
 
 ```
@@ -5939,7 +5063,9 @@ if (isNaN(textbox1.value)){  REJECT  }
 /g   global
 ```
 
-Date
+## date
+
+```js
 var d = new Date();
 var d = new Date(yyyy,mm,dd,hh,mm,ss);
 var d = new Date("11/22/2014 18:25:36");
@@ -5959,21 +5085,11 @@ easy to add eg 2 weeks to date
 toString(date)	return date and time
 toDateString(date)	return date
 toTimeString(date)	return time
-
-SetTimeout
-setTimeout(function(){
-console.log('Time Up');
-},5000);
-SetInterval
-var x = setInterval(function(){
-console.log('Time Is' + new Date());
-},1000);
-
-```
-CLEAR INTERVAL
-	clearInterval(x);
 ```
 
+## exceptions
+
+```js
 Try.Catch.Finally
 try{
 // DODGY CODE WHICH MIGHT FAIL
@@ -5999,69 +5115,25 @@ catch(e){
 throw e
 
 ```
-}
 
-}
-```
 
-Functions
+## Functions
+
 Named function
+
+```js
 function x () {}
 var x = function (){}
 var x = function(y,z){ return y+z;}
-
-```
 var x = new Function("y","z","return y+z;");
-	
-	
-	
-Anonymous function
-	function () {}
-		CALLBACK
-		on('click',myfunction)
-		on('click',function(){ })	
-
-Lambda
-	function ()    { }
-	         () => {}
-Run function
-	x()	
-	
-Run function right now
-	myfunction()	==> call / execute straight away
-	
-IIFE	Immediately Invoked Function Expression
-	Wraps whole function inside brackets
-	Compile code : function runs and returns a literal of 
-	return value of code
-		<<code within disappears; replaced by literal>>
-		<<useful for avoiding namespace conflicts >>
-	(function(){});
-	
-Parameters
-	function x(){}
-	Pass parameters to function 
-	x('Param1',a,b,c)
-		array called 'arguments'   arguments[]=['param1',a,b,c]
-	function x(z,a,b,c)
-		arguments.length => length of array expected
-		x.length ==> 4    [ARITY = EXPECTED NUMBER OF PARAMETERS]		
-Return
-	y = function x(){
-		return 17;
-		
-	}
-		ONLY RETURN ONE ITEM
-		USE JSON TO RETURN MULTIPLE ITEMS
-		return {
-			a:1,
-			b:2
-		}
-Optional Parameters
-	function(a,b,c,d=1,e=5){}
+// iife immediately invoked function expression - returns literal
+(function(){});
 ```
 
-Web Worker
+
+## Web Worker
+
+
 JAVASCRIPT : SINGLE-THREADED APPLICATION
 THREAD CAN GET BLOCKED BY HIGH INTENSIVE CPU OPERATIONS
 CREATE WORKER TO RUN IN SEPARATE PROCESS SO PAGE DOES NOT HANG
@@ -6096,63 +5168,65 @@ worker.addEventListener('error',function(event){
 [//event.data](notion://event.data/)[//event.type](notion://event.type/)
 })
 
-DOM MODEL
-WINDOW => DOCUMENT => HTML => BODY => DIV
+## webworker
+
+```js
+console.log("Inside webWorker");
+onmessage = function (event) {
+    console.log('worker has received a message ' + event.data);
+}
+setTimeout(function () {
+    console.log(new Date());
+    postMessage('Sending message back to main page ' + new Date());
+}, 1000);
+```
+
+```html
+<fieldset>
+    <h1>Javascript - web worker</h1>
+    <div id="worker" onclick="fnWorker()">Web Worker</div>
+    <script>
+        function fnWorker() {
+            var w = new Worker("assets/js/webworker.js");
+            w.onmessage=function(event){
+                console.log(event.data);
+            }
+            w.postMessage("You are my worker and you will do whatever I command you");
+            
+        }
+    </script>
+</fieldset>
+```
+
+
+## dom
+
+dom arrays
+
+- document.forms
+- document.images
+- document.links
+- document.anchors
+
+```js  
 DOCUMENT.FORMS	ALL FORMS ON PAGE
 DOCUMENT.FORMS[0]	FIRST FORM ON PAGE (ZERO BASED COUNTING)
+```
+
+```html
 <FORM NAME="X">
+```
+
+```js
 DOCUMENT.FORMS['X']
 DOCUMENT.FORMS.X
 DOCUMENT.X
-OTHER TYPES OF ELEMENTS THIS WORKS WITH
-IMAGES
-LINKS (ANCHOR URL LINKS)
-
-```
-ADDING ELEMENTS TO THE DOM
-	var newDiv = document.createElement('div');
-```
-
-DOM (3-13)
-FORMS ARRAY : ALL FORMS ON PAGE
-
-```
-DOCUMENT.FORMS[0]
-	DOCUMENT.FORMS['MYFORM']
-	
-	DOCUMENT.FORMS.MYFORM
-	
-	DOCUMENT.MYFORM
-	
-	
-		NAME BOX ON FORM
-		
-			DOCUMENT.MYFORM.ELEMENTS[0]
-			
-			               .ELEMENTS['NAMEBOX']
-						   
-							.NAMEBOX
-							
-					.GETELEMENTBYID('NAMEBOX')
-					
-					
-	
-	
-IMAGES ARRAY : ALL IMAGES
-
-LINKS ARRAY : ALL LINKS
-
-ANCHORS ARRAY : ALL ANCHORS
-
 document.getElementById
-
 DOCUMENT.GETELEMENTSBYNAME
-
 document.createElement('p');
-
 document.createTextNode(string)
-
 document.createAttribute(name,value)
+```
 
 MODIFY ELEMENT
 
@@ -6161,9 +5235,6 @@ MODIFY ELEMENT
 	find parent
 	
 	append, insert or replace existing with new data
-	
-	
-	
 	
 	
 REMOVE ELEMENT
@@ -6179,69 +5250,683 @@ REMOVE ELEMENT
 		var x = document.getElementById('y');
 		 x.removeAttribute("id")
 	
-	
+```js	
 appendChild(newNode)
-
 insertBefore(newNode, existingNode)
-
 replaceChild(newNode, existingNode)
-
 replaceData(string)
+```
 
-SELECT NODE
+```js
+childNodes[]
+firstChild[]
+lastChild[]
+nextSibling[]
+parentNode
+previousSibling
+```
 
-	childNodes[]
-	
-	firstChild[]
-	
-	lastChild[]
-	
-	nextSibling[]
-	
-	parentNode
-	
-	previousSibling
-	
-	
-	
-	EXAMPLE OF APPENDCHILD
-	
-			<ol id="list">
-				<li>One</li>
-				<li>Two</li>
-			</ol>
-			<input id="country" />
-			<input type="button" id="addbutton" value="add to list" />
-			<script>
-				addbutton.onclick = function () {
-					var li = document.createElement('li');
-					li.innerText = country.value;
-					list.appendChild(li);
-					var topitem = list.firstChild;
-					list.insertBefore(li,topitem);
+
+
+
+
+
+
+
+## ajax
+
+
+
+
+
+
+
+## Google sheets
+
+```js
+function myFunction() {
+  var range, data, sheet, spreadsheetDocument, startRow, startColumn, numRows, numColumns, message;
+  
+  spreadsheetDocument = SpreadsheetApp.openById("1vy0A_Gu8u_Ba5tQbCcEbjuly0BTb6QVW7CKOIl47LJQ");
+  sheet = spreadsheetDocument.getSheetByName('Daily Tasks'); 
+  startRow = 1;
+  startColumn = 1;
+  numRows = 100;
+  numColumns = 53;
+  range = sheet.getRange(startRow,startColumn,numRows,numColumns); 
+  data = range.getValues();
+  message = '';
+  message += '===============\\nDaily Tasks To Complete\\n========\\n\\n\\n\\n';
+  for (i in data){
+    var row = data[i];
+    if (row[0].length>0) {
+        message += row[0];
+        message += '\\n\\r';
+        counter++;
+    }
+  } 
+  message += '\\n\\n\\n\\n===========\\nDaily Stats\\n===========\\n\\n\\n\\n';
+  sheet = spreadsheetDocument.getSheetByName('Summary');
+  for (var i = 2; i <= 20; i++){
+    range = sheet.getRange(2,i);
+    data = range.getValue();
+    data =  Math.round(data * 100);
+    message += data + '% : ';
+    range = sheet.getRange(1,i);
+    data = range.getValue();
+    message += data + '\\n\\n';
+  }
+  
+
+  
+  
+  message += '\\n\\n\\n\\n=====\\nWeekly Stats\\n=======\\n\\n\\n\\n';
+  var range = sheet.getRange("I1");
+  var data = range.getValue();
+  message += data + ': ';
+  var range = sheet.getRange("I2");
+  var data = range.getValue();
+  message += data + ': ';
+  var lastRow = sheet.getMaxRows();
+  var cellValue = "I" + lastRow;
+  var range = sheet.getRange(cellValue);
+  var data =  range.getValue();
+  data =  Math.round(data * 100);
+  message += data + '% Weekly Tasks Done';
+  message += '\\n\\n';
+
+ 
+  
+  
+  message += '\\n\\n\\n\\n==========\\nMonthly Stats\\n===========\\n\\n\\n\\n';  
+  // Monthly Stats 
+  var sheet = spreadsheetDocument.getSheetByName('Monthly Tasks');
+  var lastRow = sheet.getMaxRows();
+  // October
+  var cellValue = "C" + lastRow;
+  var range = sheet.getRange(cellValue);
+  var data =  range.getValue();
+  data =  Math.round(data * 100);
+  message += data + '% October Monthly Tasks Done';
+  message += '\\n\\n\\n\\n\\n';  
+
+  
+  
+  
+  message += '\\n\\n\\n\\n======\\nCount Number Of Tasks\\n========\\n\\n\\n\\n';   
+  var sheet = spreadsheetDocument.getSheetByName('Tasks'); 
+  var startRow = 1;
+  var startColumn = 1;
+  var numRows = 2000;
+  var range3 = sheet.getRange(startRow, startColumn, numRows);
+  var data = range3.getValues();
+  var counter = 0;
+  for (i in data){
+    var row = data[i];
+    if (row[0].length>0) {
+        if(row[0] === 'Done November'){
+          break;
+        }
+        message += row[0];
+        message += '\\n\\r';
+        counter++;
+    }
+  }
+}
+```
+
+## Send Gmail
+
+Email from Google Sheets
+
+```js
+// Set value
+spreadsheetDocument.getSheetByName('Summary').getRange('B17').setValue(counter);
+// Send email
+var emailAddress = 'philanderson888@hotmail.com'; 
+var subject = 'Regular Daily Tasks';    
+MailApp.sendEmail(emailAddress,subject,message);
+```
+
+
+## Glossary
+
+## AJAX
+
+AJAX demos are in the Showcase folder
+
+  Delete up to 10
+
+  Ajax 10
+
+  Serialize  : Ajax 11
+
+  Live AJAX call : Ajax 12
+
+AJAX USING XMLHTTPREQUEST
+
+```js
+    request = new XMLHttpRequest();       CREATE REQUEST OBJECT
+
+    request.open('GET',url,true);
+      // Get = read data
+      // true = asynchronous
+
+    request.onload=function(){
+      callback(request.responseText);
+    };
+    request.send(data);   // Fire off request
+
+   request.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("demo").innerHTML =
+          this.responseText;
+        }
+    };
+
+Book example
+
+function loadJSON(url, data, callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onload = function() {
+        callback( JSON.parse(xhr.responseText) );
+    }
+    xhr.send( JSON.stringify(data) );
+}
+loadJSON("my.json", { id : 1 }, function(response) {
+    setTitle(response.title); 
+});
+
+AJAX USING JQUERY
+
+  $.ajax({
+      method: "GET/POST",
+      url: "some.php",
+      data: { name: "John", location: "Boston" }
+  })
+  .success(function( msg ) {
+        alert( "Data Saved: " + msg );
+  });
+    
+
+  $.GET
+
+    $.get("URL",function(data){
+      // handle data
+    });
+  
+
+  $.POST
+
+    $.post("URL",dataOUT,function(dataIN){
+      // handle dataIN
+    });
+
+  $.LOAD
+
+    $('#divID').load("URL");
+            DATA ==> PAGE ELEMENT
+
+    
+
+Parsing Data
+
+var text="this;is;some;long;list;of;items";
+var list=text.split(';');
+for(var i = 0; i < list.length;i++){
+  console.log(list[i]);
+  console.log(list[i].trim());
+}
+```
+
+
+
+## ChartJS
+
+```bash
+<fieldset>
+	<h1>Javascript ChartJS : Displaying Charts - Bar Chart</h1>
+	<style>
+		.chart-js-01-container {
+			width: 50vw;
+			border: 2px solid rgba(247, 210, 4, 0.822);
+		}
+	</style>
+	<div class="chart-js-01-container">
+		<canvas id="chart-js-01"></canvas>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-alpha/dist/Chart.min.js"></script>
+	<script>
+		new Chart(document.getElementById('chart-js-01'), {
+			type: 'bar',
+			data: {
+				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				datasets: [{
+					label: '# of Votes',
+					data: [12, 30, 3, 5, 2, 6],
+					backgroundColor: [
+						'rgba(255, 99, 132, 0.2)',
+						'rgba(54, 162, 235, 0.2)',
+						'rgba(255, 206, 86, 0.2)',
+						'rgba(75, 192, 192, 0.2)',
+						'rgba(153, 102, 255, 0.2)',
+						'rgba(255, 159, 64, 0.2)'
+					],
+					borderColor: [
+						'rgba(255, 99, 132, 1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
 				}
-			</script>
+			}
+		});
+	</script>
+</fieldset>
+
+<fieldset>
+	<h1>Javascript ChartJS : Displaying Charts - Pie Chart</h1>
+	<p>Credit : <a
+			href="https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started">https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started</a>
+	</p>
+	<style>
+		.chart-js-02-container {
+			width: 50vw;
+			border: 2px solid rgba(247, 210, 4, 0.822);
+		}
+	</style>
+	<div class="chart-js-02-container">
+		<canvas id="chart-js-02"></canvas>
+	</div>
+
+	<script>
+		new Chart(document.getElementById("chart-js-02"), {
+			type: 'pie',
+			data: {
+				labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+				datasets: [{
+					label: "Population (millions)",
+					backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+					data: [2478, 5267, 734, 784, 433]
+				}]
+			},
+			options: {
+				title: {
+					display: true,
+					text: 'Predicted world population (millions) in 2050'
+				}
+			}
+		});
+	</script>
+</fieldset>
+
+<fieldset>
+	<h1>Javascript ChartJS - Line Chart</h1>
+	<p>Credit : <a
+			href="https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started">https://tobiasahlin.com/blog/chartjs-charts-to-get-you-started</a>
+	</p>
+	<div class="chart-js-03-container">
+		<canvas id="chart-js-03"></canvas>
+	</div>
+	<style>
+		.chart-js-03-container {
+			width: 50vw;
+			border: 2px solid rgba(247, 210, 4, 0.822);
+		}
+	</style>
+	<script>
+		new Chart(document.getElementById("chart-js-03"), {
+			type: 'line',
+			data: {
+				labels: [1500, 1600, 1700, 1750, 1800, 1850, 1900, 1950, 1999, 2050],
+				datasets: [{
+					data: [86, 114, 106, 106, 107, 111, 133, 221, 783, 2478],
+					label: "Africa",
+					borderColor: "#3e95cd",
+					fill: false
+				}, {
+					data: [282, 350, 411, 502, 635, 809, 947, 1402, 3700, 5267],
+					label: "Asia",
+					borderColor: "#8e5ea2",
+					fill: false
+				}, {
+					data: [168, 170, 178, 190, 203, 276, 408, 547, 675, 734],
+					label: "Europe",
+					borderColor: "#3cba9f",
+					fill: false
+				}, {
+					data: [40, 20, 10, 16, 24, 38, 74, 167, 508, 784],
+					label: "Latin America",
+					borderColor: "#e8c3b9",
+					fill: false
+				}, {
+					data: [6, 3, 2, 2, 7, 26, 82, 172, 312, 433],
+					label: "North America",
+					borderColor: "#c45850",
+					fill: false
+				}]
+			},
+			options: {
+				title: {
+					display: true,
+					text: 'World population per region (in millions)'
+				}
+			}
+		});
+	</script>
+</fieldset>
 ```
 
-DOM
-WINDOW
-DOCUMENT
-HTML
-HEAD
-TITLE
+## Console 
+
+See reference https://developer.mozilla.org/en-US/docs/Web/API/Console
+
+- console.log() produces black text
+- console.info() blue text with icon
+- console.debug() have to view with F12, console, filter, levels, verbose
+- console.warn() yellow with icon
+- console.error() red with icon
+- console.assert(boolean,"this test has failed") - appears if assertion is false
+
+```js
+console.log('console.log');
+console.log('big object',bigObject)
+console.info('console.info');
+console.debug('console.debug'); // same as log()
+console.warn('console.warn');
+console.error('console.error');
+console.assert(true); // not output if true
+console.assert(false); // assert outputs if fails
+console.table(myObject);
+console.dir() - view details of object
+console.dirxml() - shows interactive tree of element with descendants
+```
+
+## String format
+
+```js
+// %d
+console.log("variable x is %d", consoleOutputX);
+// %o
+console.log('object is %o', consoleObject1);
+```
+
+
+
+## DATETIME
+
+```
+<time>4h</time>
+<time>2012</time>
+<time datetime="2012-10-20">Today</time>
+<time datetime="09:00:00">9am</time>
+```
+
+## Debounce
+
+Prevents a method being called until a delay has occurred
+
+```js
+var output = debounce(DoThis(),250);
+function DoThis(){
+	console.log('Doing something')
+}
+for (let i=0;i<10;i++){
+	output()
+}
+```
+
+```js
+var debounce = require('debounce');
+window.onresize = debounce(resize, 200);
+ 
+function resize(e) {
+  console.log('height', window.innerHeight);
+  console.log('width', window.innerWidth);
+}
+```
+
+
+## Closures
+
+```jsx
+(function(){
+// app code goes here
+})();
+
+```
+
+Javascript variables can be global or local
+
+Variables created without var are always global, even if declared within a function
+
+Javascript inner function can solve the problem of wanting a private variable, which is not destroyed every time the function finishes
+
+All functions have access to the scope 'above' them
+
+Dilemma : create and initialise a variable only once - use a closure
+
+```jsx
+var add = (function () {
+var counter = 0;
+return function () {return counter += 1;}
+})();
+add();
+add();
+add();
+// the counter is now 3
+
+```
+
+The function only runs once and returns a function. Calling add() does not run the closure again, just the part which returns, which accesses the private variable (does not reset it)
+
+See https://gifted-haibt-065acd.netlify.app/#javascript-closures and https://codepen.io/philanderson888/pen/QJNwGN for a working example.
+
+
+Javascript closures are inner functions which have access to the
+
+Outer function parameters
+		
+	Outer function variables
+		
+	(but not the arguments array)
+
+
+		
+Key features of closures
+
+	1. Access to parent function parameters
+	
+	2. Access to parent function variables
+	
+	3. Access to parent function variables even
+			after the function has returned which
+			means effectively the parent function 'stays' in RAM and we can use or increment the same variable in the same state that it was when the function returned ie is not re-declared but we still have access to it.
+
+
+
+
+## AppCache
+
+Allows offline data
+
+
+## Image ISMAP
+
+ISMAP is a flag set to TRUE or FALSE inside the <img> tag.  
+  <img ismap>  
+  If present then this tells the computer that a server-side image map 
+  has been created which maps to different parts of the same image, so 
+  in order to implement this mapping all that is required is to send the 
+  coordinates of the click points to the server as part of the html
+  information, in this case as part of the URL information sent.
+
+  Note : relative image coordinates are sent (not absolute page coordinages)
+
+  See W3 Schools ISMAP for working example of this
+
+## Image USEMAP
+
+Usemap is a CLIENT SIDE IMAGE MAP DEFINED HERE
+Usemap="#map_region"
+<map name="map_region">
+  <area shape="rect" coords="0,0,10,10" href="abc.htm" />
+  <area shape="circle" coords="10,10,2" ../>
+  </map>
+
+
+## XmlHttpRequest 
+
+xhr = OBJECT WHICH  SEND DATA FROM US TO REMOTE SERVER
+
+```js
+var  xhr = new xmlHttpRequest
+// listen for response status 200
+// listen for data status 4
+onreadystatechange ...
+open('GET',URL,async t/f)
+send()       
+```
+
+## svg
+
+```
+SCALAR VECTOR GRAPHICS
+SCALES INDEPENDENT OF HOW BIG OR SMALL SCREEN IS
+DRAWN WITH VECTOR MATHS
+PURE IMAGE
+CREATE DOM ELEMENT
+THIS ELEMENT CAN BE PART OF DOM AND STYLE WITH CSS ETC
+AS ANY OTHER ELEMENT
+PERFORMANCE : BECAUSE DRAWING : MANY ITEMS, CAN SLOW PERFORMANCE
+STATIC
+DYNAMIC ITEMS : BETTER USING CANVAS (SIMILAR)
+(BETTER FOR LIVE JAVASCRIPT)
+```
+
+```html
+<svg>
+<svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
+STROKE : DRAW OUTSIDE
+STROKE-WIDTH:
+FILL : INSIDE CONTENT
+```
+
+
+```js
+RECT : X Y WIDTH HEIGHT
+CIRCLE : CX CY R
+ELLIPSE : CX CY RX RY
+POLYLINE : X1 Y1, X2 Y2, X3 Y3
+CAN DO TEXT ALSO
+	STROKE-WIDTH IS THICKNESS OF TEXT
+	FILL INSIDE
+	STROKE OUTSIDE
+TEXTPATH : CURVED PATH FOR TEXT TO FOLLOW
+TRANSFORM
+	ROTATE(30DEG,X,Y)    	ROTATE ABOUT (X,Y)
+	TRANSLATE(X,Y)		MOVE SHAPE BY X AND BY Y	
+	SCALE(X,Y)		MULTIPLY BY FACTOR OF X HORIZONTAL
+						      Y VERTICAL
+	SKEW()			SHEAR IN X AND Y DIRECTION
+```
+
+
+## canvas
+
+SVG BEST FOR STATIC ITEMS
+
+CANVAS BEST FOR DYNAMIC INTERACTION WITH JAVASCRIPT ON PAGE
+
+EG GAMES
+
+<CANVAS ID="">
+CANVAS{ // CSS }
+
+
+```js
+var canvas = document.getElementById('myCanvas')
+var context = canvas.getContext('2d');
+
+RECTANGE
+
+	ctx.fillstyle="red"
+
+	ctx.fillrect(x,y,width,height)
+
+CLEAR
+
+	ctx.clearrect(x,y,width,height)
+
+STROKE : OUTSIDE
+FILL   : INSIDE
+
+PATH
+	beginPath()
+	MOVETO		STARTING POINT OF YOUR DRAWING
+	LINETO(X,Y)
+	LINETO(A,B)
+	CLOSEPATH()
+	STROKE()		DRAW OUTLINE
+	FILL()			FILL SHAPE
+LINE
+	line(x,y,end-x,end-y)
+
+TRIANGLE
+	triangle(x,y,x1,y1,x2,y2)
+
 TEXT
-
-```
-Each element is called a NODE
-	
-	
-	
-DOM Window Object
-	Window is the main root object
-	Window Object - full documentation at Mozilla
-	
-	<https://developer.mozilla.org/en-US/docs/Web/API/Window>
 ```
 
 
+## jQuery
 
+wrapper - ensures DOM is loaded before jquery runs
+
+```js
+// set value on element
+$(document).ready( function() {
+    $('#datePicker').val(new Date().toDateInputValue());
+});​
+```
+
+input
+
+```js
+// input element
+$(element).val()
+```
+
+css
+
+```js
+// css get value
+$(..).attr('width')
+
+// css set value
+$(..).attr('width','value')
+
+// css set class
+ADDCLASS("FAILEDCLASS")
+```
+
+serialize form data
+
+jQuery.serialize produces application/x-www-form-urlencoded data (the standard encoding for HTML form submissions) from a jQuery object containing an HTML Form Element or a set of form controls.
+
+```js
+('myForm').serialize()
+```
