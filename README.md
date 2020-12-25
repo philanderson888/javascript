@@ -136,10 +136,17 @@ This is a series of notes from which to learn from scratch all about Javascript.
 
 ## Resources
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript
-
-
-
+- [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [terms web](notes/random-web-terms-and-glossary.md)
+- [terms](notes/random-programming-terms.md)
+- [nodejs](https://github.com/philanderson888/nodejs)
+- [jQuery](https://github.com/philanderson888/jquery)
+- [react](https://github.com/philanderson888/react)
+- [typescript](notes/typescript.md)
+- [reason](notes/reason.md)
+- [ajax](notes/ajax.md)
+  - [demos](https://github.com/philanderson888/ajax)
+- [Angular 1](notes/angular-version-1.md)
 ## types
 
 Primitives
