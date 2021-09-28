@@ -4,8 +4,7 @@
 
 - [Random Web Terms And Glossary](#random-web-terms-and-glossary)
   - [Contents](#contents)
-  - [Gatsby](#gatsby)
-    - [Random Mixed Modern Web Terms](#random-mixed-modern-web-terms)
+  - [Random Mixed Modern Web Terms](#random-mixed-modern-web-terms)
     - [Ajax](#ajax)
     - [jQuery](#jquery)
     - [Web Database Glossary](#web-database-glossary)
@@ -64,7 +63,7 @@
 
 
 
-## Gatsby
+## Random Mixed Modern Web Terms
 
 ```
 Gatsby
@@ -72,26 +71,9 @@ gatsby new mysite [https://link-to-template](https://link-to-template/); cd mysi
 contentful : deploy content for site easily
 graphql : new alternative to REST API
 Apollo : works with GraphQl
-React
-Vue
-Angular
-Library
 NextJS
 [Sanity.IO](http://sanity.io/) is a headless CMS ie provides API
-Apollo
-Shopify
-Axios
-Hooks : notifies of instant changes
 Appium does Mobile and Web testing [appium.io](http://appium.io/)
-Rust
-Python
-Go
-```
-
-
-### Random Mixed Modern Web Terms
-
-```
 wss:// free way of sending real time chat data across web
 Web Workers Javascript backround task
 Protocol language which carries data TCP (web) SMTP (email) DNS (name) HTTP(web page)
@@ -1773,28 +1755,10 @@ handlebars
 templating = layout = view
 knockout : View => Model BUT MANUAL CODING
 Backbone : MODEL AUTO UPDATE
-POST /table  .mytable.create()
-GET /table .mytable.fetch()
-GET /table/id .mytable.fetch(id)
-PUT /table/id .mytable.save()
-DEL /table/id .mytable.destroy()
 partial render
 express-partial
 app.use(partial())
 response.renderPartials
-testing
-eslint
-Jasmine
-expect(x).toBe(y)
-.not.toBe
-.toBeDefined
-.toBeNull
-.toBeLessThan(y)
-.toThrow
-.toThrowError
-toEqual
-expect(function.parameter).toHaveBeenCalledWith(123)
-TDD Test Driven Design
 mean.io
 mean.js
 grunt --force
@@ -1805,9 +1769,6 @@ eslint : code quality
 csslint : css code quality eg nesting
 minification
 JSX compiles to javascript
-git
-push
-hooks
 isomorphic
 webpack
 browserify

@@ -83,7 +83,7 @@ server.listen()
 
 # Client
 
-```csharp
+```js
 npm install graphql-request
 
 // index.js
@@ -193,11 +193,8 @@ fetch(endpoint, options)
 
 ```jsx
 sudo npm install -g create-react-app
-
 create-react-app learn-graph-ql-client
-
 yarn start
-
 ```
 
 ### Learner Tutorial
@@ -208,17 +205,17 @@ yarn start
 
 [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app)
 
-Run
-
-npx
+```js
 create-react-app my-app
 cd my-app
 npm start
+```
 
-React uses JSX for syntax which is
-Javascript code containing HTML declarations
+React uses JSX for syntax which is Javascript code containing HTML declarations
 
+```js
 const element = <h1>Hello, world!</h1>;
+```
 
 # Gatsby
 
@@ -333,15 +330,9 @@ Wpgraphical
 
 [sanity.io](http://sanity.io/) headless cms opens socket so changes to site are replicated instantly
 
-shopify
-
-apollo : best
-
-axios : possible for small things
-
 Use [hooks.com](http://hooks.com) 
 
-. Usekeypress react hook 
+Usekeypress react hook 
 
 Intersection observer 
 
@@ -566,7 +557,7 @@ function isCollide(a, b) {
 
 # Random List 1 - mostly web
 
-```js
+```
 GIF !!! [https://giphy.com](https://giphy.com/)
     
 AWS - Amazon's cloud computing arm, Amazon Web Services provided two thirds of the firm's profit last quarter.
@@ -634,8 +625,11 @@ react hooks
 react mixin
 react render props
 jsx
+```
 
-Android Tbings
+
+## Random
+
 [https://nest.com/uk/](https://nest.com/uk/) Google IO
 [https://cloud.google.com/solutions/iot/](https://cloud.google.com/solutions/iot/)
 IOT Sensor [https://dzone.com/articles/introduction-to-iot-sensors](https://dzone.com/articles/introduction-to-iot-sensors)[https://www.finoit.com/blog/top-15-sensor-types-used-iot/](https://www.finoit.com/blog/top-15-sensor-types-used-iot/)
@@ -651,6 +645,7 @@ IOT for all website
 NEXTJS examples [https://github.com/zeit/next.js/tree/master/examples](https://github.com/zeit/next.js/tree/master/examples)[https://www.meteor.com/](https://www.meteor.com/)[https://medium.com/@olotintemitope/how-to-generate-your-api-documentation-in-20-minutes-4e0072f08b94](https://medium.com/@olotintemitope/how-to-generate-your-api-documentation-in-20-minutes-4e0072f08b94)[https://graphql.org/learn/](https://graphql.org/learn/)[http://usejsdoc.org/](http://usejsdoc.org/) creates documentation
 Microsoft Artificial Intelligence Developers Guide EBook [https://info.microsoft.com/rs/157-GQE-382/images/EN-US-CNTNT-eBook-AI-A-Developer's-Guide-to-Building-AI-Applications.pdf?LCID=en-us&mkt_tok=eyJpIjoiTW1FNVlUUTROREUwTlRkaCIsInQiOiIzb25wUUhPQmdYSVVxaWZOVExweGhTXC9haHRaejVjczgwSVY5XC9kYXdQaXJMb1RoSGdvaDFhMlRjSkk3SG9LcjZGTFU4WWpJOVhUQTNwM3NFQnBDbU91Q3MzVEhlV1lmNWc1S2xyZjNBd1lhYTAxbDFITWI1eEpoeW9UZzdrU0RuZjg1VUZqN1FyaklCTVEwNjA4dGNOZz09In0%3D](https://info.microsoft.com/rs/157-GQE-382/images/EN-US-CNTNT-eBook-AI-A-Developer%27s-Guide-to-Building-AI-Applications.pdf?LCID=en-us&mkt_tok=eyJpIjoiTW1FNVlUUTROREUwTlRkaCIsInQiOiIzb25wUUhPQmdYSVVxaWZOVExweGhTXC9haHRaejVjczgwSVY5XC9kYXdQaXJMb1RoSGdvaDFhMlRjSkk3SG9LcjZGTFU4WWpJOVhUQTNwM3NFQnBDbU91Q3MzVEhlV1lmNWc1S2xyZjNBd1lhYTAxbDFITWI1eEpoeW9UZzdrU0RuZjg1VUZqN1FyaklCTVEwNjA4dGNOZz09In0%3D)
 
+```
 Love something tutorials . Com / store
 Level up tutorials .com / pro
 Advanced react graphql
@@ -662,8 +657,12 @@ A11y
 Android auto app
 iOS auto app
 iOS car play
+```
+
 [https://css-tricks.com/why-using-reduce-to-sequentially-resolve-promises-works/](https://css-tricks.com/why-using-reduce-to-sequentially-resolve-promises-works/)[https://github.com/leonardomso/33-js-concepts#readme](https://github.com/leonardomso/33-js-concepts#readme)[https://wallabyjs.com/docs/intro/advanced-logging.html](https://wallabyjs.com/docs/intro/advanced-logging.html)[https://scotch.io/bar-talk/5-tips-to-write-better-conditionals-in-javascript](https://scotch.io/bar-talk/5-tips-to-write-better-conditionals-in-javascript)[https://dev.to/denisinvader/creating-an-interactive-map-with-d3-and-vue-4158](https://dev.to/denisinvader/creating-an-interactive-map-with-d3-and-vue-4158)
 Free copy file with verification : TeraCopy : [https://www.codesector.com/downloads](https://www.codesector.com/downloads)[https://www.styled-components.com/](https://www.styled-components.com/)
+
+```
 Templating
 Promise.all
 Object.entries
@@ -811,21 +810,21 @@ Threading [https://jj09.net/multithreading-csharp-vs-java/](https://jj09.net/mul
 Structs : Developers at Microsoft recommend using a struct in place of a class only for types which are smaller than 16 bytes, are immutable, are short-lived and are not frequently boxed.
 Bob Tabor teaches C# for beginners
 Visual Studio App Center
+```
 
-CSS
+## CSS
 CSS Grid with Traversy
 
+## Testing
 Cucumber
-Testing Framework
 
-Git
+## Git
 GitGuys : 30 tutorials on the use of Git!!!
 Bitbucket = paid GIT. [bitbucket.org](http://bitbucket.org/)
-Git - Book
 Find a chat room - become a Google Developer - [webchat.freenode.net](http://webchat.freenode.net/)[events.google.com/io](http://events.google.com/io)
 Google Sheets
 HTML to Google Sheets : [https://developers.google.com/sheets/api/quickstar…](https://developers.google.com/sheets/api/quickstar%E2%80%A6)
-```
+
 
 # Random List - Programming
 
