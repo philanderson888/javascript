@@ -23,7 +23,15 @@ best for time zone handling
 
 best minimalist, no-fuss library
 
-## tree shaking
+### lodash
+
+[lodash](https://lodash.com)
+
+useful library for working with arrays and objects
+
+## terminology
+
+### tree shaking
 
 tree shaking enables us to declare, for each module
 
