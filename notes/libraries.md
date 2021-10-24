@@ -29,6 +29,12 @@ best minimalist, no-fuss library
 
 useful library for working with arrays and objects
 
+### nanoid
+
+[nanoid](https://www.npmjs.com/package/nanoid)
+
+generates random string ids for use in an application
+
 ## terminology
 
 ### tree shaking
