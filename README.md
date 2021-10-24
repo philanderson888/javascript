@@ -138,14 +138,37 @@ This is a series of notes from which to learn from scratch all about Javascript.
 
 ## Resources And Further Notes
 
-- [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [libraries](notes/libraries.md)
-- [random programming terms](notes/random-programming-terms.md)
-- [random web programming terms](notes/random-web-terms-and-glossary.md)
-- [nodejs](https://github.com/philanderson888/nodejs)
-- [jQuery](https://github.com/philanderson888/jquery)
-- [react](https://github.com/philanderson888/react)
-- [typescript](notes/typescript.md)
+### javascript docs
+
+[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+### nodejs
+
+[nodejs](https://github.com/philanderson888/nodejs)
+
+### jQuery
+
+[jQuery](https://github.com/philanderson888/jquery)
+
+### reactjs
+
+[react](https://github.com/philanderson888/react)
+
+### typescript
+
+[typescript](notes/typescript.md)
+
+### libraries
+
+[libraries](notes/libraries.md)
+
+### random terms
+
+[random programming terms](notes/random-programming-terms.md)
+[random web programming terms](notes/random-web-terms-and-glossary.md)
+
+### other notes and topics
+
 - [reason](notes/reason.md)
 - [ajax](notes/ajax.md)
   - [demos](https://github.com/philanderson888/ajax)
