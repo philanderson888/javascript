@@ -557,6 +557,16 @@ function isCollide(a, b) {
 
 # Random List 1 - mostly web
 
+## bundling
+
+this takes all of the separate libraries and dependencies of your code, and bundles them neatly into one file to speed up the fetching process so multiple http calls do not need to be made, thus drastically reducing the time taken to receive libraries in the background.
+
+Webpack does this job.
+
+## code splitting
+
+this works with [bundling](#bundling) in that, when the bundles get too large the code can be split into components which may or may not be needed immediately.  The components which are not required immediately can be `lazy-loaded` on demand.
+
 ```
 GIF !!! [https://giphy.com](https://giphy.com/)
     
