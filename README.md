@@ -27,6 +27,8 @@
 	- [setTimeout setInterval](#settimeout-setinterval)
 	- [exceptions](#exceptions)
 	- [Function](#function)
+	- [this](#this)
+	- [globalThis](#globalThis)
 	- [dom](#dom)
 	- [svg](#svg)
 	- [canvas](#canvas)
@@ -820,6 +822,14 @@ Callback Function
 * @return CSSStyleRule|null
 */
 ```
+
+## this
+
+When we use a function, `this` refers to the current object that is in scope at this present time
+
+## globalThis
+
+as expected, `globalThis` refers to the global value of `this` which does not change, and refers to the window within which we are creating our web application
 
 ## dom
 
