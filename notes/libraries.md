@@ -1,5 +1,28 @@
 # libraries
 
+## date libraries
+
+### date-fns
+
+[date-fns](https://date-fns.org)
+[date-fns](https://www.skypack.dev/view/date-fns)
+
+best overall date library
+
+### luxon
+
+[luxon](https://moment.github.io/luxon)
+[luxon](https://www.skypack.dev/view/luxon)
+
+best for time zone handling
+
+### day.js
+
+[day.js](https://www.skypack.dev/view/dayjs)
+[day.js](https://day.js.org)
+
+best minimalist, no-fuss library
+
 ## tree shaking
 
 tree shaking enables us to declare, for each module
