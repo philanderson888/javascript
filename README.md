@@ -137,9 +137,9 @@ This is a series of notes from which to learn from scratch all about Javascript.
 ## Resources And Further Notes
 
 - [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [terms web](notes/random-web-terms-and-glossary.md)
 - [libraries](notes/libraries.md)
-- [terms](notes/random-programming-terms.md)
+- [random programming terms](notes/random-programming-terms.md)
+- [random web programming terms](notes/random-web-terms-and-glossary.md)
 - [nodejs](https://github.com/philanderson888/nodejs)
 - [jQuery](https://github.com/philanderson888/jquery)
 - [react](https://github.com/philanderson888/react)
