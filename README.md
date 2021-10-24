@@ -6,7 +6,7 @@
 	- [Contents](#contents)
 	- [Author](#author)
 	- [Introduction](#introduction)
-	- [Resources](#resources)
+	- [Resources And Further Notes](#resources-and-further-notes)
 	- [types](#types)
 	- [TypeOf](#typeof)
 	- [Operators](#operators)
