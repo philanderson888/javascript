@@ -23,17 +23,31 @@ best for time zone handling
 
 best minimalist, no-fuss library
 
-### lodash
+## faker
+
+[faker](https://fakercloud.com/api)
+[faker](https://github.com/marak/Faker.js)
+
+used for creating fake data
+
+## lodash
 
 [lodash](https://lodash.com)
 
 useful library for working with arrays and objects
 
-### nanoid
+## nanoid
 
 [nanoid](https://www.npmjs.com/package/nanoid)
 
 generates random string ids for use in an application
+
+## uuid
+
+[uuid](https://www.npmjs.com/package/uuid)
+similar to [nanoid](#nanoid)
+generates unique id
+
 
 ## terminology
 
