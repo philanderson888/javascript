@@ -56,3 +56,18 @@ log(chalk.red('Not all statistics are available...'));
 log(chalk.redBright('Endpoint disconnected before all results were received'));
 log(chalk.magenta('All finished'));
 ```
+
+## colors.js
+
+we can also log with `colors.js` (note - care with this repo as the owner deliberately sabotaged it!)
+
+```js
+var colors = require('colors');
+
+colors.enable()
+
+console.log('Error!'.underline.red);
+console.log('Warning!'.red);
+console.log('This is okay!'.green);
+```
+
