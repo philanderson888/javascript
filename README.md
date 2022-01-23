@@ -5673,31 +5673,10 @@ for(var i = 0; i < list.length;i++){
 </fieldset>
 ```
 
-## Console 
+## console logging
+	
+[notes/console-logging.md](notes/console-logging.md)
 
-See reference https://developer.mozilla.org/en-US/docs/Web/API/Console
-
-- console.log() produces black text
-- console.info() blue text with icon
-- console.debug() have to view with F12, console, filter, levels, verbose
-- console.warn() yellow with icon
-- console.error() red with icon
-- console.assert(boolean,"this test has failed") - appears if assertion is false
-
-```js
-console.log('console.log');
-console.log('big object',bigObject)
-console.info('console.info');
-console.debug('console.debug'); // same as log()
-console.warn('console.warn');
-console.error('console.error');
-console.assert(true); // not output if true
-console.assert(false); // assert outputs if fails
-console.table(myObject);
-console.dir() - view details of object
-console.dirxml() - shows interactive tree of element with descendants
-console.log('\x1b[33mPrint in another colour \x1b[0m') - print line in another color - see https://en.m.wikipedia.org/wiki/ANSI_escape_code#Colors for list of colors	
-```
 
 ## String format
 
