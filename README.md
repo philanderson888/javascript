@@ -5953,3 +5953,9 @@ jQuery.serialize produces application/x-www-form-urlencoded data (the standard e
 ```js
 ('myForm').serialize()
 ```
+
+## Deno 
+	
+[notes/deno.md](notes/deno.md)
+	
+	
