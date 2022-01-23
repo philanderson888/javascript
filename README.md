@@ -124,6 +124,7 @@
 	- [svg](#svg-1)
 	- [canvas](#canvas-1)
 	- [jQuery](#jquery-1)
+	- [deno](#deno)
 
 
 ## Author
