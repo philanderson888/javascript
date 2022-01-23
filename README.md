@@ -5696,7 +5696,7 @@ console.assert(false); // assert outputs if fails
 console.table(myObject);
 console.dir() - view details of object
 console.dirxml() - shows interactive tree of element with descendants
-console.log('\x1b[33mPrint in another colour \x1b[0m') - print line in another color	
+console.log('\x1b[33mPrint in another colour \x1b[0m') - print line in another color - see https://en.m.wikipedia.org/wiki/ANSI_escape_code#Colors for list of colors	
 ```
 
 ## String format
