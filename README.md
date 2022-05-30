@@ -2476,6 +2476,19 @@ BUBBLE          BOTTOM MIDDLE TOP
 
 </script>
 ```
+	
+	
+### queueMicrotask
+	
+useful for final cleanup tasks which does not interfere with any other tasks.  waits until all tasks have completed but runs before control is passed back to the browser
+	
+```javascript
+function onClick(){
+	queueMicrotask( ()=> { 
+		anotherElement.focus()
+	}
+}
+```
 
 ## GEOLOCATION
 
@@ -5958,5 +5971,3 @@ jQuery.serialize produces application/x-www-form-urlencoded data (the standard e
 ## Deno 
 	
 [notes/deno.md](notes/deno.md)
-	
-	
