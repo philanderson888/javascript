@@ -29,6 +29,8 @@ NativeScript
 
 ## Warning - Use ReasonML not Typescript
 
+https://reasonml.github.io/
+
 Typescript adds types to Javascript but still retains backwards compatibility with all of the poor design flaws and bugs inherent in raw Javascript.
 
 For this reason, ReasonML is a better choice than Typescript if starting out!
@@ -54,7 +56,68 @@ document.body.innerHTML = greeter(user);
 ```
 
 
-# compile typescript to Javascript
+Now compile this typescript file to javascript
+
 ```
-tsc myfile.ts
+# typescript compile to javascript the typescript file `helloworld.ts` 
+tsc helloworld.ts
 ```
+
+Now run this with HTML :
+
+```
+<!DOCTYPE html>
+<html>
+    <head><title>TypeScript</title></head>
+    <body>
+        <script src="helloworld.js"></script>
+    </body>
+</html>
+```
+
+## Typescript interfaces
+
+We can use interfaces as a predicted class structure
+
+```
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+function greeter(person: Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
+}
+let user = { firstName: "Jane", lastName: "User" };
+document.body.innerHTML = greeter(user);
+```
+
+## Typescript Classes
+
+Typescript has full support for ES6 classes
+
+```
+class Student {
+    fullName: string;
+    constructor(public firstName: string, public middleInitial: string, public lastName: string) {
+        this.fullName = firstName + " " + middleInitial + " " + lastName;
+    }
+}
+interface Person {
+    firstName: string;
+    lastName: string;
+}
+function greeter(person : Person) {
+    return "Hello, " + person.firstName + " " + person.lastName;
+}
+let user = new Student("Jane", "M.", "User");
+document.body.innerHTML = greeter(user);
+```
+
+## tsconfig.json
+
+tsconfig.json sits at project root. 
+
+tsconfig specifies
+
+- root files
+- compiler options
