@@ -6,7 +6,7 @@
 	- [Contents](#contents)
 	- [Author](#author)
 	- [Introduction](#introduction)
-	- [Resources And Further Notes](#resources-and-further-notes)
+	- [resources](#resources)
 	- [types](#types)
 	- [TypeOf](#typeof)
 	- [Operators](#operators)
@@ -28,7 +28,7 @@
 	- [exceptions](#exceptions)
 	- [Function](#function)
 	- [this](#this)
-	- [globalThis](#globalThis)
+	- [globalThis](#globalthis)
 	- [dom](#dom)
 	- [svg](#svg)
 	- [canvas](#canvas)
@@ -51,80 +51,8 @@
 	- [environment variables](#environment-variables)
 	- [Google Calendar](#google-calendar)
 	- [Google Maps](#google-maps)
-	- [Javascript flow 2 - decrement](#javascript-flow-2---decrement)
-	- [Forms](#forms)
-	- [Serializing Form Data](#serializing-form-data)
-	- [FORMS](#forms-1)
-	- [DOM Capture And Bubble](#dom-capture-and-bubble)
-	- [GEOLOCATION](#geolocation)
-	- [Audio](#audio)
-	- [Video](#video)
-	- [Navigator](#navigator)
-	- [performance](#performance)
-	- [Storage](#storage)
-	- [Cookies](#cookies)
-	- [Local Storage](#local-storage)
-	- [Session Storage](#session-storage)
-	- [Cookies](#cookies-1)
-	- [HTML5 localStorage](#html5-localstorage)
-	- [Session State](#session-state)
-	- [cookie](#cookie)
-	- [location](#location)
-	- [websockets](#websockets-1)
-	- [jQuery](#jquery)
-	- [Array](#array-1)
-	- [Classes](#classes)
-	- [dependency injection](#dependency-injection)
-	- [try.catch.finally](#trycatchfinally)
-	- [async](#async)
-	- [map](#map-1)
-	- [page load](#page-load)
-	- [Delete](#delete)
-	- [classList](#classlist)
-	- [forEach](#foreach-1)
-	- [Object.seal()](#objectseal)
-	- [Object.freeze()](#objectfreeze)
-	- [Object.preventExtensions()](#objectpreventextensions)
-	- [querySelectorAll](#queryselectorall)
-	- [scope](#scope)
-	- [Javascript Switch](#javascript-switch)
-	- [Or just 'return'](#or-just-return)
-	- [Javascript If..Else](#javascript-ifelse)
-	- [document.querySelector](#documentqueryselector)
-	- [Set A Listener](#set-a-listener)
-	- [classList.remove](#classlistremove)
-	- [getPropertyValue](#getpropertyvalue)
-	- [getAttribute](#getattribute)
-	- [this](#this)
-	- [Dates](#dates-1)
-	- [dom](#dom-1)
-	- [string includes](#string-includes)
-	- [Prototype](#prototype)
-	- [VIDEO](#video-1)
-	- [exceptions](#exceptions-1)
-	- [Functions](#functions)
-	- [Web Worker](#web-worker)
-	- [webworker](#webworker)
-	- [dom](#dom-2)
-	- [ajax](#ajax)
-	- [Google sheets](#google-sheets)
-	- [Send Gmail](#send-gmail)
-	- [Glossary](#glossary)
-	- [AJAX](#ajax-1)
-	- [ChartJS](#chartjs)
-	- [Console](#console)
-	- [String format](#string-format)
-	- [DATETIME](#datetime)
-	- [Debounce](#debounce)
-	- [Closures](#closures)
-	- [AppCache](#appcache)
-	- [Image ISMAP](#image-ismap)
-	- [Image USEMAP](#image-usemap)
-	- [XmlHttpRequest](#xmlhttprequest)
-	- [svg](#svg-1)
-	- [canvas](#canvas-1)
-	- [jQuery](#jquery-1)
-	- [deno](#deno)
+		- [random terms](#random-terms)
+		- [other notes and topics](#other-notes-and-topics)
 
 
 ## Author
@@ -137,44 +65,9 @@ Phil Anderson
 
 This is a series of notes from which to learn from scratch all about Javascript.
 
-## Resources And Further Notes
+## resources
 
-### javascript docs
-
-[docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-### nodejs
-
-[nodejs](https://github.com/philanderson888/nodejs)
-
-### jQuery
-
-[jQuery](https://github.com/philanderson888/jquery)
-
-### reactjs
-
-[react](https://github.com/philanderson888/react)
-
-### typescript
-
-[typescript](notes/typescript.md)
-
-### libraries
-
-[libraries](notes/libraries.md)
-
-### random terms
-
-[random programming terms](notes/random-programming-terms.md)
-[random web programming terms](notes/random-web-terms-and-glossary.md)
-
-### other notes and topics
-
-- [reason](notes/reason.md)
-- [ajax](notes/ajax.md)
-  - [demos](https://github.com/philanderson888/ajax)
-- [Angular 1](notes/angular-version-1.md)
-
+[resources](notes/resources.md)
 
 ## types
 
@@ -1969,6 +1862,18 @@ This page shows a map, zooms in and out, can set the latitude and longitude and 
 
 
 
-## Deno 
-	
-[notes/deno.md](notes/deno.md)
+
+
+
+### random terms
+
+[random programming terms](notes/random-programming-terms.md)
+[random web programming terms](notes/random-web-terms-and-glossary.md)
+
+### related topics
+
+- [reason](notes/reason.md)
+- [ajax](notes/ajax.md)
+  - [demos](https://github.com/philanderson888/ajax)
+- [Angular 1](notes/angular-version-1.md)
+- [Deno](notes/deno.md)
