@@ -3,56 +3,45 @@
 ## Contents
 
 - [Javascript](#javascript)
-	- [Contents](#contents)
-	- [Author](#author)
-	- [Introduction](#introduction)
-	- [resources](#resources)
-	- [types](#types)
-	- [TypeOf](#typeof)
-	- [Operators](#operators)
-	- [Maths](#maths)
-	- [equality](#equality)
-	- [Loops](#loops)
-	- [Array](#array)
-	- [map](#map)
-	- [Reduce](#reduce)
-	- [Dates](#dates)
-	- [types](#types-1)
-	- [String](#string)
-	- [Boolean to string](#boolean-to-string)
-	- [Date to string](#date-to-string)
-	- [String To Number](#string-to-number)
-	- [Number(date)](#numberdate)
-	- [truthy falsy](#truthy-falsy)
-	- [setTimeout setInterval](#settimeout-setinterval)
-	- [exceptions](#exceptions)
-	- [Function](#function)
-	- [this](#this)
-	- [globalThis](#globalthis)
-	- [dom](#dom)
-	- [svg](#svg)
-	- [canvas](#canvas)
-	- [websockets](#websockets)
-	- [Spread Operator](#spread-operator)
-	- [find](#find)
-	- [findIndex](#findindex)
-	- [forEach](#foreach)
-	- [Filter](#filter)
-	- [JSON](#json)
-	- [serialize](#serialize)
-	- [for..in](#forin)
-	- [valid JSON?](#valid-json)
-	- [UNDEFINED](#undefined)
-	- [Fetch](#fetch)
-	- [Collections](#collections)
-	- [Sets](#sets)
-	- [Events](#events)
-	- [event.type](#eventtype)
-	- [environment variables](#environment-variables)
-	- [Google Calendar](#google-calendar)
-	- [Google Maps](#google-maps)
-		- [random terms](#random-terms)
-		- [other notes and topics](#other-notes-and-topics)
+  - [Contents](#contents)
+  - [Author](#author)
+  - [Introduction](#introduction)
+  - [resources](#resources)
+  - [types](#types)
+  - [operators](#operators)
+  - [equality](#equality)
+  - [loops](#loops)
+  - [arrays, also map, filter, reduce](#arrays-also-map-filter-reduce)
+  - [dates](#dates)
+  - [setTimeout setInterval](#settimeout-setinterval)
+  - [exceptions](#exceptions)
+  - [Function](#function)
+  - [this](#this)
+  - [globalThis](#globalthis)
+  - [dom](#dom)
+  - [svg](#svg)
+  - [canvas](#canvas)
+  - [websockets](#websockets)
+  - [Spread Operator](#spread-operator)
+  - [find](#find)
+  - [findIndex](#findindex)
+  - [forEach](#foreach)
+  - [Filter](#filter)
+  - [JSON](#json)
+  - [serialize](#serialize)
+  - [for..in](#forin)
+  - [valid JSON?](#valid-json)
+  - [UNDEFINED](#undefined)
+  - [Fetch](#fetch)
+  - [Collections](#collections)
+  - [Sets](#sets)
+  - [Events](#events)
+  - [event.type](#eventtype)
+  - [environment variables](#environment-variables)
+  - [Google Calendar](#google-calendar)
+  - [Google Maps](#google-maps)
+    - [random terms](#random-terms)
+    - [related topics](#related-topics)
 
 
 ## Author
@@ -71,203 +60,12 @@ This is a series of notes from which to learn from scratch all about Javascript.
 
 ## types
 
-Primitives
-- number
-- string
-- boolean
-- null  
-- undefined
-- BigInt
-- Symbol
+[types](notes/types.md)
+[converting one type to another](notes/types.md)
 
-Object
-- Object
+## operators
 
-Regular Expression 
-- var myRegularExpression = /test/g
-
-Date
-- var d = new Date()
-	
-Function
-- var x = function(){//code}
-	
-Exponential
-- var x = 1.23e5       123000
-
-NaN Not a number
-- isNaN(x) 		TRUE OR FALSE  		TRUE => IT IS NOT A NUMBER!
-		
-Infinity
-- Infinity
-
-Array
-
-```js
-var arr = []    or   ()
-var arr = [3];      
-var arr = [1,2,3, "hello" , {} , [] ];
-var arr = [,]
-var arr = [,,]
-```	
-
-Object
-
-```js
-var obj = {}
-var obj = new Object();
-
-var myObject = {
-	var1: "value1";
-	var2: "value2";
-	var3: 15;
-};
-
-var obj = { "key": [value1, value2, value3], "key2": [value1, value2] }
-or
-
-var obj = {};
-
-	obj.key=value;
-	
-		key also called 'property' which has attribute
-		obj.property=attribute
-	
-	obj.key = [value1, value2, value3];
-
-	or
-	
-	obj["key2"] = [value1, value2]; 
-
-myObject.var2= 23 / "string" / false / [val1,val2,val3] / undefined
-
-delete myObject.var3;
-		
-JSON.parse     ==> String to JSON
-JSON.stringify ==> JSON to String
-	
-
-	Note : root object is 'Object' and everything is a child of this object
-			and its methods eg .toString();
-```
-
-Other object types
-
-	Error 
-	
-	Global
-	
-	Math
-	
-	Arguments array passed to a function
-	
-	
-
-## TypeOf
-
-```
-Variable can change its type
-
-	var x = 1;
-	var x = "hi";
-
-	
-typeof(x)  declares its type 
-
-	var str1 = "Welcome to my Application" ; 
-	var num1 = 25 ; 
-	var num2;
-	
-		typeof(str1)           String
-		       num1            Number 
-			   num2            undefined 
-			   
-	var x = function (){}
-	
-		typeof(x)				function
-```
-
-## Operators
-
-```
-Arithmetic evaluates to a number
-
-String evaluates to a string
-
-Logical evaluates to true/false
-
-INTEGER DIVISION RETURNS AN INTEGER
-
-int/int = int eg 5/2 = 2 so must use float instead
-
-DOUBLE/FLOAT DIVISION RETURNS A DOUBLE/FLOAT
-```
-
-## Maths
-
-```
-Rounding Numbers
-	Math.round to nearest integer
-	Math.ceil to next highest integer
-	Math.floor truncates anything after decimal point
-ABS()
-
-	ABSOLUTE VALUE     MAKE ALL NUMBERS ZERO OR POSITIVE
-	
-				
-					+99 => 99
-					-99 => 99
-					
-	
-Random numbers
-	Math.random()  between 0 and 1
-		var numRandom=Math.floor((Math.random()*6)+1);
-		
-
-POW(X,Y)		RAISE X TO THE POWER Y
-
-	Math.pow(3,2)   Three squared
-
-SQRT
-
-	Math.sqrt()
-
-	
-MAX/MIN
-
-		max(1,2,3)
-		min(1,2,3)
-			
-toFixed
-toPrecision
-
-	toPrecision(5)   gives number to 5 significant digits
-toExponential 
-
-		
-Math.e;  
-
-	e = 2.7 Euler
-
-Math.PI  3.141
-
-Math.LN2/10
-
-		ln2 = .69
-		ln10 = 2.3
-Math.LOG2E/10E
-
-exp(x)
-log(x)  natural logs (to the base e)
-
-Math.sin(x)/cos/tan/asin..
-
-Infinity !!!
-	<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity>
-```
-
-
-
+[operators](notes/operators.md)
 
 ## equality
 
@@ -280,8 +78,7 @@ a === true //true
 ```
 
 
-
-## Loops
+## loops
 
 ```
 While() loop
@@ -293,309 +90,13 @@ For(var x=0;x<10;x++){}
 For(var item in myObject){ }
 ```
 
-## Array
+## arrays, also map, filter, reduce
 
-```
-array1 = ["item1","item2"];
-array2 = [];
-array3 = ();
-array4 = [5];  
-array5 = (5);
+[arrays](arrays.md)
 
-Looping through Array  (Parse an array)
-	for (var i=0;i<myArray.length;i++){
-		console.log('myArray[' + i + '] = ' + myArray[i]);
-	}
-	
-JOIN
+## dates
 
-	OUTPUTS THE ARRAY ELEMENTS AS ONE LONG STRING
-	
-		MYARRAY.JOIN()			==>		1,2,3
-		MYARRAY.JOIN(',')		==>		1,2,3
-		MYARRAY,JOIN(';')		==>		1;2;3
-		
-
-PUSH
-
-	array.push(22)       TO END
-	array1.push("extra1","extra2");
-
-POP
-
-	array.pop            FROM END
-
-UNSHIFT
-
-	unshift adds element at start of array   array1.unshift("extra item at start1","2");
-
-	array.unshift(22)    TO START
-
-SHIFT
-
-	shift removes element from start of array
-
-	array.shift()        FROM START 
-
-SPLICE
-
-	splice inserts element at position x and optionally removes y elements eg 
-	
-		array1.splice(2,2,"extra1","extra2","extra3");   
-		
-				removes third and fourth items (index 2 and 3) and then 
-				adds three items at index 2,3,4
-SLICE
-
-	slice copies from existing array to create new array 
-	
-		var newArray = array1.slice(x,y) 
-		
-				copies from index x up to the index before y
-		slice(0,1) will get the first character of an array  
-		
-				(second number is index AFTER last character).  
-				
-		Second minus first number gives length of slice.  eg 
-				
-			slice(2,5) on Boston gives letters s(2) t(3) o(4)
-		
-	slice(2) goes from index 2 to end
-		
-Looping through Array  (Parse an array)
-	for (var i=0;i<myArray.length;i++){
-		console.log('myArray[' + i + '] = ' + myArray[i]);
-	}
-		flag with initial value and changes if value found eg var found=false;
-			break out of a loop if match found
-length of array.length;
-nested loops
-
-SORT
-
-	array.sort()
-		
-REVERSE
-
-	array.reverse()
-
-indexOf : can be used to locate the index of a given item in the array
-
-	myArray=["banana","pear","apple"]
-
-	myArray.indexOf('banana')   ==> 0
-
-Jagged Array
-	
-	var arr = [[value1, value2, value3], [value1, value2]]
-	
-	or
-	
-	var arr = [];   arr.push([value1, value2, value3]);
-Object containing arrays of differing length
-	
-	var obj = { "key": [value1, value2, value3], "key2": [value1, value2] }
-	or
-	
-	var obj = {};
-	obj.key = [value1, value2, value3];
-	obj["key2"] = [value1, value2];
-```
-
-## map
-
-maps to new array
-
-map is like a foreach loop over an array
-
-    creates a new array by iterating the old array
-
-    myNewArray = myOldArray.map(function(item))
-
-*Note:*
-*- map is used when we want to return an array mapped from the original array*
-*- forEach is used when we want to iterate but do not want to return anything*
-
-```js
-<p>Click the button to get a new array with the full name of each person in the array.</p>
-<button onclick="myFunction()">Try it</button>
-
-<p>New array: <span id="demo"></span></p>
-
-<script>
-var persons = [
-    {firstname : "Malcom", lastname: "Reynolds"},
-    {firstname : "Kaylee", lastname: "Frye"},
-    {firstname : "Jayne", lastname: "Cobb"}
-];
-
-function myFunction() {
-    document.getElementById("demo").innerHTML = persons.map(function(item,index) {
-        var fullname = [item.firstname,item.lastname].join(" ");
-        return fullname;
-    });
-}
-</script>
-```
-
-## Reduce
-
-To get the sum of items in an array we write
-
-```js
-const total = myArray.reduce((x,y)=>x+y)
-```
-
-
-## Dates
-
-```js
-var myDate = new Date();
-
-var myDate = new Date(yyyy,mm,dd,hh,mm,ss,ms);
-var myDate = new Date("11/22/2014 18:25:35")  
-var futureDate = new Date("June 20, 2017");
-
-var anotherDate = new Date("March 06, 2022 08:17:55")
-
-getFullYear
-getMonth   0-11
-getDay     0-6
-
-	var today = myDate.getDay();
-	
-getDate       1-31
-getHours   0-23
-getMinutes  0-59
-getSeconds   0-59
-getMilliseconds 0-999
-Offset from GMT
-Time Zone
-getTime = UNIX time = milliseconds since 1 Jan 1970 at midnight
-
-toString(date)    returns full date and time
-toDateString(date) returns date
-toTimeString(date) returns time
-	js_77_date.htm
-	
-	js_78_set_date.htm
-	
-	also '24'  
-	
-	search for word 'date' 
-	
-			
-			
-			
-var todaysDate = today.getTime();
-var millisecondDiff = futureDate - todaysDate
-var dayDiff = math.Floor(millisecondDiff/(1000*60*60*24))  //days
-setFullYear / setMonth / setDate / setHours / setMinutes / setSeconds / setMilliseconds
-```
-
-Inputting a date
-
-```html
-<input type="date"> 
-<!-- set default date to today -->
-<input type="date" id="datePicker"> 
-<script>
-	document.getElementById('DatePicker').valueAsDate = new Date();
-</script>
-```
-
-ISO Date
-
-```js
-const date01 = new Date('07 November 2020 13:30 GMT`);
-console.log(date01
-/*
-Sat Nov 07 2020 13:30:00 GMT+0000 (Greenwich Mean Time)
-*/
-console.log(date01.toISOString())
-/*
-2020-11-07T13:30:00.000
-*/
-console.log(date01.toGMTString())
-/*
-Sat, 07 Nov 2020 13:30:00 GMT
-*/
-
-```
-
-## types
-
-primitive types
-- Number
-- String
-- Boolean
-- Symbol
-
-Object type is
-- Object
-
-## String
-
-```js
-String(10) //"10"
-
-(10).toString() //"10"
-```
-
-## Boolean to string
-
-```js
-String(true) //"true"
-true.toString() //"true"
-String(false) //"false"
-false.toString() //"false"
-```
-
-## Date to string
-
-```js
-
-String(new Date('2019-01-22'))
-//"Tue Jan 22 2019 01:00:00 GMT+0100 (Central European Standard Time)"
-
-(new Date('2019-01-22')).toString()
-//"Tue Jan 22 2019 01:00:00 GMT+0100 (Central European Standard Time)"
-```
-
-
-
-## String To Number
-
-```js
-Number("1") //1
-Number("0") //0
-Number(" 1 ") //1
-Number("") //0
-Number("12.2")
-Number("abc"") // NaN
-Number(true) //1
-Number(false) //0
-```
-
-## Number(date)
-
-Converts date to UNIX timestamp
-
-
-## truthy falsy
-
-Any value can be converted to boolean passing it to `Boolean()`.
-
-All values will resolve to `true` except:
-
-```
-Boolean(false) //false
-Boolean(0) //false
-Boolean(NaN) //false
-Boolean("") //false
-Boolean(null) //false
-Boolean(undefined) //false
-```
+[dates](notes/dates.md)
 
 
 
