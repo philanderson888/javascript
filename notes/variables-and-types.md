@@ -1,10 +1,21 @@
-# types
+# variables and types
 
 ## contents
 
-- [types](#types)
+- [variables and types](#variables-and-types)
 	- [contents](#contents)
-	- [types](#types-1)
+	- [overview](#overview)
+		- [Primitives](#primitives)
+		- [Object](#object)
+		- [Regular Expression](#regular-expression)
+		- [Date](#date)
+		- [Function](#function)
+		- [Exponential](#exponential)
+		- [NaN Not a number](#nan-not-a-number)
+		- [Infinity](#infinity)
+		- [Array](#array)
+			- [Finding a key inside an object](#finding-a-key-inside-an-object)
+			- [Iterate over object](#iterate-over-object)
 	- [Other object types](#other-object-types)
 	- [TypeOf](#typeof)
 	- [String](#string)
@@ -16,9 +27,12 @@
 		- [truthy falsy](#truthy-falsy)
 
 
-## types
+## overview
 
-Primitives
+variable types can be summarised as follows:
+
+### Primitives
+
 - number
 - string
 - boolean
@@ -27,28 +41,36 @@ Primitives
 - BigInt
 - Symbol
 
-Object
+### Object
+
 - Object
 
-Regular Expression 
+### Regular Expression 
+
 - var myRegularExpression = /test/g
 
-Date
+### Date
+
 - var d = new Date()
 	
-Function
+### Function
+
 - var x = function(){//code}
 	
-Exponential
+### Exponential
+
 - var x = 1.23e5       123000
 
-NaN Not a number
+### NaN Not a number
+
 - isNaN(x) 		TRUE OR FALSE  		TRUE => IT IS NOT A NUMBER!
 		
-Infinity
+### Infinity
+
 - Infinity
 
-Array
+
+### Array
 
 ```js
 var arr = []    or   ()
@@ -58,7 +80,7 @@ var arr = [,]
 var arr = [,,]
 ```	
 
-Object
+### Object
 
 ```js
 var obj = {}
@@ -96,6 +118,20 @@ JSON.stringify ==> JSON to String
 
 	Note : root object is 'Object' and everything is a child of this object
 			and its methods eg .toString();
+```
+
+#### Finding a key inside an object
+
+```js
+if (key in object){}
+```
+
+#### Iterate over object
+
+```js
+for ( const[key,value] of Object.entries(myObject)) {
+
+}
 ```
 
 ## Other object types

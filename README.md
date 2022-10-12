@@ -16,12 +16,6 @@
   - [setTimeout setInterval](#settimeout-setinterval)
   - [exceptions](#exceptions)
   - [Function](#function)
-  - [this](#this)
-  - [globalThis](#globalthis)
-  - [dom](#dom)
-  - [svg](#svg)
-  - [canvas](#canvas)
-  - [websockets](#websockets)
   - [Spread Operator](#spread-operator)
   - [find](#find)
   - [findIndex](#findindex)
@@ -118,7 +112,7 @@ function fnStop = clearInterval(mytimer);
 
 ## exceptions
 
-```
+```js
 try{
   // CODE WHICH MAY FAIL		
 }
@@ -135,7 +129,7 @@ THROW AN EXCEPTION MANUALLY
 TRY
 THROW 'EXCEPTION HAS BEEN THROWN BY ME';
 
-```
+```js
 throw("this is an error");
 			throw new ArgumentException("This is an argument exception");
 			
@@ -160,10 +154,10 @@ Input Validation eg with Regular Expressions
 
 Declare Named Function
 
-```
+```js
 function x(){}
 	var y = function x(){}
-	
+```
 	
 Declare Anonymous (not named) function
 
