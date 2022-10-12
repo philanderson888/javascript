@@ -3,9 +3,11 @@
 ## contents
 
 - [operators](#operators)
-  - [contents](#contents)
-  - [Overview](#overview)
-  - [Maths Operators](#maths-operators)
+	- [contents](#contents)
+	- [Overview](#overview)
+	- [Maths Operators](#maths-operators)
+		- [sqrt](#sqrt)
+		- [cbrt](#cbrt)
 
 
 ## Overview
@@ -54,11 +56,20 @@ Random numbers
 POW(X,Y)		RAISE X TO THE POWER Y
 
 	Math.pow(3,2)   Three squared
+```
 
-SQRT
+### sqrt
 
-	Math.sqrt()
+```js
+Math.sqrt()
+```
 
+### cbrt
+
+
+```js
+Math.cbrt()
+```
 	
 MAX/MIN
 
