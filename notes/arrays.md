@@ -4,6 +4,7 @@
 
 - [arrays](#arrays)
 	- [contents](#contents)
+	- [lesson code as one block of javascript](#lesson-code-as-one-block-of-javascript)
 	- [ways to create an array](#ways-to-create-an-array)
 	- [isArray()](#isarray)
 	- [for loop over array](#for-loop-over-array)
@@ -26,28 +27,112 @@
 		- [flatten an array of arrays](#flatten-an-array-of-arrays)
 
 
+## lesson code as one block of javascript
+
+```js
+
+const array1 = [];
+const array2 = ["item1","item2"];
+const array3 = [1,2,3];  
+
+console.log(`array1 ${array1}`)
+console.log(`array2 ${array2}`)
+console.log(`array3 ${array3}`)
+
+/*
+array1 
+array2 item1,item2
+array3 1,2,3
+*/
+
+
+if (Array.isArray(array1)) {
+  console.log("yes, it's a array")
+}
+
+/*
+yes, it's a array
+*/
+
+
+const array4 = [10,20,30,40]
+for (var i=0; i < array4.length; i++){
+	console.log('array4[' + i + '] = ' + array4[i]);
+}
+
+/*
+array4[0] = 10
+array4[1] = 20
+array4[2] = 30
+array4[3] = 40
+*/
+
+const array5 = ['join', 'me', 'together']
+console.log(array5.join())
+console.log(array5.join('.....'))
+console.log(array5.join(';'))
+
+/*
+join,me,together
+join.....me.....together
+join;me;together
+*/
+
+const array6 = ['add','some']
+array6.push('more','at','the','end')
+console.log(array6)
+/*
+["add", "some", "more", "at", "the","end"]
+*/
+
+
+```
+
 ## ways to create an array
 
 ```js
-array1 = ["item1","item2"];
-array2 = [];
-array3 = ();
-array4 = [5];  
-array5 = (5);
+const array1 = [];
+const array2 = ["item1","item2"];
+const array3 = [1,2,3];  
+
+console.log(`array1 ${array1}`)
+console.log(`array2 ${array2}`)
+console.log(`array3 ${array3}`)
+
+/*
+array1 
+array2 item1,item2
+array3 1,2,3
+*/
 ```
 
 ## isArray()
 
 ```js
-if item.isArray() {}
+if (Array.isArray(array1)) {
+  console.log("yes, it's a array")
+}
+
+/*
+yes, it's a array
+*/
+
 ```
 
 ## for loop over array
 
 ```js
-for (var i=0;i<myArray.length;i++){
-	console.log('myArray[' + i + '] = ' + myArray[i]);
+const array4 = [10,20,30,40]
+for (var i=0; i < array4.length; i++){
+	console.log('array4[' + i + '] = ' + array4[i]);
 }
+
+/*
+array4[0] = 10
+array4[1] = 20
+array4[2] = 30
+array4[3] = 40
+*/
 ```
 
 
@@ -56,18 +141,29 @@ for (var i=0;i<myArray.length;i++){
 OUTPUTS THE ARRAY ELEMENTS AS ONE LONG STRING
 
 ```js
-MYARRAY.JOIN()			==>		1,2,3
-MYARRAY.JOIN(',')		==>		1,2,3
-MYARRAY,JOIN(';')		==>		1;2;3
+const array5 = ['join', 'me', 'together']
+console.log(array5.join())
+console.log(array5.join('.....'))
+console.log(array5.join(';'))
+
+/*
+join,me,together
+join.....me.....together
+join;me;together
+*/
 ```
 
 ## push
 
 adds elements to an array at the end
 
-```
-array.push(22)       TO END
-array1.push("extra1","extra2");
+```js
+const array6 = ['add','some']
+array6.push('more','at','the','end')
+console.log(array6)
+/*
+["add", "some", "more", "at", "the","end"]
+*/
 ```
 
 ## pop
@@ -266,4 +362,3 @@ can split larger array into smaller arrays
 ```js
 output = [].concat(...arr);
 ```
-

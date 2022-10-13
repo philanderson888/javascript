@@ -5,6 +5,7 @@
 - [operators](#operators)
 	- [contents](#contents)
 	- [Overview](#overview)
+	- [Working code](#working-code)
 	- [Maths Operators](#maths-operators)
 		- [sqrt](#sqrt)
 		- [cbrt](#cbrt)
@@ -24,6 +25,14 @@ INTEGER DIVISION RETURNS AN INTEGER
 int/int = int eg 5/2 = 2 so must use float instead
 
 DOUBLE/FLOAT DIVISION RETURNS A DOUBLE/FLOAT
+```
+
+## Working code
+
+```js
+let yourNumber = 900
+console.log(`the square root of ${yourNumber} is ${Math.sqrt(yourNumber)}`)
+console.log(`the cube root of ${yourNumber} is ${Math.cbrt(yourNumber)}`)
 ```
 
 ## Maths Operators
