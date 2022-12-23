@@ -7,6 +7,9 @@
   - [Author](#author)
   - [Introduction](#introduction)
   - [resources](#resources)
+    - [random terms](#random-terms)
+    - [glossaries](#glossaries)
+    - [links](#links)
   - [types](#types)
   - [operators](#operators)
   - [equality](#equality)
@@ -34,8 +37,7 @@
   - [environment variables](#environment-variables)
   - [Google Calendar](#google-calendar)
   - [Google Maps](#google-maps)
-    - [random terms](#random-terms)
-    - [related topics](#related-topics)
+  - [archive](#archive)
 
 
 ## Author
@@ -51,6 +53,22 @@ This is a series of notes from which to learn from scratch all about Javascript.
 ## resources
 
 [resources](notes/resources.md)
+
+### random terms
+
+[random programming terms](notes/random-programming-terms.md)
+[random web programming terms](notes/random-web-terms-and-glossary.md)
+
+### glossaries
+
+[glossary traditional web](notes/glossary-web.md)
+[glossary modern web](notes/glossary-modern-web.md)
+[glossary programming non-web](notes/glossary-programming.md)
+
+### links
+
+- [reason](notes/reason.md)
+- [deno](notes/deno.md)
 
 ## types
 
@@ -1356,19 +1374,8 @@ This page shows a map, zooms in and out, can set the latitude and longitude and 
 ```
 
 
+## archive 
 
-
-
-
-### random terms
-
-[random programming terms](notes/random-programming-terms.md)
-[random web programming terms](notes/random-web-terms-and-glossary.md)
-
-### related topics
-
-- [reason](notes/reason.md)
 - [ajax](notes/ajax.md)
   - [demos](https://github.com/philanderson888/ajax)
 - [Angular 1](notes/angular-version-1.md)
-- [Deno](notes/deno.md)
