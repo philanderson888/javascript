@@ -55,7 +55,7 @@
   - [SEO Search Engine Optimisation](#seo-search-engine-optimisation)
   - [SEO Search Engine Optimisation](#seo-search-engine-optimisation-1)
   - [Wireframes](#wireframes)
-  - [Random Web Terms 23rd December 2022](#random-web-terms-23rd-december-2022)
+- [Random Web Terms 23rd December 2022](#random-web-terms-23rd-december-2022)
 
 
 
@@ -1941,7 +1941,7 @@ Select Frame tool and choose mobile, tablet, desktop
 Click on frame and drag a new frame on the screen
 ```
 
-## Random Web Terms 23rd December 2022
+# Random Web Terms 23rd December 2022
 
 ```
 gatsby new mysite [https://link-to-template](https://link-to-template/); cd mysite; gatsby develop
