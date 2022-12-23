@@ -4,10 +4,6 @@
 
 - [Random Web Terms And Glossary](#random-web-terms-and-glossary)
   - [Contents](#contents)
-  - [Random Mixed Modern Web Terms](#random-mixed-modern-web-terms)
-    - [Ajax](#ajax)
-    - [jQuery](#jquery)
-    - [Web Database Glossary](#web-database-glossary)
   - [Javascript Random Terms From 480 Course](#javascript-random-terms-from-480-course)
 - [Web Glossary](#web-glossary)
   - [ASCII](#ascii)
@@ -59,297 +55,10 @@
   - [SEO Search Engine Optimisation](#seo-search-engine-optimisation)
   - [SEO Search Engine Optimisation](#seo-search-engine-optimisation-1)
   - [Wireframes](#wireframes)
+  - [Random Web Terms 23rd December 2022](#random-web-terms-23rd-december-2022)
 
 
 
-
-## Random Mixed Modern Web Terms
-
-```
-Gatsby
-gatsby new mysite [https://link-to-template](https://link-to-template/); cd mysite; gatsby develop
-contentful : deploy content for site easily
-graphql : new alternative to REST API
-Apollo : works with GraphQl
-NextJS
-[Sanity.IO](http://sanity.io/) is a headless CMS ie provides API
-Appium does Mobile and Web testing [appium.io](http://appium.io/)
-wss:// free way of sending real time chat data across web
-Web Workers Javascript backround task
-Protocol language which carries data TCP (web) SMTP (email) DNS (name) HTTP(web page)
-Razor C# in browser @for (item in items){}
-.cshtml razor
-Blazor upgrade to razor : C# in browser at RUNTIME
-IIS Web server
-Azure Microsoft cloud
-AWS Amazon cloud
-Apache Open source web server
-LAMP stack Linux Apache Mysql PHP WEBSITES!!!
-WAMP stack Windows...
-Open Source free
-MIT licence open source licence
-Cross platform Windows Mac Linux
-MYSQL free SQL database
-PHPMyAdmin paid software to manage free SQL database
-CORS Cross Origin Response : Allows web requests between domains
--ng Angular prefix
-v-for Vue element
-document.getElementById/Tag/ClassName raw javascript to identify element on page
-Flexbox 1D layout
-Grid 2D layout
-MaterialUI Google presentation
-Vuetify Vue + MaterialUI
-Mixin Modify CSS
-Preprocessor Pre-compile CSS before you use it
-SCSS Example of this
-Responsive menu big=>small and page looks good
-Collapsing menu a b c d ---
-Carousel Moving image on main page to attract attention
-Glyphicon Forward >> very small icon image
-Modal popop Tiny window pops up to ask question eg 'are you sure?''
-<pre> Render raw text / code with all spaces intact
-MVP MODEL VIEW PRESENTER 	P = PASSIVE VIEW WHERE SCREEN ITEM MATCHES DATABASE FIELD DIRECTLY.  ITEM CANNOT BE UPDATED BY USER
-MVVM MODEL VIEW VIEW MODEL
-Prettier - opinionated web formatter at [prettier.io](http://prettier.io/)
-Typescript
-Laravel - PHP framework
-ReactJS - renders a view for different states of your app
-Version control
-Cordova - build apps for multiple platform eg web, mobile
-Electron
-Browser API
-Library API
-Npm
-Map (array)
-Reduce (array)
-Filter (array)
-Replace (string)
-Slice (string)
-Split(string)
-True/false
-JSON data
-Variable scope
-ES6
-Promises
-Modules
-Classes
-Template literals
-Generators
-Destructuring
-Callback
-Promises
-Event loop
-setTimeout
-Fetch
-Async-await
-RxJS
-
-
-GIF !!! [https://giphy.com](https://giphy.com/)
-
-AWS - Amazon's cloud computing arm, Amazon Web Services provided two thirds of the firm's profit last quarter.
-
-Alexa is Amazon's best selling device
-
-Book 'Impatient Javascript' [http://2ality.com/2018/08/impatient-js.html](http://2ality.com/2018/08/impatient-js.html)
-
-JavaScript Array map[] Method
-
-Bogus Fake Data Generator [https://github.com/bchavez/Bogus](https://github.com/bchavez/Bogus)
-
-Map Reduce and Filter [https://css-tricks.com/level-up-your-filter-game/](https://css-tricks.com/level-up-your-filter-game/)
-
-auto-unsubscribe in angular observables
-
-Web framework rankings | HotFrameworks
-
-JavaScript Preprocessing
-
-webpack and Babel [https://medium.com/oredi/webpack-with-babel-7-b61f…](https://medium.com/oredi/webpack-with-babel-7-b61f%E2%80%A6)
-
-Promises and Async [https://strongloop.com/strongblog/node-js-callback…](https://strongloop.com/strongblog/node-js-callback%E2%80%A6)
-
-reduce()
-
-gulp - task manager
-webpack - compiles and transpiles and bundles source code
-transpile rewrites modern as old javascript
-bundler - merges individual files into one larger file for efficiency of delivery (less http requests)
-blazor is over web assembly
-bower versions our libraries
-yarn package manager via package.json
-webpack bundes code together
-babel: transpiles
-transpile rewrites modern as old javascript
-chocolatey: manages software on Windows
-WASM [webassembly.org](http://webassembly.org/) like mini vm in browser running C and C++ apps to run in browser
-WASM on windows = Windows + Linux + Python
-Blazor is WASM + .NET
-bower does library versions
-yarn installs via MSI/Chocolatey/Scoop
-yarn installs via apt-get
-webpack bundles files into one larger file or packs them according to need
-babel: transpiles
-transpile newer javascript into older javascript
-transpile converts reactJX to older javascript
-babel: transpiles but uses flow or typescript to check types
-grunt
-gulp
-chocolatey manages software via powershell
-chocolatey creates NUPkg package files
-tsconfig
-mobx manages state
-bower manages versions
-yarn manages packages
-webpack bundles for sending to client
-babel transpiles new to old javascript
-chocolatey manages software on windows machine
-
-```
-
-### Ajax
-
-```powershell
-$().load(url,dataSent,function(responseData,status,xhr)
-status = success / error
-xhr XML HTTP REQUEST OBJECT
-CACHE : YES GET NO POST
-$.get(url,function(data,status){})
-$.post(url,data,function(dataReturned,status){})
-serialize  turns JSON into STRING
-xhr.status
-xhr.statusText
-```
-
-### jQuery
-
-```
-$fadeTo(time,opacity,callback)
-$.each(object,function(key,value){ // iterate over object keys/values})
-$.each(array,function(){ // use 'this'})
-$.each(object,function(key,value){})
-$(document).ready(function(){ // do stuff });
-nuget : jquery
-$('div').each(function(){this.style.color="red"})
-$('p').addClass('myClass')
-$('').prepend/append
-$("").before/after
-$('div#this').detach
-$..html
-$..text
-$..replaceWith
-$..val
-$..attr
-$..css
-$..height/width
-$..bind('click',()=>{})
-$..click(()=>{})
-$..dblclick
-$..blur/focusin/focusout
-
-.each(object,function(key,value))
-Trigger simulates click
-each function(myobject){$.each(myobject,function(key,value){})}
-trigger simulates ('click',function...)
-clone an object and its descendants
-prop Gets Property
-removeProp remove property
-each function(obj){$.each(obj,function(key,value){});
-serialize form data
-trigger('click',function(){}) simulates a click
-clone
-detach
-siblings
-eq(0) returns first item
-filter(condition)***
-noConflict force jQuery not $
-$(function(){}) same as document.ready
-
-- all
-tr:even
-hide(speed,fn(){})
-toggle(speed,fn(){})
-fadeToggle***
-animate***
-fadeTo***
-fadeIn/Out***
-slideDown/Up/Toggle***
-animate({left:20px},{height:20px})
-empty deletes content
-width of (window).width (document).width
-parent
-parents UP TO ROOT
-parents('ul') parents which are also ul
-parentsUntil('y') parents until y
-find('span') find span elements at any sub-level
-next sibling
-next('ul') next item if it is also ul
-nextAll
-nextUntil('y')
-prev/All/Until
-first/last match
-
-### Animate
-
-[http://api.jquery.com/animate/](http://api.jquery.com/animate/)
-
-### Collision Detection
-
-[https://sourceforge.net/projects/jquerycollision/](https://sourceforge.net/projects/jquerycollision/)
-
-[https://eruciform.com/posts/jquery-collision/](https://eruciform.com/posts/jquery-collision/)
-
-### Position
-
-How to get the position of an element on the screen
-
-[https://api.jqueryui.com/position/#position-options](https://api.jqueryui.com/position/#position-options)
-
-[https://www.w3schools.com/jquery/css_position.asp](https://www.w3schools.com/jquery/css_position.asp)
-
-[http://api.jquery.com/position/](http://api.jquery.com/position/)
-
-### Velocity.js
-
-[http://velocityjs.org/](http://velocityjs.org/)
-
-[https://codepen.io/julianshapiro/full/oHaCy/](https://codepen.io/julianshapiro/full/oHaCy/)
-
-[https://www.youtube.com/watch?v=MDLiVB6g2NY&hd=1](https://www.youtube.com/watch?v=MDLiVB6g2NY&hd=1)
-
-```
-
-### Web Database Glossary
-
-```
-[Mongo](notion://www.notion.so/philanderson888/Random-Programming-Notes-8000-lines-ceef083f617f4874b048d248238f1f3c#mongo)
-
-[Redis](notion://www.notion.so/philanderson888/Random-Programming-Notes-8000-lines-ceef083f617f4874b048d248238f1f3c#redis)
-
-## Mongo
-
-stores data as JSON
-
-## Redis
-
-Redis is open-source
-
-Redis is licensed by UNIX BSD
-
-Redis is a key-value store
-
-keys can contain
-
-    strings
-    
-    hashes
-    
-    lists
-    
-    sets
-    
-    sorted sets
-```
 
 ## Javascript Random Terms From 480 Course
 
@@ -2230,4 +1939,43 @@ Figma
 Select Frame tool and choose mobile, tablet, desktop
 
 Click on frame and drag a new frame on the screen
+```
+
+## Random Web Terms 23rd December 2022
+
+```
+gatsby new mysite [https://link-to-template](https://link-to-template/); cd mysite; gatsby develop
+Bogus Fake Data Generator [https://github.com/bchavez/Bogus](https://github.com/bchavez/Bogus)
+Map Reduce and Filter [https://css-tricks.com/level-up-your-filter-game/](https://css-tricks.com/level-up-your-filter-game/)
+Promises and Async [https://strongloop.com/strongblog/node-js-callback…](https://strongloop.com/strongblog/node-js-callback%E2%80%A6)
+JS Promises
+JS Modules
+giphy.com
+book - impatient javascript https://exploringjs.com/impatient-js/toc.html
+hotframeworks.com
+JS preprocessor
+babel transpiles from new to older code and also can optimise code
+webpack 1) compile 2) transpile 3) bundles
+transpile new to old
+bundler makes one larger file for quick downloads
+contentful static content
+apollo with graphQL has 1) GraphQL client 2) GraphQL server for building GraphQL apis
+apollo client 1) creates GraphQL queries 2) sends queries 3) caches results 4) handles errors
+apollo server 1) builds schema 2) runtime to execute queries 3) build on node 'express' 4) can be used with any database 5) allows api testing
+next js helps to build static react applications 1) code split into bundles / chunks for easy download 2) server side rendering of code 3) static export of your site, so it can be rendered without a server.  Overall, optimised for static content.
+sanity.io headless cms with flexible schema, and generators for gatsby and nextjs
+gatsby - static site generator 
+nextjs - builds server-rendered react apps which need real time updates.  does both static and dynamic content.
+gatsby is best for static content
+nextjs is best for dynamic content but also renders static content accordingly
+appium.io does web and mobile testing
+wss://
+blazor is c# in the browser
+glyphicon
+prettier.io formats our code
+cordova builds multi-platform mobile apps
+npm manages libraries for both front and back end applications, is more advanced
+bower manages libraries for front end applications, is not as complex as npm
+yarn is upgrade to npm
+redis is an in-memory database, used as a cache
 ```
