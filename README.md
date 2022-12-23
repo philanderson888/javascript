@@ -57,12 +57,15 @@ This is a series of notes from which to learn from scratch all about Javascript.
 ### random terms
 
 [random programming terms](notes/random-programming-terms.md)
+
 [random web programming terms](notes/random-web-terms-and-glossary.md)
 
 ### glossaries
 
 [glossary traditional web](notes/glossary-web.md)
+
 [glossary modern web](notes/glossary-modern-web.md)
+
 [glossary programming non-web](notes/glossary-programming.md)
 
 ### links
