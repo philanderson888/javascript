@@ -8,6 +8,7 @@
   - [MeteorJS](#meteorjs)
   - [NativeScript](#nativescript)
   - [Node Streams](#node-streams)
+  - [n node manager vs npm node manager](#n-node-manager-vs-npm-node-manager)
   - [Password Generator](#password-generator)
   - [PWA Progressive Web Apps](#pwa-progressive-web-apps)
   - [Typescript](#typescript)
@@ -56,6 +57,15 @@ Try it out at [https://www.nativescript.org](https://www.nativescript.org/)
 Streams are similar to Unix Piping | whereby we `pipe` the output from one command into another
 
 .pipe() is used
+
+## n node manager vs npm node manager
+
+n is a Node module, which can be installed by npm, and nvm is a Bash script.
+
+n and nvm are both still active projects, because it's still more of a bother than updating on Windows. They are still actively maintained, and both have been modified less than 10 days ago.
+
+I find n to be of easier use because it can be installed by npm, but both scripts serve their purpose
+
 
 ## Password Generator
 

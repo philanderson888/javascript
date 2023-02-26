@@ -4,66 +4,13 @@
 
 - [Random Web Terms And Glossary](#random-web-terms-and-glossary)
   - [Contents](#contents)
-  - [Javascript Random Terms From 480 Course](#javascript-random-terms-from-480-course)
-- [Node Random Term List](#node-random-term-list)
-- [Random Web Terms November 2022](#random-web-terms-november-2022)
-- [Random Web Terms 23rd December 2022](#random-web-terms-23rd-december-2022)
-- [Web Glossary](#web-glossary)
-  - [ASCII](#ascii)
-  - [BigInt](#bigint)
-  - [Console Output](#console-output)
-  - [const](#const)
-  - [Cordova - build multi-platform web apps](#cordova---build-multi-platform-web-apps)
-  - [First Class Object](#first-class-object)
-  - [Headers in HTML](#headers-in-html)
-  - [History.length/back/forward/go](#historylengthbackforwardgo)
-  - [Immutable](#immutable)
-  - [Lexical Scoping](#lexical-scoping)
-  - [Location](#location)
-  - [OnResize Window Event](#onresize-window-event)
-  - [Primitive Types](#primitive-types)
-  - [Progressive Javascript Framework](#progressive-javascript-framework)
-  - [Window - Create, Resize, Manage and Close](#window---create-resize-manage-and-close)
-  - [Window.Scroll](#windowscroll)
-- [Javascript Modern Glossary](#javascript-modern-glossary)
-    - [Hacker News](#hacker-news)
-    - [MeteorJS](#meteorjs)
-    - [NativeScript](#nativescript)
-    - [Node Streams](#node-streams)
-    - [Password Generator](#password-generator)
-    - [PWA Progressive Web Apps](#pwa-progressive-web-apps)
-    - [Typescript](#typescript)
-    - [Typescript interfaces](#typescript-interfaces)
-    - [Typescript Classes](#typescript-classes)
-    - [Typescript tsconfig.json](#typescript-tsconfigjson)
-    - [Webpack](#webpack)
-    - [Canvas](#canvas)
-    - [Selenium](#selenium)
-    - [Three.js](#threejs)
-    - [Webpack](#webpack-1)
-    - [Yarn](#yarn)
-- [Programming Glossary](#programming-glossary)
-  - [Android Studio](#android-studio)
-  - [BATCH FILES .BAT](#batch-files-bat)
-    - [Buffer.bytelength](#bufferbytelength)
-  - [Docker For Windows !!!](#docker-for-windows-)
-  - [GIT](#git)
-  - [Google Lens](#google-lens)
-  - [Keyboard Shortcuts](#keyboard-shortcuts)
-  - [zsh - Z Shell : Custom Shell for MAC](#zsh---z-shell--custom-shell-for-mac)
-  - [Kotlin](#kotlin)
-  - [MegaCompanies](#megacompanies)
-  - [nchar and nvarchar SQL Data Types](#nchar-and-nvarchar-sql-data-types)
-    - [npm owner](#npm-owner)
-  - [PostgreSQL](#postgresql)
-  - [SEO Search Engine Optimisation](#seo-search-engine-optimisation)
-  - [SEO Search Engine Optimisation](#seo-search-engine-optimisation-1)
-  - [Wireframes](#wireframes)
+  - [traditional javascript random terms](#traditional-javascript-random-terms)
+  - [traditional node and mongo random terms](#traditional-node-and-mongo-random-terms)
+  - [random web terms 2022](#random-web-terms-2022)
+  - [random web terms 2023](#random-web-terms-2023)
 
 
-
-
-## Javascript Random Terms From 480 Course
+## traditional javascript random terms
 
 ```
 script async as soon as ready
@@ -352,10 +299,9 @@ self.close() from WORKER
 INITATE START
 ```
 
-# Node Random Term List
+## traditional node and mongo random terms
 
 ```
- 
 npm init -y : default install
 npm cache -verify
 express.static
@@ -1277,7 +1223,7 @@ Console. Error
 
 
 
-# Random Web Terms November 2022
+## random web terms 2022
 
 ```
 graphql : new alternative to REST API
@@ -1288,10 +1234,6 @@ Appium does Mobile and Web testing appium.io
 robot.txt at root of website
 security.txt at root of website says if vulnerability reporting is in scope, and instructions on how to disclose a vulnerability
 humans.txt at root of website
-```
-# Random Web Terms 23rd December 2022
-
-```
 gatsby new mysite [https://link-to-template](https://link-to-template/); cd mysite; gatsby develop
 Bogus Fake Data Generator [https://github.com/bchavez/Bogus](https://github.com/bchavez/Bogus)
 Map Reduce and Filter [https://css-tricks.com/level-up-your-filter-game/](https://css-tricks.com/level-up-your-filter-game/)
@@ -1327,4 +1269,17 @@ bower manages libraries for front end applications, is not as complex as npm
 yarn is upgrade to npm
 redis is an in-memory database, used as a cache
 ```
+
+## random web terms 2023
+
+pnpm - symlinks to different javascript libraries, is very fast
+
+nvm is node version manager - can be very complex ... perhaps use 'n' instead
+
+n node version manager (not NVM!) ... https://github.com/tj/n .. upgrade and better alternative to nvm ... n is a Node module, which can be installed by npm, and nvm is a Bash script ... n and nvm are both still active projects, because it's still more of a bother than updating on Windows. They are still actively maintained, and both have been modified less than 10 days ago.  ... I find n to be of easier use because it can be installed by npm, but both scripts serve their purpose
+
+lodash .. must better than underscore.js
+
+mux - streaming video 
+
 
