@@ -1282,4 +1282,4 @@ lodash .. must better than underscore.js
 
 mux - streaming video 
 
-
+m3u8 - streaming video url - downloads video in chunks at a given bitrate/streaming quality, which can vary dynamically 
