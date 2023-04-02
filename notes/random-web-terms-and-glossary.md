@@ -1285,3 +1285,5 @@ mux - streaming video
 m3u8 - streaming video url - downloads video in chunks at a given bitrate/streaming quality, which can vary dynamically 
 
 cloudinary - image hosting
+
+[github copilot](https://github.com/features/copilot) - ai programming
