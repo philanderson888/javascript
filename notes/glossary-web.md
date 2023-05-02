@@ -8,7 +8,6 @@
   - [BigInt](#bigint)
   - [Console Output](#console-output)
   - [const](#const)
-  - [Cordova - build multi-platform web apps](#cordova---build-multi-platform-web-apps)
   - [First Class Object](#first-class-object)
   - [Headers in HTML](#headers-in-html)
   - [History.length/back/forward/go](#historylengthbackforwardgo)
@@ -67,15 +66,7 @@ const references to primitive values are always immutable
 const bindings are immutable but the contents of objects and arrays are not immutable so the contents can change - it is just the binding to the object or array object which does not change
 ```
 
-## Cordova - build multi-platform web apps
 
-```
-npm install -g cordova
-cordova create MyApp
-cd MyApp
-cordova platform add browser
-cordova run browser
-```
 
 ## First Class Object
 
@@ -87,6 +78,9 @@ ie they are Function Objects
 They can be passed as an argument to other objects as well, and can even be returned by a function.
 They can be assigned as a value to a variable.
 ```
+
+
+
 
 ## Headers in HTML
 

@@ -1,85 +1,4 @@
-# Random Web Terms And Glossary
-
-## Contents
-
-- [Random Web Terms And Glossary](#random-web-terms-and-glossary)
-  - [Contents](#contents)
-  - [traditional javascript random terms](#traditional-javascript-random-terms)
-  - [traditional node and mongo random terms](#traditional-node-and-mongo-random-terms)
-  - [random web terms 2022](#random-web-terms-2022)
-  - [random web terms 2023](#random-web-terms-2023)
-
-
-## traditional javascript random terms
-
-```
-script async as soon as ready
-script defer after load
-checkbox.checked
-cookies 300 max
-input disabled => read only
-input.value in box
-exec() returns string
-find()
-search()
-autofocus
-/i case insensitive
-mystring.indexOf('findthis',starthere);
-mystring.lastIndexOf
-Telerik Fiddler
-has/get/setAttribute
-text overflow
-web font
-css columns
-box model
-position : static relative absolute fixed
-block/inline/inline-block
-override
-strokeRect ctx.strokeRect(x,y,width,height)
-font ctx.font="20px Georgia/Verdana" before ctx.strokeText or ctx.fillText
-strokeText ctx.strokeText("Hello",startx,starty,maxWidth)
-textAlign ctx.textAlign="start/end/left/center/right"
-transform ctx.transform
-translate ctx.translate
-moveTo ctx.moveTo(x,y) ABSOLUTE POINT
-lineTo ctx.lineTo(x,y) ABSOLUTE POINT
-stroke NEEDS strokeStyle + font + lineWidth + strokeText
-fill NEEDS fillStyle + font + fillText
-fillStyle ctx.fillStyle="red" COLOUR INSIDE CHARACTER
-fillText ctx.fillText("string",startx,starty,maxWidth) FILL INSIDE CHARACTER
-strokeStyle ctx.strokeStyle="green"
-lineWidth ctx.lineWidth=3
-strokeText ctx.strokeText('string',0,0)
-appcache deprecated
-worker w = new worker (abc.js); postMessage(); onmessage=fn(event){event.data}
-document.write REPLACE WHOLE PAGE IF IT HAS BEEN LOADED ALREADY
-document.write APPEND TO DOCUMENT OPENED with document.open()
-document.write(var1,var2)
-open NEW WINDOW OR DOCUMENT eg var x = window/document.open ("","title","width=200,height=100"); x.document.write("text");
-document.getElementsByTagName('*').length NUMBER OF ELEMENTS
-window.history back/forward/go/length
-window.history.length
-image interlacing
-canvas good for games. resolution-dependent. rendered pixel by pixel.
-canvas image map is hyperlink from point
-script has type/src/charset/defer
-break
-byClassName(selector)
-change
-checkbox : onclick
-checkbox.checked = true will set a checkbox to be checked
-window.closed BOOLEAN true if window has been closed
-myWindow TRUE IF WINDOW EXISTS
-cookie 300 max, 20 max per domain, 4kb max size
-en/decodeURL/URLComponent() ENCODE EG ADD %20 DECODE=REMOVE COMPONENT=PROPER ONE TO USE TO PREPARE URLS
-status get or set text in Status bar window.status="string"
-document.write('string') APPEND TO EXISTING LINE
-document.writeln('string') NEW LINE
-escape ' becomes &apos, "=" &=& <=< >=>
-expiration date : clear cookie
-expression : assign x=7; arithmetic a+b; string a$+b$, logical if(x=7)
-monospace = fixed-width font
-fixed() DEPRECATED : DON'T USE! sets a font as monospace
+ DON'T USE! sets a font as monospace
 floating window
 frame = iframe
 frames = array of frames in current window
@@ -1287,3 +1206,7 @@ m3u8 - streaming video url - downloads video in chunks at a given bitrate/stream
 cloudinary - image hosting
 
 [github copilot](https://github.com/features/copilot) - ai programming
+
+rome is a code linter and formatter
+
+

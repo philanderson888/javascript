@@ -4,13 +4,26 @@
 
 - [modern web glossary](#modern-web-glossary)
   - [contents](#contents)
+  - [Contentful](#contentful)
+  - [Cordova - build multi-platform web apps](#cordova---build-multi-platform-web-apps)
+  - [Gatsby](#gatsby)
+    - [Gatsby Resources](#gatsby-resources)
+    - [Code Samples](#code-samples)
+    - [Install Gatsby Client](#install-gatsby-client)
+    - [Clone Gatsby Starter Site](#clone-gatsby-starter-site)
+    - [Deploy To Netlify](#deploy-to-netlify)
+  - [GraphQL](#graphql)
+  - [Nativescript](#nativescript)
+  - [PWA](#pwa)
   - [Hacker News](#hacker-news)
   - [MeteorJS](#meteorjs)
-  - [NativeScript](#nativescript)
+  - [NativeScript](#nativescript-1)
   - [Node Streams](#node-streams)
   - [n node manager vs npm node manager](#n-node-manager-vs-npm-node-manager)
   - [Password Generator](#password-generator)
   - [PWA Progressive Web Apps](#pwa-progressive-web-apps)
+  - [react-js](#react-js)
+  - [reason-ml](#reason-ml)
   - [Typescript](#typescript)
   - [Typescript interfaces](#typescript-interfaces)
   - [Typescript Classes](#typescript-classes)
@@ -23,8 +36,101 @@
   - [Yarn](#yarn)
 
 
+## Contentful
+
+Deploying a site with contentful
+
+The API keys have to be configured within contentful on their website also.
+
+The .contentful.json file contains the API keys which are valid for local use only
+
+To run the site locally simply type `gatsby develop` and browse to `http://localhost:8000`
+
+
+
+## Cordova - build multi-platform web apps
+
+```
+npm install -g cordova
+cordova create MyApp
+cd MyApp
+cordova platform add browser
+cordova run browser
+```
+
+
+
+## Gatsby
+
+Gatsby generates your site as a PWA 
+
+PWA Progressive Web Site which has a service worker to speed up page loading and resource caching
+
+### Gatsby Resources
+
+[https://www.gatsbyjs.org](https://www.gatsbyjs.org/) 
+
+Starting point for learning
+
+[https://www.gatsbyjs.org/tutorial](https://www.gatsbyjs.org/tutorial)  
+
+### Code Samples
+
+[https://www.gatsbyjs.org/docs](https://www.gatsbyjs.org/docs) 
+
+### Install Gatsby Client
+
+```csharp
+npm install -g gatsby-cli
+
+```
+
+### Clone Gatsby Starter Site
+
+```jsx
+gatsby new mysite https://github.com/gatsbyjs/gatsby-starter-hello-world
+
+https://www.gatsbyjs.org/starters/?v=2 
+
+https://github.com/gatsbyjs/gatsby-starter-hello-world
+
+https://github.com/gatsbyjs/gatsby-starter-default.
+
+cd mysite
+
+gatsby develop
+
+http://localhost:8000    
+
+Edit src/pages/index.js and changes will update live!
+```
+
+### Deploy To Netlify
+
+[https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+
+Create gatsby-02 repo locally and on GitHub; push to GitHub so site is live locally and all changes on GitHub
+
+Go to [app.netlify.com](http://app.netlify.com) and choose 'New Site From Git'.
+
+Link Netlify to GitHub
+
+[https://app.netlify.com/start/deploy?repository=https://github.com/philanderson888/gatsby-02](https://app.netlify.com/start/deploy?repository=https://github.com/philanderson888/gatsby-02) 
+
+[https://festive-perlman-abc4bd.netlify.com/](https://festive-perlman-abc4bd.netlify.com/)  
+
+[https://festive-perlman-abc4bd.netlify.com/](https://festive-perlman-abc4bd.netlify.com/) 
+
+
+## GraphQL
+
+[GraphQL](graph-ql.md)
+
+## Nativescript
 
 [NativeScript](notion://www.notion.so/philanderson888/Random-Programming-Notes-8000-lines-ceef083f617f4874b048d248238f1f3c#nativescript)
+
+## PWA
 
 [PWA Progressive Web App](notion://www.notion.so/philanderson888/Random-Programming-Notes-8000-lines-ceef083f617f4874b048d248238f1f3c#pwa)
 
@@ -34,7 +140,7 @@
 
 ## MeteorJS
 
-```
+```bash
 # Windows
 choco install meteor
 # Linux
@@ -45,6 +151,10 @@ meteor create testapp
 cd testapp
 meteor
 ```
+
+
+
+
 
 ## NativeScript
 
@@ -79,6 +189,14 @@ PWA Progressive Web App : is a web app which behaves as if it's a native app wit
 
 Native apps are used a lot but people are loth to install new web apps! Also Google/Facebook/Amazon have the lions' share of the most popular apps
 
+
+## react-js
+
+[react-js](react-js.md)
+
+## reason-ml
+
+[reason-ml](reason-ml.md)
 ## Typescript
 
 Install via NPM or VS Nuget
