@@ -1,125 +1,141 @@
-# Javascript Formal Course
+# javascript
+
+## contents
+
+- [javascript](#javascript)
+  - [contents](#contents)
+  - [introduction](#introduction)
+  - [history](#history)
+  - [security](#security)
+  - [encoding](#encoding)
+  - [variables](#variables)
+  - [reserved words](#reserved-words)
+- [Session 3: DATATYPES AND VALUES](#session-3-datatypes-and-values)
+  - [Numbers](#numbers)
+  - [Strings](#strings)
+  - [String Methods](#string-methods)
+  - [Booleans](#booleans)
+  - [JavaScript Functions](#javascript-functions)
+  - [Return](#return)
+  - [The this Keyword](#the-this-keyword)
+  - [Objects Introduction](#objects-introduction)
+  - [Arrays Introduction](#arrays-introduction)
+  - [Type Conversion](#type-conversion)
+  - [Primitive Datatype Wrappers](#primitive-datatype-wrappers)
+- [Session 4: VARIABLES, OPERATORS AND EXPRESSIONS](#session-4-variables-operators-and-expressions)
+  - [JavaScript Variables](#javascript-variables)
+  - [JavaScript Expressions](#javascript-expressions)
+  - [Arithmetic Operators](#arithmetic-operators)
+  - [Relational Operators](#relational-operators)
+  - [String Operators](#string-operators)
+  - [Logical Operators](#logical-operators)
+  - [Bitwise Operators](#bitwise-operators)
+  - [Assignment Operators](#assignment-operators)
+  - [The global Object](#the-global-object)
+- [Session 5: JAVASCRIPT CONTROL STRUCTURES](#session-5-javascript-control-structures)
+  - [If/Else](#ifelse)
+  - [For/For In](#forfor-in)
+  - [While](#while)
+  - [Do..While](#dowhile)
+  - [Switch](#switch)
+  - [Break and Continue](#break-and-continue)
+  - [JavaScript Exception Handling](#javascript-exception-handling)
+- [Session 6: OBJECTS AND ARRAYS](#session-6-objects-and-arrays)
+  - [Object](#object)
+  - [Common Properties and Methods](#common-properties-and-methods)
+  - [Dates, Times and Timers](#dates-times-and-timers)
+  - [Classes and Prototyping](#classes-and-prototyping)
+  - [Arrays](#arrays)
+  - [Array Methods](#array-methods)
+- [Session 7: JAVASCRIPT FUNCTIONS](#session-7-javascript-functions)
+  - [Defining Functions](#defining-functions)
+  - [Invoking Functions](#invoking-functions)
+  - [Functions as Data](#functions-as-data)
+  - [Anonymous Functions](#anonymous-functions)
+  - [Passing Arguments to Functions](#passing-arguments-to-functions)
+- [Session 8: INTRODUCTION TO REGULAR EXPRESSIONS](#session-8-introduction-to-regular-expressions)
+  - [The RegEx Object](#the-regex-object)
+  - [Methods and Usage](#methods-and-usage)
+  - [Patterns Matching Examples](#patterns-matching-examples)
+  - [Regular Expressions Tools](#regular-expressions-tools)
+- [Session 9: BROWSER-BASED JAVASCRIPT](#session-9-browser-based-javascript)
+  - [The Window Object](#the-window-object)
+  - [JavaScript Event Handling](#javascript-event-handling)
+  - [JavaScript Form Handling](#javascript-form-handling)
+  - [The Document Object Model](#the-document-object-model)
+  - [Tools](#tools)
+    - [Profiling JavaScript](#profiling-javascript)
+  - [Firebug](#firebug)
+  - [Fiddler](#fiddler)
+  - [YSlow](#yslow)
+  - [Other JavaScript Tools](#other-javascript-tools)
+- [Session 11: JAVASCRIPT EXTRAS](#session-11-javascript-extras)
+  - [NodeJS](#nodejs)
+  - [AJAX Asynchronous Javascript and XML](#ajax-asynchronous-javascript-and-xml)
+  - [Working with Structured Data](#working-with-structured-data)
+- [JavaScript Libraries/Frameworks](#javascript-librariesframeworks)
+  - [Intro](#intro)
+
+## introduction
+
+javascript runs either in a browser or the runtime can be installed as `nodejs` on a machine and javascript files can be run outside of the browser
+
+in a browser the engine is called for example on Chrome a 'v8' engine ... for each browser it is different
+
+the code is run line by line and executes as such - this is called a `script` rather than a compiled unit of code
+
+## history
+
+created 1995 by brendan eich from netscape and mozilla
+
+ecmascript is the official name
+
+2005 ajax web calls obtaining xml or json structured data
+
+2005 jquery simplified form of the language which removed a lot of the perils of javascript
+
+html5
+
+nodejs
+
+2009 angularjs by google to provide data binding in the browser ui to map to data fields obtained in data 'models'
+
+2013 reactjs by facebook to create a virual 'dom' which gets updated 
 
 
-# Session 1: INTRODUCTION TO JAVASCRIPT WEB DEVELOPMENT
+## security
 
-## JavaScript vs. Java
+html, css and javascript are not secure by default
 
-Javascript is NOT JAVA!!! JAVA and C# are both HIGH LEVEL LANGUAGES WHICH DEMAND A COMPILER TO COMPILE CODE INTO RUNTIME CODE. Javascript is more of an 'interpreted' language which is much more fluid and doesn't demand a heavyweight compiler but is executed more as a 'script' would be executed, line by line. The Javascript 'runtime' engine will run within the browser for example Chrome has a V8 engine which is also used to power NodeJS which executes Javascript both in the browser but also running on the operating system itself natively.
+everything is visible on the client
 
-## JavaScript Evolution
+only safe space is server side code
 
-Created 1995
+## encoding
 
-Brendan Eich from Netscape/Mozilla
+default character set is utf-8
 
-ECMAScript is the 'official name' for Javascript
+html is case insensitive but use <lower_case_tags>
 
-2005 : explosion with 1) AJAX 2) jQuery
+css is case insensitive
 
-HTML5
+javascript is case sensitive
 
-NodeJS driving forward a completely new era of Javascript
+## variables
 
-## Security Overview
+variables can start with a-z $ or underscore
 
-Javascript as such on the CLIENT is NOT SECURE! You CANNOT TRUST CLIENT-SIDE JAVASCRIPT AS IT COULD BE HACKED OR CHANGED AT ANY TIME. So form validation etc will have to be performed both on the client but again on the server just to make sure data is safe. For example in particular with 'code injection' attacks where form data is submitted containing \<script\>..\</script\> or other eg SQL commands.
+default naming for variables is `camelCase`
 
-## JavaScript Versions and Browser Support
+## reserved words
 
-Please see [https://en.wikipedia.org/wiki/ECMAScript#Versions](https://en.wikipedia.org/wiki/ECMAScript#Versions) for details of Javascript versions, which are officially called ECMAScript versions now.
+https://www.w3schools.com/js/js_reserved.asp
 
-Browser support can be a very technical and detailed matter with the best website on the planet to confirm if a feature is supported in a given browser being [http://CanIUse.com/](http://caniuse.com/) where you can search for an individual feature to check how it is supported – this goes for HTML, CSS and Javascript.
 
-## JavaScript Engines
+```
+======== done to here october 2024 ==========
+```
 
-These are the browser engines which run Javascript.
-
-- Check out this official guide to browser engines at [https://en.wikipedia.org/wiki/Web\\_browser\\_engine](https://en.wikipedia.org/wiki/Web%5C%5C_browser%5C%5C_engine) and a comparison of engines at [https://en.wikipedia.org/wiki/Comparison\\_of\\_web\\_browser\\_engines](https://en.wikipedia.org/wiki/Comparison%5C%5C_of%5C%5C_web%5C%5C_browser%5C%5C_engines)
-- Chrome : Blink which is a fork of Webkit which Chrome used to use and is officially the most popular browser engine
-- Opera : Blink like Chrome
-- Gecko : Mozilla Firefox
-- Internet Explorer : Trident
-- Edge : EdgeHTML
-- Safari : WebKit
-
-# Session 2: LANGUAGE STRUCTURE
-
-## Character Set
-
-For web pages, HTML, CSS and Javascript the default character set is UTF-8 which provides a 2-byte code which can represent any character from any language on the planet, plus some symbols too, which means that in theory any language can be represented in computer form.
-
-ASCII was the primitive one-byte representation of all basic English letters and characters, for example see this page here on ASCII [http://www.ascii-code.com/](http://www.ascii-code.com/) and also here on W3Schools at [http://www.w3schools.com/html/html\\_charset.asp](http://www.w3schools.com/html/html%5C%5C_charset.asp)
-
-UTF-8 is also called UNICODE. There is also a version called UTF-16 which is a character set used in many operating systems.
-
-HTML pages : to use a non-standard character set the code would simply be \<meta charset="ISO-8859-1"\>
-
-## Case Sensitivity
-
-HTML is CASE INsEnSiTiVe although \<lower\_case\> tags should always be used, for everything!
-
-CSS is CASE INsEnSiTiVe
-
-Javascript is CASE SENSITIVE so you must be EXTRA CAREFUL for example document.getElementById("x")
-
-## Layout and Whitespace
-
-Standard programming practice can and should be used to lay out good code for example:
-
-- Declare variables at the top of the code
-- Use comments
-- White space is not normally an issue but be aware it can cause issues for example if parsing DOM elements then spaces (from your code) can be counted as DOM elements even though they might not be visible or have any effect on the page. They may influence (1) CSS layout for example firstchildmight be applying to a 'space' element (2) arrays of multiple elements eg forms.myForm.length may be affected by non-visible DOM elements
-    - See [http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref\\_node\\_childnodes](http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref%5C%5C_node%5C%5C_childnodes) for details
-    - See HTML Whitespace lab also in index.htm
-
-]
-
-## JavaScript Literals
-
-A 'literal' is a fixed string that is no longer treated as a variable and cannot be changed without altering the string directly eg by adding or removing characters. Advanced discussion on literals can be found at [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar\\_and\\_types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar%5C%5C_and%5C%5C_types) .
-
-## Identifiers
-
-Javascript identifiers are used to name variables and functions
-
-First character of every Javascript variable/function must be
-
-Letter of the alphabet (NOT A NUMBER)
-
-$
-
-\_
-
-Note : Numbers are not allowed to start variables, neither are other special characters
-
-Other letters may be the above (letter, $ and \_) plus numbers so \_123 is valid.
-
-camelCase tends to be used in Javascript.
-
-Please see discussion on Javascript syntax at [http://www.w3schools.com/js/js\\_syntax.asp](http://www.w3schools.com/js/js%5C%5C_syntax.asp)
-
-## Reserved Words
-
-Javascript's reserved word list is as follows
-
-[Untitled](Javascript%20Formal%20Course%208a26124f8df54b48b4c6ed241c23eb0f/Untitled%20Database%20e05548eca4574216a3ca14494297d5b0.csv)
-
-[Untitled](Javascript%20Formal%20Course%208a26124f8df54b48b4c6ed241c23eb0f/Untitled%20Database%206761556eae1f4be892298d55e1a7feec.csv)
-
-## Operator Precedence
-
-Basic BODMAS precedence will take place eg
-
-(3+2)42+213=????
-
-Brackets first so 3+2=5, multiply by 4 squared = 16 to give 80 then add 21 divided by 7 = 3 to give 83
-
-## Good practice and tips
-
-For example see Google guide to Javascript here
-
-[https://google.github.io/styleguide/javascriptguide.xml](https://google.github.io/styleguide/javascriptguide.xml)
 
 # Session 3: DATATYPES AND VALUES
 
@@ -853,26 +869,3 @@ The web has defaulted to using first XML as the default structural way of passin
 ## Intro
 
 Javascript frameworks undergird SPA Single Page Applications which are kept in memory unlike traditional HTML applications which often are 'stateless'.
-
-## Angular.JS
-
-Created 2009 by Google
-
-Extends HTML attributes using Angular 'directives'
-
-Two-way data binding is at the core of Angular. When data is changed / entered on a form this goes through to the model, and vice-versa.
-
-## React.JS
-
-This is a competitor to Angular.js
-
-React is behind Instagram and Facebook and is developed mostly by Facebook.
-
-Released 2013.
-
-Embodies a 'Virtual DOM'
-
-Focuses on the View part of MVC
-
-Flux and Redux are part of the React suite of tools
-

@@ -1,6 +1,6 @@
 # Javascript
 
-** NOTE - i think we should deprecate this and add all new items into my GITHUB repository
+** deprecate these notes ** 
 
 ## New Stuff 2021 September
 
@@ -5581,11 +5581,14 @@ System.Diagnostics.Debug.WriteLine(x);	appear in OUTPUT window
 										when debugging
 ```
 
-480 Class Notes After First Delivery
 
-480 LABS
+### 480 Class Notes After First Delivery
+
+### 480 LABS
 
 Labs To Build In
+
+```
 REGEX
 MATCH
 TEST
@@ -5752,8 +5755,39 @@ DL	DT	DD
 <i>
 <strong>
 <em>	EMPHASIS
-HTML
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# HTML
+
 !DOCTYPE html	FIRST LINE IN CODE
+
 TYPE OF HTML
 
 XHTML
@@ -5883,7 +5917,13 @@ DATA-
 			$('div[data-name="x"]');
 ```
 
-JAVASCRIPT
+
+
+
+
+# JAVASCRIPT
+
+```
 HISTORY
 1995
 NETSCAPE
@@ -5904,8 +5944,10 @@ OF YOUR CODE
 GOOD PRACTICE : PUT DECLARATIONS AT TOP
 var x;	(GLOBAL IF DECLARED OUTSIDE FUNCTION)
 { let x =6; }
-
 ```
+
+
+```js
 var x;		UNDEFINED		
 var y=null;	NULL
 var z=""	EMPTY STRING
@@ -5923,10 +5965,16 @@ var bb="hello"
 AVOID KEYWORDS EG NAME,DATE,TIME  (RESERVED)
 ```
 
-DEBUGGING
+### DEBUGGING
+
+```js
 console.log()
 debugger;	pause live code
-COMMENTS
+```
+
+### COMMENTS
+
+```js
 HTML
 <!-- COMMENT	-->
 CSS
@@ -5934,7 +5982,11 @@ CSS
 JAVASCRIPT
 /* */	MULTILINE
 //	SINGLE LINE
-Coding conventions
+```
+
+### Coding conventions
+
+```
 CASE SENSITIVE??
 FILES IN WINDOWS	NOT CASE SENSITIVE
 FILES IN LINUX	YES CASE SENSITIVE
@@ -5944,12 +5996,15 @@ CONSTANT	FIXED, UNCHANGING
 ;	TERMINATE LINE; RECOMMENDED TO BE PRESENT (NOT REQUIRED)
 ""	used to enclose string
 ' '	used to enclose string
-
 ```
+
+```js
 " ' string ' "     OR   '  " string "  '		good,valid
 ```
 
-DECLARING VARIABLES
+### DECLARING VARIABLES
+
+```js
 must start with LETTER abcABC or UNDERSCORE ___
 must contain	numbers or letters or __
 var : valid in global space??? YES local function??? YES
@@ -5964,13 +6019,16 @@ use strict;	MUST USE var; declaration
 hoist	variables put at start of code
 Object ==>	all items are children of ROOT OBJECT
 Literal	RAW STRING DATA AS OPPOSED TO A VARIABLE
-DATA TYPES
+```
+
+### DATA TYPES
+
+```js
 String	var x="hi"
 empty	var x=""
 Number	var x=1;
 Constant	const DO_NOT_CHANGE_ME = 557;
 
-```
 Boolean			1/0
 Regular Expression	var myregexp = / /g     global match
 				      /^     starts with
@@ -6056,11 +6114,11 @@ Object
 				OR USE jquery ('myForm').serialize()
 ```
 
-EXPRESSIONS
+### EXPRESSIONS
+
+```js
 x=y	ASSIGN VALUE OF Y TO X
 x==y	COMPARE VALUE
-
-```
 x===y		COMPARE VALUE  AND   TYPE
 !
 > < >= <= 
@@ -6068,10 +6126,12 @@ x===y		COMPARE VALUE  AND   TYPE
 ||
 ```
 
-OPERATOR
+### OPERATOR
+
+
 UNARY
 
-```
+```js
 ++x	INCREMENT THEN ASSIGN
 	x++	ASSIGN THEN INCREMENT
 BINARY
@@ -6100,9 +6160,9 @@ BODMAS/BIDMAS
 		 12  +  6 -5 = 13
 ```
 
-Maths
+### Maths
 
-```
+```js
 Math.round   3.5=>4.0        NOTE : FINANCIAL WORLD NOT GOOD
 Math.ceil	3.1 => 4.0
 Math.floor	3.9 => 3.0
