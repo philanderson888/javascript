@@ -9,7 +9,6 @@
   - [resources](#resources)
     - [official documentation](#official-documentation)
     - [related topics](#related-topics)
-    - [random terms](#random-terms)
     - [links](#links)
   - [types](#types)
   - [dates](#dates)
@@ -37,7 +36,6 @@
     - [dom child nodes array](#dom-child-nodes-array)
     - [Node Name By Tag Name](#node-name-by-tag-name)
   - [svg](#svg)
-  - [canvas](#canvas)
   - [websockets](#websockets)
   - [dom](#dom-1)
   - [arrays](#arrays)
@@ -88,11 +86,6 @@ repositories from which to learn the basics of javascript
 [typescript](notes/typescript.md)
 
 [libraries](notes/libraries.md)
-
-
-### random terms
-
-[random web programming terms](notes/random-web-terms-and-glossary.md)
 
 ### links
 
@@ -598,9 +591,6 @@ Removing Nodes
 
 [SVG](notes/svg.md)
 
-## canvas
-
-[canvas](notes/canvas.md)
 
 ## websockets
 

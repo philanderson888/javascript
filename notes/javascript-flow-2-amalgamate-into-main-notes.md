@@ -3788,7 +3788,7 @@ add();
 
 The function only runs once and returns a function. Calling add() does not run the closure again, just the part which returns, which accesses the private variable (does not reset it)
 
-See https://gifted-haibt-065acd.netlify.app/#javascript-closures and https://codepen.io/philanderson888/pen/QJNwGN for a working example.
+See https://codepen.io/philanderson888/pen/QJNwGN for a working example.
 
 
 Javascript closures are inner functions which have access to the

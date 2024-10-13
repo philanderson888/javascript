@@ -413,22 +413,11 @@ Binary Operators
 		
 		11%3=2
 
-and/or && / ||
-		
-
-Bit shift >> <<   :  Bitwise operator
-	<http://imgs.g4estatic.com/bitwise-operators/table_bitwise.png>
-
-	
-BODMAS / BIDMAS rules!
-
 ## Ternary Operator  ? :
 
 ```jsx
 (x<10?10:100) 
-
 // means
-
 if x<10 then return 10 else 100
 ```
 
