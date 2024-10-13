@@ -10,7 +10,6 @@
     - [official documentation](#official-documentation)
     - [related topics](#related-topics)
     - [random terms](#random-terms)
-    - [glossaries](#glossaries)
     - [links](#links)
   - [types](#types)
   - [dates](#dates)
@@ -21,7 +20,6 @@
   - [operators](#operators)
   - [equality](#equality)
   - [loops](#loops)
-  - [arrays, also map, filter, reduce](#arrays-also-map-filter-reduce)
   - [dates](#dates-3)
   - [setTimeout setInterval](#settimeout-setinterval)
   - [exceptions](#exceptions)
@@ -91,19 +89,13 @@ repositories from which to learn the basics of javascript
 
 [libraries](notes/libraries.md)
 
-[resources](notes/resources.md)
 
 ### random terms
 
 [random web programming terms](notes/random-web-terms-and-glossary.md)
 
-### glossaries
-
-[glossary programming non-web](notes/glossary-programming.md)
-
 ### links
 
-- [reason](notes/reason.md)
 - [deno](notes/deno.md)
 
 ## types
@@ -225,10 +217,6 @@ For(var x=0;x<10;x++){}
 
 For(var item in myObject){ }
 ```
-
-## arrays, also map, filter, reduce
-
-[arrays](arrays.md)
 
 ## dates
 

@@ -2197,13 +2197,6 @@ var obj = {get x() {return 0} };
   PNPM
 ```
 
-
-## jQuery
-
-[jQuery](notes/jquery.md)
-
-
-
 ## Array
 		
 ```js
@@ -3716,11 +3709,6 @@ for(var i = 0; i < list.length;i++){
 	</script>
 </fieldset>
 ```
-
-## console logging
-	
-[notes/console-logging.md](notes/console-logging.md)
-
 
 ## String format
 
