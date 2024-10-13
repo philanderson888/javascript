@@ -1,23 +1,25 @@
-name: Link Checker
+name: Links
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  repository_dispatch:
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0'  # Runs weekly
+    - cron: "00 18 * * *"
 
 jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Run lychee link checker
-        uses: lycheeverse/lychee-action@v1.6.1
+      - name: Link Checker
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+
+      - name: Create Issue From File
+        if: env.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
         with:
-          args: --verbose --no-progress --timeout 30s
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          labels: report, automated issue
