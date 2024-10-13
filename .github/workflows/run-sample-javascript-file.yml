@@ -1,4 +1,4 @@
-name: Run JavaScript File
+name: Test JavaScript Output
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  run-js-file:
+  test-js-output:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # You can specify the Node.js version you prefer
+          node-version: '18'  # Node.js version
 
-      - name: Run hello-world.js
-        run: node hello-world.js
+      - name: Run hello-world.js and check output
+        run: |
+          output=$(node hello-world.js)
+          if [ "$output" = "hello world" ]; then
+            echo "Test passed!"
+          else
+            echo "Test failed: expected 'hello world' but got '$output'"
+            exit 1
+          fi
