@@ -20,4 +20,8 @@ jobs:
       - name: Run lychee link checker
         uses: lycheeverse/lychee-action@v1.6.1
         with:
-          args: --verbose --no-progress --timeout 30s ./  # Specify the directory or files to check
+          args: --verbose --no-progress --timeout 30 ./  # Specify the directory or files to check
+
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
