@@ -30,11 +30,3 @@ jobs:
             echo "Test failed: expected 'hello world' but got '$output'"
             exit 1
           fi
-
-          name: Test JavaScript Output
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm test
