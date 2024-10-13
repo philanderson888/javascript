@@ -1,0 +1,25 @@
+name: Run JavaScript File
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-js-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # You can specify the Node.js version you prefer
+
+      - name: Run hello-world.js
+        run: node hello-world.js
