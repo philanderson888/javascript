@@ -81,10 +81,6 @@ repositories from which to learn the basics of javascript
 
 ### glossaries
 
-[glossary traditional web](notes/glossary-web.md)
-
-[glossary modern web](notes/glossary-modern-web.md)
-
 [glossary programming non-web](notes/glossary-programming.md)
 
 ### links
@@ -1152,7 +1148,7 @@ app-env
 
 ## Google Calendar
 
-Find the code at [api\index.html](api\index.html)
+Find the code at [api/index.html](api/index.html)
 
 ```html
 <!DOCTYPE html>
