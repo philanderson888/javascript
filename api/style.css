@@ -44,3 +44,7 @@ li{
 #latitude, #longitude, #zoom{
     width:4vw;
 }
+
+.old-menu-style { 
+    display: block;
+}
