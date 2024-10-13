@@ -1,13 +1,6 @@
 # graph-ql
 
 
-
-## GraphQL
-
-EggHead Course
-
-[Create Fullstack Applications with GraphQL and Apollo](https://egghead.io/playlists/create-fullstack-applications-with-graphql-and-apollo-794dc9c7)
-
 # Apollo Server
 
 ```csharp

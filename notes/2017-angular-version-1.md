@@ -2,7 +2,7 @@
 
 # AngularJS (Angular 1) Terms
 
-```
+```js
 Ngrx state management 
 
 Angular does state management out of the box
@@ -185,26 +185,40 @@ CONTROLLER ng-controller   DOES NOT SEEM TO HAVE ANY FUNCTION HERE!
 
 ```
 
-```jsx
-
 # Angular
 
 Angular is a client-side framework maintained by Google
-History
 
+
+## History
+
+```
 Conceived in about 2009 and first release 2012; now officially supported by Google.
+
 v1 called 'AngularJS'
+
 	MVC architecture
+
 	Javascript is used 
+
 v2 called 'Angular' from now on! (instead of AngularJS)
+
 	Complete rewrite compared with version 1
+
 	service/controller architecture
+
 	Controllers from v1 eliminated in favour of component based UI. This gives improved
+
 		flexibility and usability.
+
 	Typescript is used
+
 	Two layers
+
 		Application layer
+
 		Rendering layer
+
 	SEO friendly which v1 was not.  V2 is rendered server-side
 v4
 	codebase size reduced by 60%
@@ -213,26 +227,23 @@ v4
 		<div *ngIf="x ; then ABlock else BBlock ">HTML Content<div>
 	Angular 4 getting started link https://www.edureka.co/blog/angular-tutorial/?78%5CDASFWERPIQWJGLKNGMAL%2FSD%2CNMGADSLMPQWIRJGFPIQJGFutm_campaign=social-media-edureka-june-ab&utm_medium=crosspost&utm_source=quora and also Angular 4 getting started video Youtube : 1 hour 32 minutes : 8 May 2017 : Edureka
 	Angular 4 in 1 hour https://www.youtube.com/watch?v=KhzGSHNhnbI 43 minutes : July 2017 : Traversy Media  
-    
-Angular Help Links
+```
+
+### Angular Help Links
 
 W3 Schools
+
 Official documentation at https://docs.angularjs.org/api
+
 Quickstart https://angular.io/guide/quickstart
-Summary of all directives
-    https://www.w3schools.com/angular/angular_ref_directives.asp
-WebChat help for Angular http://webchat.freenode.net/?channels=angularjs&uio=d4
-Free Online Courses
 
-Work this through!
-http://www.tutorialsteacher.com/angularjs/angularjs-tutorials
-Angular Video Help
+Summary of all directives     https://www.w3schools.com/angular/angular_ref_directives.asp
 
-Taster course - 11 minutes - by Jordan Matthiesen from VS Javascript Tools team at 
-https://channel9.msdn.com/Series/Visual-Studio-2015-Enterprise-Videos/Building-JavaScript-apps-with-Angular#time=0s
-Hello World - using braces {{ }} to display items
+### hello world
 
 Angular can be added to a single HTML page like this
+
+```js
 <!DOCTYPE html>
 <head>
     <title>Angular JS</title>
@@ -244,67 +255,91 @@ Angular can be added to a single HTML page like this
     <p>{{"Hello " + " World"}}</p>
 </body>
 </html>
+```
 
 See Angular_01
-Directive
+
+### Directive
+
 
 Directives are custom attributes which allow ANGULAR TO EXTEND HTML
-	ng-app
-	ng-model
-	ng-bind
-	ng-..
-	Can also build our own custom directives
-	When naming our own directive we use camelCase eg w3TestDirective but when invoking it must use separated case eg w3-test-directive
-	<body ng-app="x">
-	<w3-test-directive></w3-test-directive>
-	<script>
-	var app=angular.module('x',[]);
-	app.directive("w3TestDirective",function(){
-		return{
-			template : "<h1>My First Directive</h1>"
-		};
-	});
-	</script>
-	We can use (invoke) the directive by using four methods
-		Element Name E		<w3-test-directive></w3-test-directive>
-		Attribute		 A		<div w3-test-directive></div>							
-		Class        C    <div class="w3-test-directive"></div>			
-											must have restrict: C, to work
-		Comment      M    <!-- directive: w3-test-directive -->			
-											must have restrict: M to work and replace:true also
-		app.directive("directive01",function(){
-			return{	
-				restrict : E/A/C/M   restricts how the directive may be invoked
-				template : "<h1>test</h1>"
-			};
-		});
-	Worked Example
-		<!DOCTYPE html>
-		<html>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-		<body ng-app="myApp">
-		<w3-test-directive></w3-test-directive>
-		<div w3-test-directive></div>
-		<div class="w3-test-directive"></div>
-		<!-- directive : w3-test-directive -->
-		<script>
-		var app = angular.module("myApp", []);
-		app.directive("w3TestDirective", function() {
-		    return {
-		        template : "<h1>Made by a directive!</h1>"
-		    };
-		});
-		</script>
-		</body>
-		</html>
+
+```js
 ng-app
+ng-model
+ng-bind
+ng-..
+Can also build our own custom directives
+When naming our own directive we use camelCase eg w3TestDirective but when invoking it must use separated case eg w3-test-directive
+<body ng-app="x">
+<w3-test-directive></w3-test-directive>
+<script>
+var app=angular.module('x',[]);
+app.directive("w3TestDirective",function(){
+	return{
+		template : "<h1>My First Directive</h1>"
+	};
+});
+</script>
+```
+We can use (invoke) the directive by using four methods
+
+Element Name E		<w3-test-directive></w3-test-directive>
+
+Attribute		 A		<div w3-test-directive></div>							
+
+Class        C    <div class="w3-test-directive"></div>			
+
+				must have restrict: C, to work
+
+Comment      M    <!-- directive: w3-test-directive -->			
+				must have restrict: M to work and replace:true also
+
+```js
+app.directive("directive01",function(){
+	return{	
+		restrict : E/A/C/M   restricts how the directive may be invoked
+		template : "<h1>test</h1>"
+	};
+});
+```
+
+Worked Example
+
+```js
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-app="myApp">
+<w3-test-directive></w3-test-directive>
+<div w3-test-directive></div>
+<div class="w3-test-directive"></div>
+<!-- directive : w3-test-directive -->
+<script>
+var app = angular.module("myApp", []);
+app.directive("w3TestDirective", function() {
+	return {
+		template : "<h1>Made by a directive!</h1>"
+	};
+});
+</script>
+</body>
+</html>
+```
+
+### ng-app
 
 <body ng-app=""> tells us this is an Angular application, and this is the (one) root element of the Angular application.  
+
 This is a blank, nameless application.
+
 Hello World
 
 Angular – Hello World
-	Angular can also be run with linking to a .js file in the background using ng-app to link to a function within the .js file
+
+Angular can also be run with linking to a .js file in the background using ng-app to link to a function within the .js file
+
+```js
 <!DOCTYPE html>
 <html ng-app="HelloWorld">                     ng-app refers to FUNCTION HELLOWORLD in myscript.js
 <head>
@@ -317,19 +352,31 @@ Angular – Hello World
 <script src="myscript.js"></script>
 </body>
 </html>
+```
+
 Note : it is recommended to place the     <script src="assets/js/angular.js"></script>  at the end of the <head>
-ng-model and ng-bind
+
+### ng-model and ng-bind
 
 ng-model maps INPUT TO ANGULAR DATA FIELD
+
 ng-bind maps ANGULAR DATA FIELD TO HTML VISUAL ITEMS ON THE SCREEN
+
 ng-model for INPUT DATA
+
 nb-bind for OUTPUT DATA
+
+```js
 <div ng-app="">
 <input type="text" ng-model="angular-data-item-01" />
 <p ng-bind="angular-data-item-01"></p>
-ng-init
+```
+
+### ng-init
 
 Sets initial values
+
+```js
 <body ng-app="" ng-init="field01='fred'">
 <div ng-bind="field01"></div>
 	ng-init="field01=22;field02=33" can initialise multiple fields with semicolons
@@ -338,34 +385,55 @@ ng-bind same as {{   }}
 <body ng-app="" ng-init="field001='fred'">
 <div ng-bind="field01"></div>
 <div>{{field01}}</div>
-Expressions
+```
 
+### Expressions
+
+```js
 {{  expressions  }}  can be numeric {{ 1+1 }}  returns 2 but {{ "1" + "1" }} returns 11
 <p>1 + 2 = {{1+2}}</p>     raw HTML with NUMBER
+```
+
 Expressions – Differences with Javascript
+
 https://docs.angularjs.org/guide/expression
-Angular variables
+
+### Angular variables
+
 Evaluate against a SCOPE OBJECT, not Javascript's GLOBAL WINDOW
+
 Errors return NULL and UNDEFINED
+
 Angular Can:
-	contain literals, operators, variables
-	be written inside HTML
-	support filters
+- contain literals, operators, variables
+- be written inside HTML
+- support filters
+
 Angular Cannot
-	have IF, FOR, DO, WHILE, TRY..CATCH
-	declare a function
-	use REGEXP
-	use 'new' eg var d = new Date()
-Expressions Setting CSS
+- have IF, FOR, DO, WHILE, TRY..CATCH
+- declare a function
+- use REGEXP
+- use 'new' eg var d = new Date()
+
+### Expressions Setting CSS
 
 Expressions can be used to set CSS values also for example
+
+```js
 <body ng-app="" ng-init="color01='blue'">
 <div style="background-color='{{color01}}'">
+```
+
 We can even make it a variable like
+
+```js
 <input type="text" ng-model="color01" value={{color01}}>
 <div style="background-color: {{color01}}">This text is {{color01}}</div>
+```
+
 see angular_07a_set_CSS.htm for a worked example
-Using a checkbox to set CSS
+
+### Using a checkbox to set CSS
 
 See this code
 <p ng-class="[style4, {orange: warning}]">Using Array and Map Syntax</p>
