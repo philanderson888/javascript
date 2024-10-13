@@ -14,36 +14,56 @@
     - [links](#links)
   - [types](#types)
   - [dates](#dates)
+  - [dates](#dates-1)
   - [Temporal native date object](#temporal-native-date-object)
   - [2023 update](#2023-update)
-  - [Dates](#dates-1)
+  - [Dates](#dates-2)
   - [operators](#operators)
   - [equality](#equality)
   - [loops](#loops)
   - [arrays, also map, filter, reduce](#arrays-also-map-filter-reduce)
-  - [dates](#dates-2)
+  - [dates](#dates-3)
   - [setTimeout setInterval](#settimeout-setinterval)
   - [exceptions](#exceptions)
   - [Function](#function)
-  - [Spread Operator](#spread-operator)
-  - [find](#find)
-  - [findIndex](#findindex)
-  - [forEach](#foreach)
-  - [Filter](#filter)
+    - [return](#return)
+    - [function scope](#function-scope)
+    - [IIFE Immediately Invoked Function](#iife-immediately-invoked-function)
+    - [Callback Function](#callback-function)
+    - [documentation](#documentation)
+    - [this](#this)
+    - [globalThis](#globalthis)
+  - [dom](#dom)
+    - [window](#window)
+    - [Add an element to page using Javascript](#add-an-element-to-page-using-javascript)
+    - [dom child nodes array](#dom-child-nodes-array)
+    - [Node Name By Tag Name](#node-name-by-tag-name)
+  - [svg](#svg)
+  - [canvas](#canvas)
+  - [websockets](#websockets)
+  - [dom](#dom-1)
+  - [arrays](#arrays)
+    - [Array.of](#arrayof)
+    - [Spread Operator](#spread-operator)
+    - [find](#find)
+    - [findIndex](#findindex)
+    - [forEach](#foreach)
+    - [Filter](#filter)
   - [JSON](#json)
   - [serialize](#serialize)
-  - [for..in](#forin)
+    - [for..in](#forin)
   - [valid JSON?](#valid-json)
   - [UNDEFINED](#undefined)
   - [Fetch](#fetch)
   - [Collections](#collections)
-  - [Sets](#sets)
+    - [Sets](#sets)
   - [Events](#events)
+    - [button event](#button-event)
+    - [PAGE LOAD EVENTS](#page-load-events)
   - [event.type](#eventtype)
   - [environment variables](#environment-variables)
   - [Google Calendar](#google-calendar)
   - [Google Maps](#google-maps)
-  - [archive](#archive)
 
 ## author
 
@@ -75,8 +95,6 @@ repositories from which to learn the basics of javascript
 
 ### random terms
 
-[random programming terms](notes/random-programming-terms.md)
-
 [random web programming terms](notes/random-web-terms-and-glossary.md)
 
 ### glossaries
@@ -91,6 +109,9 @@ repositories from which to learn the basics of javascript
 ## types
 
 [variables and types](/notes/variables-and-types.md)
+
+## dates
+
 
 ## dates
 
@@ -282,69 +303,81 @@ function x(){}
 	
 Declare Anonymous (not named) function
 
-	function(){}
-	() => {}                  //Lambda (anonymous)
-	
+```js
+function(){}
+()) => {}                  //Lambda (anonymous)
+```	
 
 Run a function
 
-	x(); 
+```js
+x(); 
+```
 	
-	
-	
-	Run an ANONYMOUS (NAMELESS) FUNCTION RIGHT NOW USING
-		   ....... function(){}
+Run an ANONYMOUS (NAMELESS) FUNCTION RIGHT NOW USING
+
+```js
+function(){}
+```
 
 Pass parameters
 
-	x('Param1',a,b,c)
-	
-		arguments is the name of the array passed into the function
-		
-		arguments.length = expected number of parameters [arity]
-		
-											function x(a,b,c) ==> x.length=3
-		
-		arguments[0]
-		
-		
-		
+```js
+x('Param1',a,b,c)
+```	
 
-Return
+arguments is the name of the array passed into the function
+		
+arguments.length = expected number of parameters [arity]
+		
+```js
+function x(a,b,c) ==> x.length=3
+arguments[0]
+```
+### return
 
-	return <value>;    halts execution of the function
 
-						can return a JSON 
-						
-						
-	Best practice : ALWAYS PASS VARIABLES TO FUNCTIONS AND USE RETURN STATEMENT
-Scope
+```js
+return <value>;    halts execution of the function
+```
 
-	global var declared OUTSIDE FUNCTION
-	
-	local var declared WITHIN FUNCTION
-	
-	let is valid within { block of code }  (even private within a function)
-	
-	
+can return a JSON 
 
-IIFE Immediately Invoked Function
-	(function(){});   RUN RIGHT NOW AND RETURN THE OUTPUT OF THAT FUNCTION AS A 	LITERAL INPUT INTO THE COMPILED CODE
-	
+Best practice : ALWAYS PASS VARIABLES TO FUNCTIONS AND USE RETURN STATEMENT
 
-Callback Function
-	$(this).on('click',function(){})
+
+### function scope
+
+```js
+global var declared OUTSIDE FUNCTION
 	
-	$(this).on('click',callback)
-					note : NO QUOTES SURROUNDING CALLBACK 
+local var declared WITHIN FUNCTION
+	
+let is valid within { block of code }  (even private within a function)
+```
+
+
+### IIFE Immediately Invoked Function
+
+```js
+(function(){});   RUN RIGHT NOW AND RETURN THE OUTPUT OF THAT FUNCTION AS A 	LITERAL INPUT INTO THE COMPILED CODE
+```
+
+### Callback Function
+
+```js
+$(this).on('click',function(){})
+	
+$(this).on('click',callback)
+```
+
+note : NO QUOTES SURROUNDING CALLBACK 
 					
+		
 					
+### documentation				
 					
-					
-					
-					
-					
-					
+```			
 /**
 * Given a scope (typically $(document)) all sheets are scanned until requested rule is found
 * 
@@ -356,26 +389,30 @@ Callback Function
 */
 ```
 
-## this
+### this
 
 When we use a function, `this` refers to the current object that is in scope at this present time
 
-## globalThis
+### globalThis
 
 as expected, `globalThis` refers to the global value of `this` which does not change, and refers to the window within which we are creating our web application
 
-## dom
 
+
+
+
+## dom
 
 Window is root element
 
-```
 window is the (default) object that is always present in every command but omitted from being explicitly stated.
 
+### window
+
+```js
 eg  alert() can be written window.alert()
 
 Create new Window
-
 	window.open()
 	
 	window.open(URL)
@@ -387,10 +424,11 @@ Create new Window
 	window.open(URL,_self)     SAME WINDOW
 ```
 
+
 Working with Web Documents
 When a page is loaded into a browser it is treated as an HTML Document
 
-```
+```js
 Window => Document 
 
 	Think of Window as structure onto which we will place a moving advertisement.
@@ -405,7 +443,9 @@ Window => Document
 					   sByName 
 					   
 	document.write()   create a new page containing this content
-	
+```
+
+
 DOM uses 4 elements to create a page
 
 	Document 
@@ -413,148 +453,157 @@ DOM uses 4 elements to create a page
 	Text
 	Attribute with Value 
 	
-Add an element to page using Javascript 
+### Add an element to page using Javascript 
 
-	HTML : <div id="x">
+```js
+HTML : <div id="x">
 	
-	Javascript var newPara = document.createElement("p");
-	var node = document.createTextNode("some text here");
-	newPara.appendChild(node);
-	OR newPara.innerHTML="some text";
-	document.getElementById('x').appendChild(newPara);
-	
-	<div id=x>
-		<p>some text here</p>
-		
-		
-		<http://www.w3schools.com/js/js_htmldom_nodes.asp>
-		
+Javascript var newPara = document.createElement("p");
+var node = document.createTextNode("some text here");
+newPara.appendChild(node);
+OR newPara.innerHTML="some text";
+document.getElementById('x').appendChild(newPara);
+```
+
+```html
+<div id=x>
+  <p>some text here</p>
+```	
+
+http://www.w3schools.com/js/js_htmldom_nodes.asp
+
+```js
 insertBefore an element 
 parentElement.removeChild(childElement);
 parent.replace(new,old);
+```
 
-		<https://jsfiddle.net/philanderson888/m797tLhk/>
-		
+https://jsfiddle.net/philanderson888/m797tLhk
 
-	
+
+### dom child nodes array
+
 ChildNodes[]
 		
-	('parent').childNodes 				==> ARRAY OF ALL CHILD NODES
+
+```js
+('parent').childNodes 				==> ARRAY OF ALL CHILD NODES
 	
-	
-	('parent').childNodes[0]    etc
-	
-	childNodes[0] = firstChild
-	
-	lastChild will be childNodes[childNodes.length-1]
-	
-	
-	
-	
+('parent').childNodes[0]    etc
+
+childNodes[0] = firstChild
+
+lastChild will be childNodes[childNodes.length-1]
+```
+
 ParentNode
-	('id').parentNode
+
+```js
+('id').parentNode
+```
 
 Sibling Nodes
 
-	nextSibling 
-	
-	previousSibling
+```js
+nextSibling 
+
+previousSibling
+```
 
 White space
 
-	NOTE : WHITE SPACE CAN CONSTITUTE PART OF THE DOM SO TAKE CARE WITH CERTAIN ELEMENTS !!!!
+NOTE : WHITE SPACE CAN CONSTITUTE PART OF THE DOM SO TAKE CARE WITH CERTAIN ELEMENTS !!!!
 	
-		SOLUTION : JUST REMOVE THE WHITE SPACE AND YOUR PROBLEMS WILL BE FIXED!
+SOLUTION : JUST REMOVE THE WHITE SPACE AND YOUR PROBLEMS WILL BE FIXED!
+
 	OR
 	
-	Filter by NodeType
-				parentNode = document.getElementById('x');
-				childNodes = parentNode.childNodes
-				for(var i=0;i<childNodes.length;i++){
-				  if(childNodes[i].nodeType===1){
-						console.log("It's a real node!");
-						console.log("Node Name is " + childNodes[i].nodeName);
-						console.log("Node Value is " + childNodes[i].nodeValue);			  	
-				  }
-				  elseif(childNodes[i].nodeType===3){
-				        console.log("We hit white space!");					  
-				  }
-				}
-	
-Node Name By Tag Name
+Filter by NodeType
 
-	nodeName   is the interior of the <tag> name ie tag
-	
-			if (nodeName.toLowerCase==="img"){console.log('Picture');
-	
+```js
+parentNode = document.getElementById('x');
+childNodes = parentNode.childNodes
+for(var i=0;i<childNodes.length;i++){
+    if(childNodes[i].nodeType===1){
+        console.log("It's a real node!");
+        console.log("Node Name is " + childNodes[i].nodeName);
+        console.log("Node Value is " + childNodes[i].nodeValue);			  	
+    }
+    elseif(childNodes[i].nodeType===3){
+        console.log("We hit white space!");					  
+    }
+}
+```
+
+### Node Name By Tag Name
+
+nodeName   is the interior of the <tag> name ie tag
+
+```js
+if (nodeName.toLowerCase==="img"){console.log('Picture');
+```
+
 Node Value
-	nodeValue = just the bit immediately inside the node (first part only not the full html)
+
+nodeValue = just the bit immediately inside the node (first part only not the full html)
 
 InnerHTML
 
-	innerHTML = all the HTML inside tag, including html inside it
+innerHTML = all the HTML inside tag, including html inside it
 	
+
 Selecting multiple elements
 
-	document.getElementsByTagName('li')          ==> ARRAY with LENGTH property
-	
-	getElementsByTagName("p")
-		
-	getElementsByTagName("*")[3].style.backgroundColor="red"
-	getElementsByTagName("p")
-	var par = getElementsByTagName("p") returns an array par[0],par[1] of paragraphs so can address par[0].innerHTML = "Hi";
-	var pics = getElementByTagName("img"); is an array of all images
-	
-	Get all cells inside a table
-		(1) var myTable = Get table by ID
-		(2) var myCellsArray = Get by Tag (td)
-		(3) for loop from 0 to myCellsArray.length-1 => set [i].style.backgroundColor to eg pink
+```js
+document.getElementsByTagName('li')          ==> ARRAY with LENGTH property
+
+getElementsByTagName("p")
+    
+getElementsByTagName("*")[3].style.backgroundColor="red"
+getElementsByTagName("p")
+var par = getElementsByTagName("p") returns an array par[0],par[1] of paragraphs so can address par[0].innerHTML = "Hi";
+var pics = getElementByTagName("img"); is an array of all images
+```
+
+Get all cells inside a table
+
+```js
+(1) var myTable = Get table by ID
+(2) var myCellsArray = Get by Tag (td)
+(3) for loop from 0 to myCellsArray.length-1 => set [i].style.backgroundColor to eg pink
+```
 
 Attributes
-	
-	hasAttribute   ('id').hasAttribute("class")
-	getAttribute   ('id').getAttribute("class")  gets value of class attribute
-	setAttribute   ('id').setAttribute("class","myClass")
-	array of attributes ('id').attributes - get length, nodeName, nodeValue
 
-	
+```js
+hasAttribute   ('id').hasAttribute("class")
+getAttribute   ('id').getAttribute("class")  gets value of class attribute
+setAttribute   ('id').setAttribute("class","myClass")
+array of attributes ('id').attributes - get length, nodeName, nodeValue
+```
+
 Adding Nodes
-	var newElement = document.createElement("div")
-	newElement.setAttribute("class","thisClass")
-	var newText = document.createTextNode("This is my text")
-	newElement.appendChild(newText)
-	
-	example
-	var parentDiv = ..('id');
-	var newP = document.createElement("p")
-	var newText = document.createTextNode("extra text")
-	newP.appendChild(newText)
-	parentDiv.appendChild(newP)
-	parentDiv.insertBefore(newP,parentDiv.firstChild)             //first
-	parentDiv.insertBefore(newP,parentDiv.firstChild.nextSibling) //second
-	
-Removing Nodes
-	('id').removeChild(thisNode)    
 
-window.onload=function(){}
-DOM has 4 nodes which create a page : document, element, text, attribute
-node = any element
-getElementById
-getElementByTag
-document.write replaces whole page
-document.writeln("Text");   adds a new line of text
-document.write("Text"); writes text to current line
-document.write("<p>Text</p>");
-<noscript> displayed if JS disabled
-Window object is highest level object
-Status displayed in status bar
-Windows object => document object
-Document object within <body> tag
-Document => image object
-document.getElementById(id);
-span.firstchild.nodeValue  changes value of this item
-SpanID.firstChild is the text element in <span>
-SpanID.firstChild.nodeValue = "text"  to change <span> text
+```js
+var newElement = document.createElement("div")
+newElement.setAttribute("class","thisClass")
+var newText = document.createTextNode("This is my text")
+newElement.appendChild(newText)
+
+example
+var parentDiv = ..('id');
+var newP = document.createElement("p")
+var newText = document.createTextNode("extra text")
+newP.appendChild(newText)
+parentDiv.appendChild(newP)
+parentDiv.insertBefore(newP,parentDiv.firstChild)             //first
+parentDiv.insertBefore(newP,parentDiv.firstChild.nextSibling) //second
+```
+
+Removing Nodes
+
+```js
+('id').removeChild(thisNode)    
 ```
 
 ## svg
@@ -583,7 +632,10 @@ mysocket.send('message')
 3) BUFFER
 READYSTATE
 
+```js
 var mySecureSocket = 'wss://mysecuresite.com';
+```
+
 
 CONNECTING
 
@@ -597,11 +649,11 @@ mysocket.addEventListener('open',function(){})
     error
     message
    close
-
+```
 
 ## dom
 
-
+```js
 ('parent').childNodes	==> ARRAY OF ELEMENTS
 ('parent').childNodes[0]	FIRST ELEMENT
 [array.length-1 ]
@@ -613,36 +665,54 @@ white space : CAN BE PART OF DOM WITH UNEXPECTED RESULTS SO TAKE CARE!
 \s	WHITE SPACE WITH REGEX
 ^\s	NOT WHITE SPACE
 \S	NOT WHITE SPACE
-
 ```
+
 NODE NAME == > TAG NAME
-	<img>		NODE NAME = IMG
-NODE VALUE
-	<p>----IN HERE---</p>  
-	INPUT ELEMENT   
-	 	INPUT BOX : TEXT INSIDE BOX ENTERED BY USER IS
-				
-				<element>.value
-		                $('SELECT').val()
-innerHTML/innerText   eg inside div, p
-	element.innerHTML="<p>hi</p>";
-Attributes
-	element.hasAttribute('x')		t/f
+
+```js
+<img>		NODE NAME = IMG
 ```
 
+NODE VALUE
+
+```js
+<p>----IN HERE---</p>  
+```
+
+INPUT ELEMENT   
+
+INPUT BOX : TEXT INSIDE BOX ENTERED BY USER IS
+
+```js
+<element>.value
+
+$('SELECT').val()
+```
+
+innerHTML/innerText   eg inside div, p
+
+```js
+element.innerHTML="<p>hi</p>";
+```
+
+Attributes
+
+```js
+element.hasAttribute('x')		t/f
 var boxwidth = document.getElementById('inputbox1').getAttribute('width');
 setAttribute('x','value')
 CSS 'attr'
+```
 
 ## arrays
 
-## Array.of
+### Array.of
 
 ```jsx
 let myArray = Array.of(1,2,3);
 ```
 
-## Spread Operator
+### Spread Operator
 
 Use to pass in elements of an array into a function
 
@@ -656,19 +726,19 @@ function getSum(a,b,c){
 getSum(...myArray)
 ```
 
-## find
+### find
 
 ```jsx
 var output = myArray.find(item=>item>1000)
 ```
 
-## findIndex
+### findIndex
 
 ```jsx
 var output = myArray.findIndex(item=>item>1000)
 ```
 
-## forEach
+### forEach
 
 ```jsx
 let total = 0;
@@ -676,7 +746,7 @@ myArray.forEach( item => total += item )
 ```
 
 
-## Filter
+### Filter
 
 To get the minimum value in an array we can use
 
@@ -709,7 +779,7 @@ HTML FORM : POST DATA TO SERVER (FORM ACTION ="" METHOD='POST')
 	==> 'SERIALIZE FORM FIELDS AND SEND AS STRING'
 	
 
-## for..in
+### for..in
 		
 ```js		
 console.log('\n\n');
@@ -871,7 +941,7 @@ Before ES6 we had arrays and objects
 
 Now we also have `sets`, `maps`, `weak sets` and `weak maps`
 
-## Sets 
+### Sets 
 
 - unordered
 - unindexed
@@ -898,174 +968,194 @@ mySet.add(10) // ignores duplicates!
 
 ## Events
 
+```js
+<div onmouseover="fndothis()">
+element.addEventListener('mouseover',fndothis)
+$(..).on('mouseover',function(){});
+$(  ).click(function(event){   event.x  })
+    
+REMOVE LISTENER
+element.removeEventListener('mouseover',<<named-function>>)
+$('..).off('mouseover',<<named funtion>>)
 ```
-EVENT
-	<div onmouseover="fndothis()">
-	element.addEventListener('mouseover',fndothis)
-	$(..).on('mouseover',function(){});
-	$(  ).click(function(event){   event.x  })
-		
-	REMOVE LISTENER
-	element.removeEventListener('mouseover',<<named-function>>)
-	$('..).off('mouseover',<<named funtion>>)
-	
-	
-	
-	Events
-Button
 
-	Get Event (from user)
+
+### button event
+
+Get Event (from user)
 	
-	Event Source 
+Event Source 
 	
-				You know an object is the event source if it has addAction/Key/MouseListener
+You know an object is the event source if it has addAction/Key/MouseListener
 	
-	Accepts Registration From Listeners who want to be told when event occurs
+Accepts Registration From Listeners who want to be told when event occurs
 	
-	Calls the Listener's Event-Handling Method
+Calls the Listener's Event-Handling Method
+
+
+### PAGE LOAD EVENTS
 	
-PAGE LOAD EVENTS
-	onload()
-	onunload()
+```js
+onload()
+onunload()
+```
+
 MOUSE EVENTS
-	onclick/dblclick/mouseover/mouseenter/mouseout/mousemove
-	onmousedown/up
-KEYBOARD EVENTS
-	onkeyup/down/press
-	
-	keyPressed
-	keyReleased
-FORM EVENTS
-	onsubmit
-	onfocus/blur		CLICK INTO OR OUT OF AN INPUT BOX
-	onchange		SELECT DROWN BOX : MAKE SELECTION
-	onselect		ITEM GETS SELECTED ((CHECKBOX/RADIO))		
 
-		DISABLED 	EG BUTTON
-		READONLY	EG INPUT FIELD
+```js
+onclick/dblclick/mouseover/mouseenter/mouseout/mousemove
+onmousedown/up
+```
+
+KEYBOARD EVENTS
+
+```js
+onkeyup/down/press
+keyPressed
+keyReleased
+```
+
+FORM EVENTS
+
+```js
+onsubmit
+onfocus/blur		CLICK INTO OR OUT OF AN INPUT BOX
+onchange		SELECT DROWN BOX : MAKE SELECTION
+onselect		ITEM GETS SELECTED ((CHECKBOX/RADIO))		
+DISABLED 	EG BUTTON
+READONLY	EG INPUT FIELD
+```
+
 EVENT DATA AND TYPE
-	event.data
-	event.type
+
+```js
+event.data
+event.type
+```
 
 Event Onclick
 
+```js
 <button onclick="dothis()">
-		
-		<form onsubmit="dothis()">
-		
-		<div onMouseOver="function-to-run">
-	
-LISTENER which is active on the OBJECT listening for EVENTS 
-	
-		object.addEventListener('EVENT',handler);
-		<div>.addEventListener("mouseover",function-to-run)
-		
-		<element>.removeEventListener('mouseover',named-function)
-PAGE EVENTS
-	ONLOAD
-	
-		<body onload="dothis()">
-		
-	
-	ONUNLOAD
-		
-		
-		
-		
-METHOD click()          (Can call this method in code to trigger the click 
-								event)
-								
-			$(this).click();	//BUTTON
-	
-			$(this).submit();    //FORM
-			
-			$(this).trigger('click',function(){});
-		
-		
-		
-		
-Mouse Events 
-	event.x and event.y will hold the coordinates of the event
-	
-		canvas.onmousedown=function(e){//e.x,e.y}
-		
-		
-	onclick
-	ondblclick
-	
-	onmousedown
-	onmouseup
-	
-	onmousemove           
-	
-	onmouseover
-	onmouseout
-	
-Keyboard Events
-
-	keyPressed
-	keyReleased
-	onKeyDown  
-	onKeyPress  
-	onKeyUp 
-	
-Form Events
-	onfocus
-	onblur
-	onsubmit
-	onchange
-	onselect
-	focus() sets the focus
-	disabled()  make field read only
-	
-
-Using the onLoad and onUnload Events
-	window.onload 
-	
-		<body onload="fnDoThisOnLoad()">  in HTML 
-	
-	window.onunload
+<form onsubmit="dothis()">
+<div onMouseOver="function-to-run">
 ```
 
+LISTENER which is active on the OBJECT listening for EVENTS 
 
+```js
+object.addEventListener('EVENT',handler);
+<div>.addEventListener("mouseover",function-to-run)
+<element>.removeEventListener('mouseover',named-function)
+```
+
+PAGE EVENTS
+
+ONLOAD
+
+```js
+<body onload="dothis()">
+```
+
+ONUNLOAD
+		
+METHOD click()          
+
+Can call this method in code to trigger the click event
+
+```js
+$(this).click();	//BUTTON
+$(this).submit();    //FORM
+$(this).trigger('click',function(){});
+```		
+		
+Mouse Events 
+
+```js
+event.x and event.y will hold the coordinates of the event
+canvas.onmousedown=function(e){//e.x,e.y}
+
+onclick
+ondblclick
+	
+onmousedown
+onmouseup
+	
+onmousemove           
+	
+onmouseover
+onmouseout
+```
 
 Keyboard Events
 
-  KeyPress
-  KeyDown
-  KeyUp
-  shiftKey/ctrlKey/altKey
-  charCode : Keyboard Letters, Numbers and Characters : KeyPress
-  scanCode : Special Keys like Escape : KeyUp/Down
-  http://javascript.info/tutorial/keyboard-events
+```js
+keyPressed
+keyReleased
+onKeyDown  
+onKeyPress  
+onKeyUp 
+```
+	
+Form Events
+
+```js
+onfocus
+onblur
+onsubmit
+onchange
+onselect
+focus() sets the focus
+disabled()  make field read only
+```
+
+Using the onLoad and onUnload Events
+
+```js
+window.onload 
+<body onload="fnDoThisOnLoad()">  in HTML 
+window.onunload
+```
+
+Keyboard Events
+
+```js
+KeyPress
+KeyDown
+KeyUp
+shiftKey/ctrlKey/altKey
+charCode : Keyboard Letters, Numbers and Characters : KeyPress
+scanCode : Special Keys like Escape : KeyUp/Down
+```
+
+http://javascript.info/tutorial/keyboard-events
 
 Mouse Events
 
-  mouseMove
-  mouseDown
-  mouseUp
-  mouseEnter
-  mouseLeave
-  mouseOut
-  click
-  dblClick
+```js
+mouseMove
+mouseDown
+mouseUp
+mouseEnter
+mouseLeave
+mouseOut
+click
+dblClick
+```
 
 Finger Events : Gestures
 
-  TouchStart
-    Finger is placed on the screen
+TouchStart - Finger is placed on the screen
+TouchMove - Finger is dragged across screen
+TouchEnd - Finger is removed from screen
 
-  TouchMove
-    Finger is dragged across screen
+Testing Finger Events : Using An Emulator
 
-  TouchEnd
-    Finger is removed from screen
+Hold down shift in these emulations to simulate multiple finger touches
 
-  Testing Finger Events : Using An Emulator
-    Hold down shift in these emulations to simulate multiple finger touches
-    http://cdn.rawgit.com/hammerjs/touchemulator/master/tests/manual/hammer.html
-    http://cdn.rawgit.com/hammerjs/touchemulator/master/tests/manual/leaflet.html
+http://cdn.rawgit.com/hammerjs/touchemulator/master/tests/manual/hammer.html
 
+http://cdn.rawgit.com/hammerjs/touchemulator/master/tests/manual/leaflet.html
 
 
 ## event.type 
@@ -1475,10 +1565,3 @@ This page shows a map, zooms in and out, can set the latitude and longitude and 
 </body>
 </html>
 ```
-
-
-## archive 
-
-- [ajax](notes/ajax.md)
-  - [demos](https://github.com/philanderson888/ajax)
-- [Angular 1](notes/angular-version-1.md)
