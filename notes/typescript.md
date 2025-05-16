@@ -4,17 +4,19 @@
 
 - [typeScript](#typescript)
   - [contents](#contents)
-- [install](#install)
+  - [install](#install)
   - [compile ts to js](#compile-ts-to-js)
   - [run](#run)
   - [constants](#constants)
   - [types](#types)
+  - [nullable](#nullable)
   - [interface](#interface)
   - [class](#class)
   - [config](#config)
   - [functions](#functions)
+  - [array](#array)
 
-# install
+## install
 
 ```bash
 npm install -g typescript
@@ -56,6 +58,9 @@ tsc helloworld.ts
 ```ts
 const instance: x = {field: "value"}
 declare const instance: x
+const MY_CONSTANT = { js } as HtmlElement
+// generates a literal
+const MY_CONSTANT = { } as Const
 ```
 
 infer type from structure
@@ -64,9 +69,17 @@ infer type from structure
 
 ```ts
 type x = "a"|"b"
+type x = number|string
 type y = 1|2|3
 type z = array<string>
 type t = array<{field:string}>
+```
+
+## nullable
+
+```
+? is nullable
+! if not null then use
 ```
 
 ## interface
@@ -75,6 +88,7 @@ We can use interfaces as a predicted class structure
 
 ```ts
 interface X {field: string}
+interface X extends Y
 ```
 
 ```ts
@@ -142,7 +156,11 @@ tsconfig specifies
 ## functions
 
 ```ts
-fn x(): string // return type 
+// define parameters
+fn x(id:number|string){}
+// define return type
+fn x(): string {} 
+
 ```
 
 type inferred parameter
@@ -157,4 +175,10 @@ fn x(a:string; b?.c: string})
 
 ```ts
 async fn()
+```
+
+## array
+
+```ts
+Array.isArray(x)
 ```
