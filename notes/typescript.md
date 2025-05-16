@@ -1,51 +1,28 @@
-# TypeScript
+# typeScript
 
-## Contents
+## contents
 
-- [TypeScript](#typescript)
-  - [Contents](#contents)
-  - [Introduction](#introduction)
-  - [Warning - Use ReasonML not Typescript](#warning---use-reasonml-not-typescript)
-- [TypeScript .ts](#typescript-ts)
-- [install typescript](#install-typescript)
-- [compile typescript to Javascript](#compile-typescript-to-javascript)
+- [typeScript](#typescript)
+  - [contents](#contents)
+- [install](#install)
+  - [compile ts to js](#compile-ts-to-js)
+  - [run](#run)
+  - [constants](#constants)
+  - [types](#types)
+  - [interface](#interface)
+  - [class](#class)
+  - [config](#config)
+  - [functions](#functions)
 
-## Introduction
+# install
 
-Typescript
-
-    Javascript is valid typescript
-    Microsoft created
-    Typescript is not valid javascript unless compiled
-    Brings strict checking
-    Write elegant javascript in the compiler
-    App Building
-
-NativeScript
-
-    Nativescript can compile Javscript to native Android and iOS apps very quickly.  
-    Each page has a source code of XML, Javascript and CSS and that's it!!!
-    https://play.nativescript.org/?template=groceries-js&tutorial=groceries-js&id=8cWlB7
-
-## Warning - Use ReasonML not Typescript
-
-https://reasonml.github.io/
-
-Typescript adds types to Javascript but still retains backwards compatibility with all of the poor design flaws and bugs inherent in raw Javascript.
-
-For this reason, ReasonML is a better choice than Typescript if starting out!
-
-This article discusses some of the failings of Typescript in more details
-
-https://medium.com/swlh/typescript-will-make-you-suffer-7cc6ca4b1233
-
-# TypeScript .ts
-
-# install typescript
-
-```js
+```bash
 npm install -g typescript
+```
 
+then run
+
+```ts
 function greeter(person) {
     return "Hello, " + person;
 }
@@ -55,17 +32,16 @@ let user = "Jane User";
 document.body.innerHTML = greeter(user);
 ```
 
+## compile ts to js
 
-Now compile this typescript file to javascript
-
-```
-# typescript compile to javascript the typescript file `helloworld.ts` 
+```ts
 tsc helloworld.ts
+// helloworld.js
 ```
 
-Now run this with HTML :
+## run
 
-```
+```tsx
 <!DOCTYPE html>
 <html>
     <head><title>TypeScript</title></head>
@@ -75,11 +51,33 @@ Now run this with HTML :
 </html>
 ```
 
-## Typescript interfaces
+## constants
+
+```ts
+const instance: x = {field: "value"}
+declare const instance: x
+```
+
+infer type from structure
+
+## types
+
+```ts
+type x = "a"|"b"
+type y = 1|2|3
+type z = array<string>
+type t = array<{field:string}>
+```
+
+## interface
 
 We can use interfaces as a predicted class structure
 
+```ts
+interface X {field: string}
 ```
+
+```ts
 interface Person {
     firstName: string;
     lastName: string;
@@ -91,11 +89,21 @@ let user = { firstName: "Jane", lastName: "User" };
 document.body.innerHTML = greeter(user);
 ```
 
-## Typescript Classes
+## class
 
-Typescript has full support for ES6 classes
+typescript has full support for ES6 classes
 
+```ts
+class x { 
+    constructor(){
+        this.field = field
+    }
+}
 ```
+
+
+
+```ts
 class Student {
     fullName: string;
     constructor(public firstName: string, public middleInitial: string, public lastName: string) {
@@ -113,7 +121,7 @@ let user = new Student("Jane", "M.", "User");
 document.body.innerHTML = greeter(user);
 ```
 
-## tsconfig.json
+## config
 
 tsconfig.json sits at project root. 
 
@@ -121,3 +129,32 @@ tsconfig specifies
 
 - root files
 - compiler options
+
+```json
+{
+    strict: true,
+    noimplicitany: true,
+    StrictNullCheck: true
+}
+```
+
+
+## functions
+
+```ts
+fn x(): string // return type 
+```
+
+type inferred parameter
+
+```ts
+fn x(a:string; b?.c: string})
+// ? = nullable
+// ```
+
+
+## async
+
+```ts
+async fn()
+```
